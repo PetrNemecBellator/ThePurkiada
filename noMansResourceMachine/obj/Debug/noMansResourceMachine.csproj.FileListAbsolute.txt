@@ -1,0 +1,9 @@
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe.config
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.pdb
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.resources
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
