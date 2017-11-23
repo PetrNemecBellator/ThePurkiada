@@ -15,10 +15,12 @@ namespace noMansResourceMachine
     {
         Prikaz pk;//= new Prikaz(0, 0, this);
         ArrayList prikazy = new ArrayList();
+        Panel panel = new Panel();
         public Form1()
         {
             InitializeComponent();
             pk = new Prikaz(0, 0, this);
+        
 
         }
 
@@ -29,7 +31,44 @@ namespace noMansResourceMachine
 
         private void kompilovat_Click(object sender, EventArgs e)
         {
-            pk.setsdebugLayText();
+            Prikaz ifl = new Prikaz(0, 3, this);
+            
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

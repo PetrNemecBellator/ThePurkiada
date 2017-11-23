@@ -7,3 +7,15 @@ c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansR
 c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
 c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
 c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\aa\noMansResourceMachine.resources.dll
