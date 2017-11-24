@@ -14,6 +14,7 @@ namespace noMansResourceMachine
         public Label nazevPrikazu = new Label();
         private int typ;
         private Panel pozadi = new Panel();
+        
         public ComboBox promena1 = new ComboBox();
         public ComboBox promena2 = new ComboBox();
         public ComboBox promena3 = new ComboBox();
@@ -23,6 +24,8 @@ namespace noMansResourceMachine
         {
             this.posY = PosY;
             this.typ = typ;
+            pozadi.Width = 200;
+            pozadi.Height = 65;
             if (this.typ == 0) // prirad
             {
               
@@ -50,6 +53,8 @@ namespace noMansResourceMachine
                 this.nazevPrikazu.SetBounds(30, posY, 100, 30);
                 this.promena1.SetBounds(60, posY, 50, 30);
                 
+                //String.Format("dsaf {0}", posY);
+                
             }
             else if (this.typ == 3)//jump if
             {
@@ -60,13 +65,10 @@ namespace noMansResourceMachine
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
                 //20,15 200,65
-                pozadi.SetBounds(20, 15, 200, 65);
+                //   pozadi.SetBounds(20, posY, 200, 65);
+                pozadi.Top = (posY);
+                pozadi.Left = (20);
                 pozadi.BackColor = Color.FromArgb(255, 0, 0, 255);
-                // promena1.SetBounds(25, 20, 40, 20);
-                //  promena1.BackColor = Color.FromArgb(255, 0, 0, 0);
-                //form.Controls.Add(promena1);
-                //promena1.Location = new Point(5, 5);
-                //promena1 = new ComboBox();
                 int offset = 0;
                 promena1.Text = "-";
                 promena1.Size = new Size(30, 00);
@@ -97,11 +99,28 @@ namespace noMansResourceMachine
                    MessageBox.Show("Click");
                };
 
-                /*
+                
 
-        public ComboBox promena2 = new ComboBox();
-        public ComboBox promena3 = new ComboBox();
-        public ComboBox promena4 = new ComboBox();/*/
+            }
+            else if (typ == 4)
+            {
+                pozadi.Controls.Add(nazevPrikazu);
+                form.Controls.Add(pozadi);
+                nazevPrikazu.SetBounds(0, 0, 80, 30);
+                nazevPrikazu.Text = "jump";
+                nazevPrikazu.Font = new Font("Arial", 15);
+                nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
+                //20,15 200,65
+                //idealni roytex 85 (y)
+                //pozadi.SetBounds(20, posY, 200, 65);
+                pozadi.Top = (posY);
+                pozadi.Left = (20);
+                pozadi.BackColor = Color.FromArgb(255, 0, 0, 255);
+
+                promena1.Text = "-";
+                promena1.Size = new Size(30, 00);
+                promena1.Location = new Point((60 * 2) + 30, 32);
+                pozadi.Controls.Add(promena1);
             }
 
         }

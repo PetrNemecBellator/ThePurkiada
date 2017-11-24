@@ -15,11 +15,12 @@ namespace noMansResourceMachine
     {
         Prikaz pk;//= new Prikaz(0, 0, this);
         ArrayList prikazy = new ArrayList();
-        Panel panel = new Panel();
+       
         public Form1()
         {
             InitializeComponent();
         //    pk = new Prikaz(0, 0, this);
+     //   this.BackColor = Color.FromArgb(255,255,255,255)
         
 
         }
@@ -31,9 +32,9 @@ namespace noMansResourceMachine
 
         private void kompilovat_Click(object sender, EventArgs e)
         {
-            Prikaz ifl = new Prikaz(0, 3, this);
-            
-            
+            Prikaz ifl = new Prikaz(5, 3, this);
+            Prikaz jump = new Prikaz(75, 4, this);
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

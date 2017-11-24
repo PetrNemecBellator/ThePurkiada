@@ -37,17 +37,20 @@
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.kompilovat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox35 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
@@ -55,12 +58,12 @@
             this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.comboBox14 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBox18 = new System.Windows.Forms.ComboBox();
             this.comboBox15 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox16 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox17 = new System.Windows.Forms.ComboBox();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox19 = new System.Windows.Forms.ComboBox();
             this.comboBox20 = new System.Windows.Forms.ComboBox();
@@ -76,13 +79,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox26 = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox31 = new System.Windows.Forms.ComboBox();
             this.comboBox28 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox30 = new System.Windows.Forms.ComboBox();
-            this.comboBox31 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox27 = new System.Windows.Forms.ComboBox();
@@ -91,9 +94,6 @@
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
-            this.comboBox35 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -166,6 +166,24 @@
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox4, "comboBox4");
+            this.comboBox4.Name = "comboBox4";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Name = "label12";
+            // 
+            // comboBox35
+            // 
+            this.comboBox35.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox35, "comboBox35");
+            this.comboBox35.Name = "comboBox35";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Green;
@@ -177,6 +195,13 @@
             this.panel2.Controls.Add(this.comboBox8);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Name = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // comboBox1
             // 
@@ -196,13 +221,6 @@
             resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Blue;
@@ -214,6 +232,12 @@
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.comboBox10);
             this.panel3.Name = "panel3";
+            // 
+            // comboBox11
+            // 
+            this.comboBox11.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox11, "comboBox11");
+            this.comboBox11.Name = "comboBox11";
             // 
             // label3
             // 
@@ -238,12 +262,6 @@
             this.comboBox10.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox10, "comboBox10");
             this.comboBox10.Name = "comboBox10";
-            // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox11, "comboBox11");
-            this.comboBox11.Name = "comboBox11";
             // 
             // panel4
             // 
@@ -300,6 +318,12 @@
             this.panel5.Controls.Add(this.comboBox17);
             this.panel5.Name = "panel5";
             // 
+            // comboBox18
+            // 
+            this.comboBox18.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox18, "comboBox18");
+            this.comboBox18.Name = "comboBox18";
+            // 
             // comboBox15
             // 
             this.comboBox15.FormattingEnabled = true;
@@ -330,12 +354,6 @@
             this.comboBox17.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox17, "comboBox17");
             this.comboBox17.Name = "comboBox17";
-            // 
-            // comboBox18
-            // 
-            this.comboBox18.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox18, "comboBox18");
-            this.comboBox18.Name = "comboBox18";
             // 
             // panel6
             // 
@@ -450,6 +468,20 @@
             this.panel8.Controls.Add(this.comboBox30);
             this.panel8.Name = "panel8";
             // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.BackColor = System.Drawing.Color.DarkOrange;
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Name = "label9";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // comboBox31
+            // 
+            this.comboBox31.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox31, "comboBox31");
+            this.comboBox31.Name = "comboBox31";
+            // 
             // comboBox28
             // 
             this.comboBox28.FormattingEnabled = true;
@@ -481,20 +513,6 @@
             this.comboBox30.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox30, "comboBox30");
             this.comboBox30.Name = "comboBox30";
-            // 
-            // comboBox31
-            // 
-            this.comboBox31.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox31, "comboBox31");
-            this.comboBox31.Name = "comboBox31";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.BackColor = System.Drawing.Color.DarkOrange;
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Name = "label9";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // panel9
             // 
@@ -554,24 +572,6 @@
             this.comboBox34.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox34, "comboBox34");
             this.comboBox34.Name = "comboBox34";
-            // 
-            // comboBox35
-            // 
-            this.comboBox35.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox35, "comboBox35");
-            this.comboBox35.Name = "comboBox35";
-            // 
-            // label12
-            // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Name = "label12";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox4, "comboBox4");
-            this.comboBox4.Name = "comboBox4";
             // 
             // Form1
             // 
