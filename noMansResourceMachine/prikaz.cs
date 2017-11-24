@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace noMansResourceMachine
@@ -10,7 +11,6 @@ namespace noMansResourceMachine
     class Prikaz
     {
         private int posY;
-        
         public Label nazevPrikazu = new Label();
         private int typ;
         private Panel pozadi = new Panel();
@@ -53,28 +53,62 @@ namespace noMansResourceMachine
             }
             else if (this.typ == 3)//jump if
             {
-                form.Controls.Add(nazevPrikazu);
+                pozadi.Controls.Add(nazevPrikazu);
                 form.Controls.Add(pozadi);
-                nazevPrikazu.SetBounds(20, 18, 65, 50);
+                nazevPrikazu.SetBounds(0, 0, 80, 30);
                 nazevPrikazu.Text = "jump if";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
+                //20,15 200,65
                 pozadi.SetBounds(20, 15, 200, 65);
                 pozadi.BackColor = Color.FromArgb(255, 0, 0, 255);
-                // form.Controls.Add(promena1);
+                // promena1.SetBounds(25, 20, 40, 20);
+                //  promena1.BackColor = Color.FromArgb(255, 0, 0, 0);
+                //form.Controls.Add(promena1);
+                //promena1.Location = new Point(5, 5);
+                //promena1 = new ComboBox();
+                int offset = 0;
+                promena1.Text = "-";
+                promena1.Size = new Size(30, 00);
+                promena1.Location = new Point( 20, 32);
                 pozadi.Controls.Add(promena1);
-                promena1.SetBounds(25, 20, 20, 20);
-                promena1.BackColor = Color.FromArgb(255, 255, 255, 255);/*
+
+                promena2.Text = "-";
+                promena2.Items.Add("=");
+                promena2.Items.Add("<");
+                promena2.Items.Add(">");
+                promena2.Size = new Size(30, 00);
+                promena2.Location = new Point(60, 32);
+                pozadi.Controls.Add(promena2);
+
+                promena3.Text = "-";
+                promena3.Size = new Size(30, 00);
+                promena3.Location = new Point((50*2)+ offset,32 );
+                pozadi.Controls.Add(promena3);
+
+
+                promena4.Text = "-";
+                promena4.Size = new Size(30, 00);
+                promena4.Location = new Point((60*2) + 30, 32 );
+                pozadi.Controls.Add(promena4);
+             
+                //  pozadi.Click += new EventHandler(pozadi_click);
+               pozadi.Click += (s, e) => {
+                   MessageBox.Show("Click");
+               };
+
+                /*
 
         public ComboBox promena2 = new ComboBox();
         public ComboBox promena3 = new ComboBox();
         public ComboBox promena4 = new ComboBox();/*/
-    }
+            }
 
         }
         public void setsdebugLayText()
         {
             this.nazevPrikazu.Text = this.promena1.GetItemText(this.promena1.SelectedItem);
         }
+       
     }
 }

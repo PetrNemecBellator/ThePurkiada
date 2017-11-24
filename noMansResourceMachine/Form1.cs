@@ -19,7 +19,7 @@ namespace noMansResourceMachine
         public Form1()
         {
             InitializeComponent();
-            pk = new Prikaz(0, 0, this);
+        //    pk = new Prikaz(0, 0, this);
         
 
         }
