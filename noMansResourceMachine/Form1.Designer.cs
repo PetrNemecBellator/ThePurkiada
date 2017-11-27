@@ -87,6 +87,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox30 = new System.Windows.Forms.ComboBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox27 = new System.Windows.Forms.ComboBox();
             this.comboBox32 = new System.Windows.Forms.ComboBox();
@@ -94,6 +95,7 @@
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -528,6 +530,11 @@
             this.panel9.Controls.Add(this.comboBox34);
             this.panel9.Name = "panel9";
             // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
@@ -573,10 +580,17 @@
             resources.ApplyResources(this.comboBox34, "comboBox34");
             this.comboBox34.Name = "comboBox34";
             // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
@@ -610,6 +624,7 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -680,6 +695,8 @@
         private System.Windows.Forms.ComboBox comboBox34;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
