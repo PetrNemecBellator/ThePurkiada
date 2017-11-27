@@ -272,6 +272,63 @@
   <data name="&gt;&gt;kompilovat.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="&gt;&gt;comboBox4.Name" xml:space="preserve">
+    <value>comboBox4</value>
+  </data>
+  <data name="&gt;&gt;comboBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBox4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox35.Name" xml:space="preserve">
+    <value>comboBox35</value>
+  </data>
+  <data name="&gt;&gt;comboBox35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox35.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;comboBox35.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>846, 12</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 65</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <data name="comboBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 22</value>
   </data>
@@ -348,26 +405,74 @@
   <data name="&gt;&gt;comboBox35.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>846, 12</value>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 65</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
+    <value>comboBox1</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
+    <value>comboBox2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1052, 12</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 64</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -465,29 +570,89 @@
   <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1052, 12</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 64</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="panel3.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;comboBox11.Name" xml:space="preserve">
+    <value>comboBox11</value>
+  </data>
+  <data name="&gt;&gt;comboBox11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox11.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;comboBox11.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;comboBox9.Name" xml:space="preserve">
+    <value>comboBox9</value>
+  </data>
+  <data name="&gt;&gt;comboBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox9.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;comboBox9.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBox10.Name" xml:space="preserve">
+    <value>comboBox10</value>
+  </data>
+  <data name="&gt;&gt;comboBox10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox10.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;comboBox10.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>846, 83</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 65</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="comboBox11.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 17</value>
@@ -612,26 +777,86 @@
   <data name="&gt;&gt;comboBox10.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>846, 83</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 65</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panel4</value>
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+  <data name="&gt;&gt;comboBox12.Name" xml:space="preserve">
+    <value>comboBox12</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Name" xml:space="preserve">
+    <value>comboBox13</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Name" xml:space="preserve">
+    <value>comboBox14</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1050, 91</value>
+  </data>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 64</value>
+  </data>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -753,29 +978,101 @@
   <data name="&gt;&gt;comboBox14.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1050, 91</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 64</value>
-  </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="panel5.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;comboBox18.Name" xml:space="preserve">
+    <value>comboBox18</value>
+  </data>
+  <data name="&gt;&gt;comboBox18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox18.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;comboBox18.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox15.Name" xml:space="preserve">
+    <value>comboBox15</value>
+  </data>
+  <data name="&gt;&gt;comboBox15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox15.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;comboBox15.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox16.Name" xml:space="preserve">
+    <value>comboBox16</value>
+  </data>
+  <data name="&gt;&gt;comboBox16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox16.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;comboBox16.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox17.Name" xml:space="preserve">
+    <value>comboBox17</value>
+  </data>
+  <data name="&gt;&gt;comboBox17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox17.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;comboBox17.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1050, 161</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 65</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="comboBox18.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -921,29 +1218,101 @@
   <data name="&gt;&gt;comboBox17.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1050, 161</value>
-  </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 65</value>
-  </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="panel6.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;comboBox19.Name" xml:space="preserve">
+    <value>comboBox19</value>
+  </data>
+  <data name="&gt;&gt;comboBox19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox19.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;comboBox19.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox20.Name" xml:space="preserve">
+    <value>comboBox20</value>
+  </data>
+  <data name="&gt;&gt;comboBox20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox20.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;comboBox20.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox21.Name" xml:space="preserve">
+    <value>comboBox21</value>
+  </data>
+  <data name="&gt;&gt;comboBox21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox21.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;comboBox21.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox22.Name" xml:space="preserve">
+    <value>comboBox22</value>
+  </data>
+  <data name="&gt;&gt;comboBox22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox22.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;comboBox22.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1052, 240</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 65</value>
+  </data>
+  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="comboBox19.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1089,29 +1458,101 @@
   <data name="&gt;&gt;comboBox22.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1052, 240</value>
-  </data>
-  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 65</value>
-  </data>
-  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="&gt;&gt;comboBox23.Name" xml:space="preserve">
+    <value>comboBox23</value>
+  </data>
+  <data name="&gt;&gt;comboBox23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox23.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;comboBox23.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox24.Name" xml:space="preserve">
+    <value>comboBox24</value>
+  </data>
+  <data name="&gt;&gt;comboBox24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox24.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;comboBox24.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox25.Name" xml:space="preserve">
+    <value>comboBox25</value>
+  </data>
+  <data name="&gt;&gt;comboBox25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox25.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;comboBox25.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;button4.Name" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBox26.Name" xml:space="preserve">
+    <value>comboBox26</value>
+  </data>
+  <data name="&gt;&gt;comboBox26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox26.Parent" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;comboBox26.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1052, 311</value>
+  </data>
+  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 65</value>
+  </data>
+  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
+    <value>panel7</value>
+  </data>
+  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="comboBox23.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1257,27 +1698,6 @@
   <data name="&gt;&gt;comboBox26.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="panel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1052, 311</value>
-  </data>
-  <data name="panel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 65</value>
-  </data>
-  <data name="panel7.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;panel7.Name" xml:space="preserve">
-    <value>panel7</value>
-  </data>
-  <data name="&gt;&gt;panel7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="panel8.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1335,27 +1755,6 @@
   <data name="&gt;&gt;comboBox31.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="comboBox28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 17</value>
-  </data>
-  <data name="comboBox28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 21</value>
-  </data>
-  <data name="comboBox28.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;comboBox28.Name" xml:space="preserve">
-    <value>comboBox28</value>
-  </data>
-  <data name="&gt;&gt;comboBox28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox28.Parent" xml:space="preserve">
-    <value>panel8</value>
-  </data>
-  <data name="&gt;&gt;comboBox28.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1384,7 +1783,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="comboBox29.Location" type="System.Drawing.Point, System.Drawing">
     <value>1120, 205</value>
@@ -1405,7 +1804,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;comboBox29.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1432,7 +1831,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="comboBox30.Location" type="System.Drawing.Point, System.Drawing">
     <value>1055, 205</value>
@@ -1453,7 +1852,7 @@
     <value>panel8</value>
   </data>
   <data name="&gt;&gt;comboBox30.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="panel8.Location" type="System.Drawing.Point, System.Drawing">
     <value>844, 161</value>
@@ -1533,27 +1932,6 @@
   <data name="&gt;&gt;comboBox27.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="comboBox32.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 17</value>
-  </data>
-  <data name="comboBox32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 21</value>
-  </data>
-  <data name="comboBox32.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;comboBox32.Name" xml:space="preserve">
-    <value>comboBox32</value>
-  </data>
-  <data name="&gt;&gt;comboBox32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox32.Parent" xml:space="preserve">
-    <value>panel9</value>
-  </data>
-  <data name="&gt;&gt;comboBox32.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1582,7 +1960,7 @@
     <value>panel9</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="comboBox33.Location" type="System.Drawing.Point, System.Drawing">
     <value>1120, 205</value>
@@ -1603,7 +1981,7 @@
     <value>panel9</value>
   </data>
   <data name="&gt;&gt;comboBox33.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="button8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1630,7 +2008,7 @@
     <value>panel9</value>
   </data>
   <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="comboBox34.Location" type="System.Drawing.Point, System.Drawing">
     <value>1055, 205</value>
@@ -1651,7 +2029,7 @@
     <value>panel9</value>
   </data>
   <data name="&gt;&gt;comboBox34.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="panel9.Location" type="System.Drawing.Point, System.Drawing">
     <value>846, 240</value>
@@ -1675,7 +2053,7 @@
     <value>2</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>511, 216</value>
+    <value>650, 240</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>

@@ -26,7 +26,13 @@ namespace noMansResourceMachine
             InitializeComponent();
             //    pk = new Prikaz(0, 0, this);
             //   this.BackColor = Color.FromArgb(255,255,255,255)
-            PrikazZobrazeni muj = new PrikazZobrazeni(0, 3, this);
+            PrikazZobrazeni[] ml = new PrikazZobrazeni[] {new PrikazZobrazeni (0, 0, this),
+            new PrikazZobrazeni(85,1,this), new PrikazZobrazeni(85*2,2,this), new PrikazZobrazeni(85*3,3,this),
+            new PrikazZobrazeni(85*4,4,this),
+            new PrikazZobrazeni(85*5,5,this),
+              new PrikazZobrazeni(85*5,6,this),
+            new PrikazZobrazeni(85*7,7,this),
+            new PrikazZobrazeni(85*6,7,this)};
         
 
         }

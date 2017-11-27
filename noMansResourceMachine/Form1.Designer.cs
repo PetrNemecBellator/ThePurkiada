@@ -81,20 +81,18 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox31 = new System.Windows.Forms.ComboBox();
-            this.comboBox28 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox30 = new System.Windows.Forms.ComboBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox27 = new System.Windows.Forms.ComboBox();
-            this.comboBox32 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.comboBox34 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -463,7 +461,6 @@
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.comboBox31);
-            this.panel8.Controls.Add(this.comboBox28);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.comboBox29);
             this.panel8.Controls.Add(this.button7);
@@ -483,12 +480,6 @@
             this.comboBox31.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox31, "comboBox31");
             this.comboBox31.Name = "comboBox31";
-            // 
-            // comboBox28
-            // 
-            this.comboBox28.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox28, "comboBox28");
-            this.comboBox28.Name = "comboBox28";
             // 
             // label8
             // 
@@ -523,17 +514,11 @@
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel9.Controls.Add(this.label10);
             this.panel9.Controls.Add(this.comboBox27);
-            this.panel9.Controls.Add(this.comboBox32);
             this.panel9.Controls.Add(this.label11);
             this.panel9.Controls.Add(this.comboBox33);
             this.panel9.Controls.Add(this.button8);
             this.panel9.Controls.Add(this.comboBox34);
             this.panel9.Name = "panel9";
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
             // 
             // label10
             // 
@@ -548,12 +533,6 @@
             this.comboBox27.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox27, "comboBox27");
             this.comboBox27.Name = "comboBox27";
-            // 
-            // comboBox32
-            // 
-            this.comboBox32.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox32, "comboBox32");
-            this.comboBox32.Name = "comboBox32";
             // 
             // label11
             // 
@@ -579,6 +558,11 @@
             this.comboBox34.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox34, "comboBox34");
             this.comboBox34.Name = "comboBox34";
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
             // 
             // textBox2
             // 
@@ -677,7 +661,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox26;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox comboBox28;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox29;
         private System.Windows.Forms.Button button7;
@@ -688,7 +671,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox27;
-        private System.Windows.Forms.ComboBox comboBox32;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox33;
         private System.Windows.Forms.Button button8;
