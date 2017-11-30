@@ -14,28 +14,19 @@ namespace noMansResourceMachine
     public partial class Form1 : Form
     {
         //Prikaz pk;//= new Prikaz(0, 0, this);
+        private static int pocetBloku;
       //  ArrayList prikazy = new ArrayList();
         List<List<int>> prikazy = new List<List<int>>();
         List<int> prikaz = new List<int>();
         List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
         Levely[] vsechnyLevly = new Levely[2];
+        
         //int [] pole= new pole
         int aktualniLevel = 1;
         public Form1()
         {
             InitializeComponent();
-            //    pk = new Prikaz(0, 0, this);
-            //   this.BackColor = Color.FromArgb(255,255,255,255)
-            PrikazZobrazeni[] ml = new PrikazZobrazeni[] {new PrikazZobrazeni (0, 0, this),
-            new PrikazZobrazeni(85,1,this), new PrikazZobrazeni(85*2,2,this), new PrikazZobrazeni(85*3,3,this),
-            new PrikazZobrazeni(85*4,4,this),
-            new PrikazZobrazeni(85*5,5,this),
-              new PrikazZobrazeni(85*5,6,this),
-            new PrikazZobrazeni(85*7,7,this),
-            new PrikazZobrazeni(85*6,7,this)};
-        
-
-        }
+        }        
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -113,27 +104,65 @@ namespace noMansResourceMachine
 
         }
 
-        private void panel1_Click(object sender, EventArgs e)
+     /* private void jumpIf_Click(object sender, EventArgs e)
         {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count , 3, panel_scrolllll));
+        }*/
 
+
+        private void jump_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 4, panel_scrolllll));
+        }
+        private void pricti1_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 1, panel_scrolllll));
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void odecti1_Click(object sender, EventArgs e)
         {
-
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 2, panel_scrolllll));
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void inputPanel_Click(object sender, EventArgs e)
         {
-
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 5, panel_scrolllll));
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
+      
 
+        private void output_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 6, panel_scrolllll));
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void prirad_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 0, panel_scrolllll));
+        }
+
+        private void pricti_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 7, panel_scrolllll));
+        }
+
+        private void odecti_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 8, panel_scrolllll));
+        }
+
+        private void jumpIf_Click(object sender, EventArgs e)
+        {
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 3, panel_scrolllll));
+            everyClick(prikazySeVsim.Count);
+        }
+        private void everyClick(int cislo)
+        {
+        }
+
+     
+
+        private void panel_scrolllll_MouseClick(object sender, MouseEventArgs e)
         {
 
         }
