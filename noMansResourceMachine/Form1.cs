@@ -18,14 +18,17 @@ namespace noMansResourceMachine
       //  ArrayList prikazy = new ArrayList();
         List<List<int>> prikazy = new List<List<int>>();
         List<int> prikaz = new List<int>();
-        List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-        Levely[] vsechnyLevly = new Levely[2];
-        
+        static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
+         Levely[] vsechnyLevly = new Levely[2];
+        private static int aktualniPocetBloku;
+
         //int [] pole= new pole
         int aktualniLevel = 1;
         public Form1()
         {
             InitializeComponent();
+            PrikazZobrazeni.initPrikazPole(prikazySeVsim);
+           // PrikazZobrazeni.setScroll(groupBox1);
         }        
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,56 +115,82 @@ namespace noMansResourceMachine
 
         private void jump_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 4, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 4,panel_scrolllll));
+            aktualniPocetBloku++;
         }
         private void pricti1_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 1, panel_scrolllll));
+          prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 1, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void odecti1_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 2, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 2, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void inputPanel_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 5, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 5, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
       
 
         private void output_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 6, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 6, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void prirad_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 0, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 0, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void pricti_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 7, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 7, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void odecti_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 8, panel_scrolllll));
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 8, panel_scrolllll));
+            aktualniPocetBloku++;
         }
 
         private void jumpIf_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 3, panel_scrolllll));
-            everyClick(prikazySeVsim.Count);
+            prikazySeVsim.Add(new PrikazZobrazeni(aktualniPocetBloku, 3, panel_scrolllll));
+            aktualniPocetBloku++;
         }
         private void everyClick(int cislo)
         {
         }
+        /*  public List<List<PrikazZobrazeni>>  getPrikazy()
+          {
+              return this.prikazyToget;
+          }*/
 
-     
+      public static void deleFromMainArray(int pozice)
+        {
 
+           // MessageBox.Show("aktualne mazana pozice: "+pozice.ToString());
+            prikazySeVsim.RemoveAt(pozice);
+            aktualniPocetBloku--;
+
+        }
+        public static void zmenPocetBloku(int prictePocetbloku)
+        {
+            aktualniPocetBloku += prictePocetbloku;
+        }
+        public static int getAktpocet()
+        {
+           return aktualniPocetBloku;
+        }
         private void panel_scrolllll_MouseClick(object sender, MouseEventArgs e)
         {
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,38 +11,45 @@ namespace noMansResourceMachine
 {
     class PrikazZobrazeni
     {
-        private int posY ;
-        private static int lineNumbers;
+        private int posY ;     
         public Label nazevPrikazu = new Label();
         private int typ;
         public ComboBox argument1 = new ComboBox();
         public ComboBox argument2 = new ComboBox();
         public ComboBox argument3 = new ComboBox();
-        public  ComboBox argument4 = new ComboBox();
+        public   ComboBox argument4 = new ComboBox();
+        private int blokONline;
         private Panel blok = new Panel();
         private Panel secondPart = new Panel();
         private bool secondPartSelected = false;
         private bool selected;
         private Label cisloRadku = new Label();
-        private  Panel ScrolHelp;
+        private static Panel ScrolHelp;
         
+        private static List<PrikazZobrazeni> prikazySeVsim;
         public PrikazZobrazeni(int PosY, int typ,Panel scrollO)
-        {
-          
+         {
+      
             ScrolHelp = scrollO;
-            lineNumbers++;
-            for (int i = 1; i < lineNumbers+1; i++)
+         //   Form1.zmenPocetBloku(1);
+            int fakeAktualniPocetBloku = Form1.getAktpocet();
+            blok.Tag = fakeAktualniPocetBloku.ToString();
+            cisloRadku.Tag = fakeAktualniPocetBloku.ToString();
+            
+            blokONline = fakeAktualniPocetBloku;
+            for (int i = 1; i < fakeAktualniPocetBloku+1; i++)
             {
                 argument4.Items.Add(i);
             }
 
-            this.posY = PosY * 85;
+            this.posY = PosY * 85 + 1 ;
             this.cisloRadku.Font = new Font("Arial", 15);
             this.cisloRadku.BackColor = Color.FromArgb(1, 64, 64, 64);
-            this.cisloRadku.Text = lineNumbers.ToString();
+            this.cisloRadku.Text = fakeAktualniPocetBloku.ToString();
             this.cisloRadku.SetBounds(0, this.posY,45,20);
             this.cisloRadku.ForeColor = Color.FromArgb(255,0,0,0);
             scrollO.Controls.Add(cisloRadku);
+            
             blok.MouseClick += Blok_MouseClick1;
 
             this.typ = typ;
@@ -54,7 +62,6 @@ namespace noMansResourceMachine
             {
 
                 blok.BackColor = Color.FromArgb(142, 158, 41);
-
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 142, 158, 41);
                 this.nazevPrikazu.Text = "<--Přiřaď";
@@ -223,19 +230,16 @@ namespace noMansResourceMachine
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
                 this.nazevPrikazu.Text = "<--pricti";
-
                 this.nazevPrikazu.SetBounds(60, 25, 100, 80);
                 this.argument1.SetBounds(10, 25, 30, 30);
                 this.argument2.SetBounds(160, 25, 30, 30);
             }
             else if(typ == 8)
             {
-
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(argument1);
                 blok.Controls.Add(argument2);
                 blok.Controls.Add(nazevPrikazu);
-
                 blok.BackColor = Color.FromArgb(255, 178, 30, 30);
 
                 this.nazevPrikazu.Font = new Font("Arial", 15);
@@ -250,43 +254,96 @@ namespace noMansResourceMachine
 
         private void ScrolHelp_MouseClick1(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(e.X.ToString() + " " + e.Y.ToString());
+           //MessageBox.Show(e.X.ToString() + " " + e.Y.ToString());
+        }
+        public static void initPrikazPole(List<PrikazZobrazeni> polePrikazu)
+        {
+            prikazySeVsim =polePrikazu;
         }
 
         private void Blok_MouseClick1(object sender, MouseEventArgs e)
         {
-
+            ScrolHelp.MouseClick += ScrolHelp_MouseClick1; // trochu smutny nastovovat to u kazdeho objektu a taky to ze je to az po kliku
+            ArrayList smazPomoc = new ArrayList();
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 MessageBox.Show("Leve tlacitko aka pohnout");
-
-
-            }else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                MessageBox.Show("Prave tlacitko aka smazat");
-                MessageBox.Show(e.X.ToString());
-                ScrolHelp.MouseClick += ScrolHelp_MouseClick1;
-                ScrolHelp.Controls.Remove(blok);
-                ScrolHelp.Controls.Remove(cisloRadku);
-                lineNumbers--;
-                //blok.Controls.RemoveAt();
+                DialogResult dialogResult = MessageBox.Show("Smazní", "Jste si opravdu jisti že chcete daný blok smazat?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                 //   MessageBox.Show("Prave tlacitko aka smazat");
+                    foreach (Control c in ScrolHelp.Controls)
+                    {
 
+                        if (int.Parse(c.Tag.ToString()) == int.Parse(this.blok.Tag.ToString()))
+                        {
+                            smazPomoc.Add(c);
+                        }
+                        else if (int.Parse(c.Tag.ToString()) > int.Parse(this.blok.Tag.ToString()))
+                        {
+                            int pos = (int.Parse(c.Tag.ToString()) - 1) * 85;
+                            //   MessageBox.Show("posouv8m na pozici: "+pos.ToString());
+                            if (c is Panel)
+                            {
+                                {
+                                    Panel panelControl = (Panel)c;
+                                    //panelControl.Top = (pos);
+                                    panelControl.SetBounds(50, pos, 200, 65);
+                                    panelControl.Tag = pos / 85;
+                                }
+                            }
+                            else if (c is Label)
+                            {
+
+                                Label labelText = (Label)c;
+                                //labelText.Top = pos;
+
+                                labelText.SetBounds(0, pos, 45, 20);
+                                labelText.Text = ((pos / 85).ToString());
+                                labelText.Tag = (pos / 85);
+                            }
+
+
+                        }
+                    }
+                    //    MessageBox.Show("Pocet veci na smazani!!!!!!: " + smazPomoc.Count.ToString());
+                    foreach (Control k in smazPomoc)
+                    {
+
+                        k.BackColor = Color.FromArgb(255, 125, 65, 65);
+                        ScrolHelp.Controls.Remove(blok);
+                        ScrolHelp.Controls.Remove(cisloRadku);
+                        ScrolHelp.Refresh();
+                        k.Dispose();
+                        //   MessageBox.Show("odstrnen blok s tagem "+blok.Tag.ToString()+ " \n label s tagem "+cisloRadku.Tag.ToString());
+                    }
+                    Form1.deleFromMainArray(int.Parse(blok.Tag.ToString()));
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+               
+              
 
             }
-            else
-            {
-                MessageBox.Show("napoveda konkretniho bloku");
-            }
+        
+
+            
         }
+
+
         private void panel_scrolllll_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(e.X.ToString() + " "+ e.Y.ToString());
+            //MessageBox.Show(e.X.ToString() + " "+ e.Y.ToString());
         }
         private void panel_scrolllll_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
 
 
         public void setsdebugLayText()
@@ -336,6 +393,10 @@ namespace noMansResourceMachine
         public  void clickInit()
         {         
              
+        }
+        private void setY(int posY)
+        {
+            blok.Top = (posY);
         }
 
     
