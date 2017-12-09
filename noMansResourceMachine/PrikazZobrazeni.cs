@@ -45,7 +45,7 @@ namespace noMansResourceMachine
             this.posY = PosY * 85 + 1 ;
             this.cisloRadku.Font = new Font("Arial", 15);
             this.cisloRadku.BackColor = Color.FromArgb(1, 64, 64, 64);
-            this.cisloRadku.Text = fakeAktualniPocetBloku.ToString();
+            this.cisloRadku.Text = (fakeAktualniPocetBloku+1).ToString();
             this.cisloRadku.SetBounds(0, this.posY,45,20);
             this.cisloRadku.ForeColor = Color.FromArgb(255,0,0,0);
             scrollO.Controls.Add(cisloRadku);
@@ -302,7 +302,7 @@ namespace noMansResourceMachine
                                 //labelText.Top = pos;
 
                                 labelText.SetBounds(0, pos, 45, 20);
-                                labelText.Text = ((pos / 85).ToString());
+                                labelText.Text = ((pos / 85)+1).ToString();
                                 labelText.Tag = (pos / 85);
                             }
 
