@@ -13,6 +13,7 @@ namespace noMansResourceMachine
 {
     public partial class Form1 : Form
     {
+       
         //Prikaz pk;//= new Prikaz(0, 0, this);
         private static int pocetBloku;
       //  ArrayList prikazy = new ArrayList();
@@ -96,7 +97,10 @@ namespace noMansResourceMachine
             }
 
         }
+        protected override void OnMouseMove(MouseEventArgs mouseEv)
+        {
 
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -183,6 +187,7 @@ namespace noMansResourceMachine
             aktualniPocetBloku--;
 
         }
+        
         public static void zmenPocetBloku(int prictePocetbloku)
         {
             aktualniPocetBloku += prictePocetbloku;

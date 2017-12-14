@@ -11,6 +11,7 @@ namespace noMansResourceMachine
 {
     class PrikazZobrazeni
     {
+        private  bool alredzDrag =true;
         private int posY ;     
         public Label nazevPrikazu = new Label();
         private int typ;
@@ -22,7 +23,7 @@ namespace noMansResourceMachine
         private Panel blok = new Panel();
         private Panel secondPart = new Panel();
         private bool secondPartSelected = false;
-        private bool selected;
+        private bool selected = false;
         private Label cisloRadku = new Label();
         private static Panel ScrolHelp;
         
@@ -31,7 +32,8 @@ namespace noMansResourceMachine
          {
       
             ScrolHelp = scrollO;
-         //   Form1.zmenPocetBloku(1);
+            ScrolHelp.MouseMove += ScrolHelp_MouseMove;
+            //   Form1.zmenPocetBloku(1);
             int fakeAktualniPocetBloku = Form1.getAktpocet();
             blok.Tag = fakeAktualniPocetBloku.ToString();
             cisloRadku.Tag = fakeAktualniPocetBloku.ToString();
@@ -92,8 +94,7 @@ namespace noMansResourceMachine
                 this.argument1.Size = new Size(30, 00);
                 this.argument1.Location = new Point(10,20);
                 this.blok.Controls.Add(argument1);
-
-                
+                         
 
 
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
@@ -252,22 +253,104 @@ namespace noMansResourceMachine
             }
         }
 
+        private void ScrolHelp_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.selected)
+            {
+                setBlokPoint(e.X +20, e.Y + 20);
+            }
+                //MessageBox.Show("Mouse moved");
+        }
+
         private void ScrolHelp_MouseClick1(object sender, MouseEventArgs e)
         {
-           //MessageBox.Show(e.X.ToString() + " " + e.Y.ToString());
+            if (selected)
+            {
+                selected = false;
+                setZokrouhlenouPozici(e.Y);
+                bool provedeno = false;
+                foreach (Control c in ScrolHelp.Controls)
+                {
+                    if (int.Parse(c.Tag.ToString()) == int.Parse(this.blok.Tag.ToString()) || provedeno)
+                    {
+                        int pos = (int.Parse(c.Tag.ToString()) - 1) * 85;
+                        //   MessageBox.Show("posouv8m na pozici: "+pos.ToString());
+                        if (c is Panel)
+                        {
+                            {
+                                Panel panelControl = (Panel)c;
+                                //panelControl.Top = (pos);
+                                panelControl.SetBounds(50, pos, 200, 65);
+                                panelControl.Tag = pos / 85;
+                            }
+                        }
+                        else if (c is Label)
+                        {
+
+                            Label labelText = (Label)c;
+                            //labelText.Top = pos;
+
+                            labelText.SetBounds(0, pos, 45, 20);
+                            labelText.Text = ((pos / 85) + 1).ToString();
+                            labelText.Tag = (pos / 85);
+                        }
+
+
+                    }
+
+                }
+            }
+            
+
         }
         public static void initPrikazPole(List<PrikazZobrazeni> polePrikazu)
         {
             prikazySeVsim =polePrikazu;
         }
+        public void setBlokPoint(int x, int y)
+        {
+            blok.Top = y;
+            blok.Left = x;
+        }
+        public void setZokrouhlenouPozici( int y)
+        {
+            //this.selected = false;            
+            y = (int)((y + 40) / 85) * 85;
+            if (false)//Form1.getAktpocet() <= y)
+            {
+                y = Form1.getAktpocet() * 85;
+                blok.Left = 50;
+                blok.Top = y;
+                blok.Tag = blok.Top / 85;
+                cisloRadku.Text = ((blok.Top / 85) + 1).ToString();
+                cisloRadku.Top = y;
+            }
+
+            
+                this.selected = false;
+                blok.Left = 50;
+                blok.Top = y;                
+                cisloRadku.Text = ((blok.Top / 85) + 1).ToString();
+                cisloRadku.Top = y;
+            blok.Tag = blok.Top / 85;
+            cisloRadku.Tag = blok.Tag;
+
+        }
+        
 
         private void Blok_MouseClick1(object sender, MouseEventArgs e)
         {
+            
             ScrolHelp.MouseClick += ScrolHelp_MouseClick1; // trochu smutny nastovovat to u kazdeho objektu a taky to ze je to az po kliku
             ArrayList smazPomoc = new ArrayList();
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                MessageBox.Show("Leve tlacitko aka pohnout");
+                this.selected = true;                                   
+                blok.Left = 50;
+                blok.Top = (int)((e.Y + 40) / 85) * 85;
+                
+
+                
             }
             else if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
