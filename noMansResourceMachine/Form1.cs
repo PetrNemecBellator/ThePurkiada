@@ -13,14 +13,14 @@ namespace noMansResourceMachine
 {
     public partial class Form1 : Form
     {
-       
+
         //Prikaz pk;//= new Prikaz(0, 0, this);
         private static int pocetBloku;
-      //  ArrayList prikazy = new ArrayList();
+        //  ArrayList prikazy = new ArrayList();
         List<List<int>> prikazy = new List<List<int>>();
         List<int> prikaz = new List<int>();
         static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-         Levely[] vsechnyLevly = new Levely[2];
+        Levely[] vsechnyLevly = new Levely[2];
         private static int aktualniPocetBloku;
 
         //int [] pole= new pole
@@ -29,9 +29,8 @@ namespace noMansResourceMachine
         {
             InitializeComponent();
             PrikazZobrazeni.initPrikazPole(prikazySeVsim);
-           // PrikazZobrazeni.setScroll(groupBox1);
-        }        
-
+            // PrikazZobrazeni.setScroll(groupBox1);
+        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -61,7 +60,7 @@ namespace noMansResourceMachine
                     if (prikazy[i][1] == 1) // A
                     {
 
-                        vsechnyLevly[aktualniLevel].setHodnotaA(prikazy[i][(int) vsechnyLevly[aktualniLevel].getHod(prikazy, i)]);
+                        vsechnyLevly[aktualniLevel].setHodnotaA(prikazy[i][(int)vsechnyLevly[aktualniLevel].getHod(prikazy, i)]);
                         textBox2.Text += "Hodnota promene A se zmenila na ";
                     }
                     else if (prikazy[i][1] == 1)
@@ -97,6 +96,105 @@ namespace noMansResourceMachine
             }
 
         }
+        public void blbos()
+        {
+
+        }
+        /*  public void smazPole(int index, PrikazZobrazeni pavel)
+          {
+
+
+              PrikazZobrazeni posun;
+              //PrikazZobrazeni posun;
+              for (int i = index; i < prikazySeVsim.Count; i++)
+              {
+                  posun = prikazySeVsim[i];
+                  prikazySeVsim[i] = pavel;
+
+              }
+          }
+  */
+        public static void pridejDoPoleImaze(int cilovtIndex, int puvodniIndex)//PrikazZobrazeni pavel)
+        {
+            MessageBox.Show("cilovi index " + cilovtIndex.ToString() + "puvodni index" + puvodniIndex.ToString() + " celkovi pocet prikazu" + prikazySeVsim.Count);
+            PrikazZobrazeni pavel = prikazySeVsim[puvodniIndex];
+            prikazySeVsim.RemoveAt(puvodniIndex);
+            PrikazZobrazeni posun = null;// prikazySeVsim[i];
+            //PrikazZobrazeni posun;
+
+            if (cilovtIndex == prikazySeVsim.Count)
+            {
+               // MessageBox.Show("podminka");
+                pavel.setTagPos(cilovtIndex);
+                pavel.setBlokPoint(50, cilovtIndex * 85);
+                prikazySeVsim.Add(pavel);
+            }
+            else
+            {
+                MessageBox.Show("cil index " + cilovtIndex.ToString() + " pocet opakovani: " + (prikazySeVsim.Count));
+                posun = prikazySeVsim[cilovtIndex];
+                prikazySeVsim[cilovtIndex] = pavel;
+                // List<PrikazZobrazeni> pomocnicek = new List<PrikazZobrazeni>();
+             /*    int  i = prikazySeVsim.Count;
+                PrikazZobrazeni pomocnicek = new PrikazZobrazeni[i];
+                for (int i = 0; i < prikazySeVsim.Count; i++)
+                {
+                    if (cilovtIndex == i)
+                    {
+                        pavel.setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
+                        pavel.setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
+                        pomocnicek.Add(pavel);
+                        continue;
+                    }
+                    (prikazySeVsim[i]).setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
+                    (prikazySeVsim[i]).setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
+                    pomocnicek.Add(prikazySeVsim[i]);
+                }
+                pomocnicek.CopyTo(0,prikazySeVsim,0,pomocnicek.Count);
+            }
+                //prikazySeVsim.Insert(cilovtIndex,pavel);
+                // prikazySeVsim[cilovtIndex + 1] = posun;
+                /* for (int i = cilovtIndex; i<prikazySeVsim.Count-1 ; i++)
+             {
+
+                //pavel =  prikazySeVsim[i];
+                //prikazySeVsim[i] = posun;
+                /* pavel = prikazySeVsim[i]; // predchozi
+                 prikazySeVsim[i] = posun; //aktualni 
+                 posun = prikazySeVsim[i + 1];
+                 posun.setBlokPoint(50, (i+1) * 85);
+                 posun.setCisloRadkuPoint(( i+1) * 85, 0);
+               */ // posun = pavel;
+                  /*
+                   prikazySeVsim[i] = pavel;
+                   pavel= prikazySeVsim[i + 1];
+                   prikazySeVsim[i+1] = posun;*/
+
+                
+
+
+                //}
+                     posun.setBlokPoint(50, (prikazySeVsim.Count+2) * 85);
+                     posun.setCisloRadkuPoint((prikazySeVsim.Count+2) * 85, 0);
+                     prikazySeVsim.Add(posun);
+                 
+
+         }
+        
+        public static void zmenPole()
+        {
+            PrikazZobrazeni.ScrolHelp.Controls.Clear();
+             for (int i = 0; i<prikazySeVsim.Count; i++)
+            {
+                PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getCisloratku());
+                PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getBlok());
+                prikazySeVsim[i].setCisloRadkuPoint(i*85,0);
+                prikazySeVsim[i].setBlokPoint(50,i*85);
+                prikazySeVsim[i].setTagPos(i);
+                prikazySeVsim[i].setCisloRadkuText((i + 1).ToString());
+            }
+        }
+
         protected override void OnMouseMove(MouseEventArgs mouseEv)
         {
 
