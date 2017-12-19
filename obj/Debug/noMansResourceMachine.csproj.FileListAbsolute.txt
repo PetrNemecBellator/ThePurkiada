@@ -1,0 +1,57 @@
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe.config
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\bin\Debug\noMansResourceMachine.pdb
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.resources
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
+c:\users\oem\documents\visual studio 2015\Projects\noMansResourceMachine\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\no mans  machine\noMansResourceMachine\obj\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.exe
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\bin\Debug\noMansResourceMachine.exe
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\bin\Debug\noMansResourceMachine.pdb
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\oem\Documents\Visual Studio 2015\Projects\noMansResourceMachine\obj\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\reprezentace\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\reprezentace\bin\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\reprezentace\bin\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\reprezentace\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\reprezentace\obj\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\spojene cod\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\spojene cod\bin\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\spojene cod\bin\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\spojene cod\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\spojene cod\obj\Debug\aa\noMansResourceMachine.resources.dll
