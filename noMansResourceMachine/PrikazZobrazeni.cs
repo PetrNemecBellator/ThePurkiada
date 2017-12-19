@@ -416,71 +416,75 @@ namespace noMansResourceMachine
             }
         else if (e.Button == System.Windows.Forms.MouseButtons.Right)
         {
-                ArrayList ar;
+              
             DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazní", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                foreach (Control c in ScrolHelp.Controls)
+                if (dialogResult == DialogResult.Yes)
                 {
-                    ar = (ArrayList)c.Tag;
-                    if ((int)ar[0] == (int)tagAndOrigin[0])
+                    ArrayList ar = this.tagAndOrigin;
+                    Form1.deleFromMainArray((int)ar[0]);
+                    Form1.zmenPole();
+                }
+                    /*foreach (Control c in ScrolHelp.Controls)
                     {
-                        smazPomoc.Add(c);
-                    }
-                    else if ((int)ar[0] > (int)tagAndOrigin[0])
-                    {
-                        int pos = ((int)(ar[0]) - 1) * 85;
-                        //   MessageBox.Show("posouv8m na pozici: "+pos.ToString());
-                        if (c is Panel)
+                        ar = (ArrayList)c.Tag;
+                        if ((int)ar[0] == (int)tagAndOrigin[0])
                         {
+                            smazPomoc.Add(c);
+                        }
+                        else if ((int)ar[0] > (int)tagAndOrigin[0])
+                        {
+                            int pos = ((int)(ar[0]) - 1) * 85;
+                            //   MessageBox.Show("posouv8m na pozici: "+pos.ToString());
+                            if (c is Panel)
                             {
-                                Panel panelControl = (Panel)c;
-                                //panelControl.Top = (pos);
-                                panelControl.SetBounds(50, pos, 200, 65);
-                                tagAndOrigin[0] = pos / 85;
-                                panelControl.Tag =tagAndOrigin ;
-                                //panelControl.Tag = pos / 85;
+                                {
+                                    Panel panelControl = (Panel)c;
+                                    //panelControl.Top = (pos);
+                                    panelControl.SetBounds(50, pos, 200, 65);
+                                    tagAndOrigin[0] = pos / 85;
+                                    panelControl.Tag =tagAndOrigin ;
+                                    //panelControl.Tag = pos / 85;
+                                }
                             }
+                            else if (c is Label)
+                            {
+
+                                Label labelText = (Label)c;
+                                //labelText.Top = pos;
+
+                                labelText.SetBounds(0, pos, 45, 20);
+                                labelText.Text = ((pos / 85) + 1).ToString();
+                                tagAndOrigin[0] = pos / 85;
+                                labelText.Tag = tagAndOrigin;
+                                //labelText.Tag = (pos / 85);
+                            }
+
+
                         }
-                        else if (c is Label)
-                        {
-
-                            Label labelText = (Label)c;
-                            //labelText.Top = pos;
-
-                            labelText.SetBounds(0, pos, 45, 20);
-                            labelText.Text = ((pos / 85) + 1).ToString();
-                            tagAndOrigin[0] = pos / 85;
-                            labelText.Tag = tagAndOrigin;
-                            //labelText.Tag = (pos / 85);
-                        }
-
-
                     }
+                    //    MessageBox.Show("Pocet veci na smazani!!!!!!: " + smazPomoc.Count.ToString());
+                    foreach (Control k in smazPomoc)
+                    {
+
+                        k.BackColor = Color.FromArgb(255, 125, 65, 65);
+                        ScrolHelp.Controls.Remove(blok);
+                        ScrolHelp.Controls.Remove(cisloRadku);
+                        ScrolHelp.Refresh();
+                        k.Dispose();
+                        //   MessageBox.Show("odstrnen blok s tagem "+blok.Tag.ToString()+ " \n label s tagem "+cisloRadku.Tag.ToString());
+                    }
+                    Form1.deleFromMainArray((int)(tagAndOrigin[0]));
                 }
-                //    MessageBox.Show("Pocet veci na smazani!!!!!!: " + smazPomoc.Count.ToString());
-                foreach (Control k in smazPomoc)
+                else if (dialogResult == DialogResult.No)
                 {
-
-                    k.BackColor = Color.FromArgb(255, 125, 65, 65);
-                    ScrolHelp.Controls.Remove(blok);
-                    ScrolHelp.Controls.Remove(cisloRadku);
-                    ScrolHelp.Refresh();
-                    k.Dispose();
-                    //   MessageBox.Show("odstrnen blok s tagem "+blok.Tag.ToString()+ " \n label s tagem "+cisloRadku.Tag.ToString());
+                    //do something else
                 }
-                Form1.deleFromMainArray((int)(tagAndOrigin[0]));
+
+
+
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
-
-
-
-        }
-
-
+            */
+                }
 
     }
 

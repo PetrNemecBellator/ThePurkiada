@@ -121,10 +121,10 @@ namespace noMansResourceMachine
             prikazySeVsim.RemoveAt(puvodniIndex);
             PrikazZobrazeni posun = null;// prikazySeVsim[i];
             //PrikazZobrazeni posun;
-
+            prikazySeVsim.Insert(cilovtIndex, pavel);/*
             if (cilovtIndex == prikazySeVsim.Count)
             {
-               // MessageBox.Show("podminka");
+                // MessageBox.Show("podminka");
                 pavel.setTagPos(cilovtIndex);
                 pavel.setBlokPoint(50, cilovtIndex * 85);
                 prikazySeVsim.Add(pavel);
@@ -135,50 +135,51 @@ namespace noMansResourceMachine
                 posun = prikazySeVsim[cilovtIndex];
                 prikazySeVsim[cilovtIndex] = pavel;
                 // List<PrikazZobrazeni> pomocnicek = new List<PrikazZobrazeni>();
-             /*    int  i = prikazySeVsim.Count;
-                PrikazZobrazeni pomocnicek = new PrikazZobrazeni[i];
-                for (int i = 0; i < prikazySeVsim.Count; i++)
+                /*    int  i = prikazySeVsim.Count;
+                   PrikazZobrazeni pomocnicek = new PrikazZobrazeni[i];
+                   for (int i = 0; i < prikazySeVsim.Count; i++)
+                   {
+                       if (cilovtIndex == i)
+                       {
+                           pavel.setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
+                           pavel.setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
+                           pomocnicek.Add(pavel);
+                           continue;
+                       }
+                       (prikazySeVsim[i]).setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
+                       (prikazySeVsim[i]).setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
+                       pomocnicek.Add(prikazySeVsim[i]);
+                   }
+                   pomocnicek.CopyTo(0,prikazySeVsim,0,pomocnicek.Count);
+               }
+                   //prikazySeVsim.Insert(cilovtIndex,pavel);
+                   // prikazySeVsim[cilovtIndex + 1] = posun;
+                   /* for (int i = cilovtIndex; i<prikazySeVsim.Count-1 ; i++)
                 {
-                    if (cilovtIndex == i)
-                    {
-                        pavel.setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
-                        pavel.setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
-                        pomocnicek.Add(pavel);
-                        continue;
-                    }
-                    (prikazySeVsim[i]).setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
-                    (prikazySeVsim[i]).setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
-                    pomocnicek.Add(prikazySeVsim[i]);
-                }
-                pomocnicek.CopyTo(0,prikazySeVsim,0,pomocnicek.Count);
-            }
-                //prikazySeVsim.Insert(cilovtIndex,pavel);
-                // prikazySeVsim[cilovtIndex + 1] = posun;
-                /* for (int i = cilovtIndex; i<prikazySeVsim.Count-1 ; i++)
-             {
 
-                //pavel =  prikazySeVsim[i];
-                //prikazySeVsim[i] = posun;
-                /* pavel = prikazySeVsim[i]; // predchozi
-                 prikazySeVsim[i] = posun; //aktualni 
-                 posun = prikazySeVsim[i + 1];
-                 posun.setBlokPoint(50, (i+1) * 85);
-                 posun.setCisloRadkuPoint(( i+1) * 85, 0);
-               */ // posun = pavel;
-                  /*
-                   prikazySeVsim[i] = pavel;
-                   pavel= prikazySeVsim[i + 1];
-                   prikazySeVsim[i+1] = posun;*/
+                   //pavel =  prikazySeVsim[i];
+                   //prikazySeVsim[i] = posun;
+                   /* pavel = prikazySeVsim[i]; // predchozi
+                    prikazySeVsim[i] = posun; //aktualni 
+                    posun = prikazySeVsim[i + 1];
+                    posun.setBlokPoint(50, (i+1) * 85);
+                    posun.setCisloRadkuPoint(( i+1) * 85, 0);
+                  */ // posun = pavel;
+                     /*
+                      prikazySeVsim[i] = pavel;
+                      pavel= prikazySeVsim[i + 1];
+                      prikazySeVsim[i+1] = posun;*/
 
-                
+
 
 
                 //}
-                     posun.setBlokPoint(50, (prikazySeVsim.Count+2) * 85);
-                     posun.setCisloRadkuPoint((prikazySeVsim.Count+2) * 85, 0);
-                     prikazySeVsim.Add(posun);
-                 
+                
+                /*posun.setBlokPoint(50, (prikazySeVsim.Count + 2) * 85);
+                posun.setCisloRadkuPoint((prikazySeVsim.Count + 2) * 85, 0);
+                prikazySeVsim.Add(posun);
 
+            }*/
          }
         
         public static void zmenPole()
@@ -284,6 +285,10 @@ namespace noMansResourceMachine
             prikazySeVsim.RemoveAt(pozice);
             aktualniPocetBloku--;
 
+        }
+        public void delteFromMainAray(int index)
+        {
+          //  prikazySeVsim.RemoveAt()
         }
         
         public static void zmenPocetBloku(int prictePocetbloku)
