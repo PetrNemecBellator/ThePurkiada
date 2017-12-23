@@ -55,3 +55,15 @@ C:\Users\Petr\Desktop\spojene cod\bin\Debug\noMansResourceMachine.exe
 C:\Users\Petr\Desktop\spojene cod\bin\Debug\noMansResourceMachine.pdb
 C:\Users\Petr\Desktop\spojene cod\bin\Debug\aa\noMansResourceMachine.resources.dll
 C:\Users\Petr\Desktop\spojene cod\obj\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\bin\Debug\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\bin\Debug\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\bin\Debug\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\bin\Debug\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\no mans  machine\obj\Debug\aa\noMansResourceMachine.resources.dll

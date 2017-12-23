@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace noMansResourceMachine
 {
@@ -55,9 +56,16 @@ namespace noMansResourceMachine
         }
         public int getInput()
         {
-            int x = this.input[0];
-            this.input.RemoveAt(0);
-            return x;
+            if (input.Count != 0)
+            {
+                int x = this.input[0];
+                this.input.RemoveAt(0);
+                return x;
+            }else
+            {
+                MessageBox.Show("nejsou dostupne žádné další inputy" + (-int.MaxValue).ToString() );
+                return -int.MaxValue;
+            }
         }
         public List<int> getInputCely()
         {
