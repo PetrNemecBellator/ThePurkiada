@@ -173,6 +173,7 @@
             this.jumpIf.Controls.Add(this.comboBox3);
             resources.ApplyResources(this.jumpIf, "jumpIf");
             this.jumpIf.Name = "jumpIf";
+            this.jumpIf.Tag = "\"jumpIf\"";
             this.jumpIf.Click += new System.EventHandler(this.jumpIf_Click);
             this.jumpIf.Paint += new System.Windows.Forms.PaintEventHandler(this.jumpIf_Paint);
             // 
@@ -205,6 +206,7 @@
             this.inputPanel.Controls.Add(this.comboBox8);
             resources.ApplyResources(this.inputPanel, "inputPanel");
             this.inputPanel.Name = "inputPanel";
+            this.inputPanel.Tag = "\"vstup\"";
             this.inputPanel.Click += new System.EventHandler(this.inputPanel_Click);
             // 
             // label2
@@ -242,6 +244,7 @@
             this.jump.Controls.Add(this.button5);
             this.jump.Controls.Add(this.comboBox10);
             this.jump.Name = "jump";
+            this.jump.Tag = "\"jump\"";
             this.jump.Click += new System.EventHandler(this.jump_Click);
             // 
             // comboBox11
@@ -285,6 +288,7 @@
             this.output.Controls.Add(this.comboBox14);
             resources.ApplyResources(this.output, "output");
             this.output.Name = "output";
+            this.output.Tag = "\"vystup\"";
             this.output.MouseClick += new System.Windows.Forms.MouseEventHandler(this.output_MouseClick);
             // 
             // label4
@@ -329,6 +333,7 @@
             this.prirad.Controls.Add(this.button2);
             this.prirad.Controls.Add(this.comboBox17);
             this.prirad.Name = "prirad";
+            this.prirad.Tag = "\"prirad\"";
             this.prirad.Click += new System.EventHandler(this.prirad_Click);
             this.prirad.Paint += new System.Windows.Forms.PaintEventHandler(this.prirad_Paint);
             // 
@@ -380,6 +385,7 @@
             this.pricti.Controls.Add(this.button3);
             this.pricti.Controls.Add(this.comboBox22);
             this.pricti.Name = "pricti";
+            this.pricti.Tag = "\"pricti\"";
             this.pricti.Click += new System.EventHandler(this.pricti_Click);
             // 
             // comboBox19
@@ -430,6 +436,7 @@
             this.panel7.Controls.Add(this.button4);
             this.panel7.Controls.Add(this.comboBox26);
             this.panel7.Name = "panel7";
+            this.panel7.Tag = "\"odecti\"";
             // 
             // comboBox23
             // 
@@ -480,6 +487,7 @@
             this.pricti1.Controls.Add(this.button7);
             this.pricti1.Controls.Add(this.comboBox30);
             this.pricti1.Name = "pricti1";
+            this.pricti1.Tag = "\"priciti1\"";
             this.pricti1.Click += new System.EventHandler(this.pricti1_Click);
             // 
             // label9
@@ -532,6 +540,7 @@
             this.odecti1.Controls.Add(this.button8);
             this.odecti1.Controls.Add(this.comboBox34);
             this.odecti1.Name = "odecti1";
+            this.odecti1.Tag = "\"odecti1\"";
             this.odecti1.Click += new System.EventHandler(this.odecti1_Click);
             // 
             // label10

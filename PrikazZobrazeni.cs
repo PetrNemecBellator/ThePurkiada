@@ -31,9 +31,11 @@ namespace noMansResourceMachine
         private static List<PrikazZobrazeni> prikazySeVsim;
         public PrikazZobrazeni(int PosY, int typ, Panel scrollO)
         {
-
+           
+            nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
             ScrolHelp = scrollO;
             ScrolHelp.MouseMove += ScrolHelp_MouseMove;
+            ScrolHelp.MouseClick += ScrolHelp_MouseClick1;
             //   Form1.zmenPocetBloku(1);
 
             int fakeAktualniPocetBloku = Form1.getAktpocet();
@@ -144,8 +146,8 @@ namespace noMansResourceMachine
             {
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                nazevPrikazu.SetBounds(0, 0, 80, 30);
-                nazevPrikazu.Text = "jump if";
+                nazevPrikazu.SetBounds(0, 0,150,30);
+                nazevPrikazu.Text = "skoč když";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
                 //20,15 200,65
@@ -191,7 +193,7 @@ namespace noMansResourceMachine
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
                 nazevPrikazu.SetBounds(0, 0, 80, 30);
-                nazevPrikazu.Text = "jump";
+                nazevPrikazu.Text = "skoč";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
 
@@ -209,7 +211,7 @@ namespace noMansResourceMachine
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
                 nazevPrikazu.SetBounds(100, 25, 100, 80);
-                nazevPrikazu.Text = "<--vstup";
+                nazevPrikazu.Text = "<== vstup";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 23, 99, 13);
 
@@ -229,7 +231,7 @@ namespace noMansResourceMachine
                 blok.Controls.Add(argument1cb);
 
                 nazevPrikazu.SetBounds(150, 25, 80, 30);
-                nazevPrikazu.Text = "vystup";
+                nazevPrikazu.Text = "==> výstup";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 23, 99, 13);
 
@@ -252,7 +254,7 @@ namespace noMansResourceMachine
 
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
-                this.nazevPrikazu.Text = "<--pricti";
+                this.nazevPrikazu.Text = "<==pricti";
                 this.nazevPrikazu.SetBounds(60, 25, 100, 80);
                 this.argument1cb.SetBounds(10, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
@@ -274,6 +276,48 @@ namespace noMansResourceMachine
                 this.argument2cb.SetBounds(160, 25, 30, 30);
             }
         }
+
+        private void NazevPrikazu_MouseClick(object sender, MouseEventArgs e)
+        {
+            ArrayList smazPomoc = new ArrayList();
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                //   MessageBox.Show(selected.ToString() + "je vybran ten druhej " + oneIsalreadySelected.ToString());
+                if (oneIsalreadySelected)
+                {
+                    this.selected = true;
+                    oneIsalreadySelected = false;
+                    setBlokPoint(e.X + 20, e.Y + 20);
+
+                }
+                else
+                {
+                    blok.Left = 50;
+                    blok.Top = (int)((e.Y + 40) / 85) * 85;
+                    oneIsalreadySelected = true;
+                }
+
+
+
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazní", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ArrayList ar = this.tagAndOrigin;
+                    Form1.deleFromMainArray((int)ar[0]);
+                    Form1.zmenPole();
+                }
+            }
+
+        }
+
+        private void NazevPrikazu_Click(object sender, EventArgs e)
+        {
+         }
+
         public void setsdebugLayText()
         {
             this.nazevPrikazu.Text = this.argument1cb.GetItemText(this.argument1cb.SelectedItem);
@@ -311,11 +355,22 @@ namespace noMansResourceMachine
 
 
                 Form1.zmenPole();
-                Form1.pridejDoPoleImaze(((int)((e.Y) / 85)), getIndex());
-                setZokrouhlenouPozici(e.Y);
-                Form1.zmenPole();
-                oneIsalreadySelected = true;
+                if (((int)((e.Y) / 85)) > Form1.getAktpocet()  ){
 
+                    Form1.pridejDoPoleImaze((Form1.getAktpocet()), getIndex());
+                    setZokrouhlenouPozici(e.Y);
+                    Form1.zmenPole();
+                    oneIsalreadySelected = true;
+                }
+                else
+                {
+                    Form1.pridejDoPoleImaze(((int)((e.Y) / 85)), getIndex());
+                    setZokrouhlenouPozici(e.Y);
+                    Form1.zmenPole();
+                    oneIsalreadySelected = true;
+
+
+                }
             }
             /*
                setZokrouhlenouPozici(e.Y); 
@@ -421,15 +476,16 @@ namespace noMansResourceMachine
         private void Blok_MouseClick1(object sender, MouseEventArgs e)
         {
 
-            ScrolHelp.MouseClick += ScrolHelp_MouseClick1; // trochu smutny nastovovat to u kazdeho objektu a taky to ze je to az po kliku
+         // trochu smutny nastovovat to u kazdeho objektu a taky to ze je to az po kliku
             ArrayList smazPomoc = new ArrayList();
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                MessageBox.Show(selected.ToString() + "je vybran ten druhej " + oneIsalreadySelected.ToString());
+             //   MessageBox.Show(selected.ToString() + "je vybran ten druhej " + oneIsalreadySelected.ToString());
                 if (oneIsalreadySelected)
                 {
                     this.selected = true;
                     oneIsalreadySelected = false;
+                    setBlokPoint(e.X + 20, e.Y + 20);
 
                 }
                 else

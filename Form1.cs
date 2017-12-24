@@ -23,6 +23,7 @@ namespace noMansResourceMachine
         List<int> outputHrace = new List<int>();
       static  List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
         Levely[] vsechnyLevely= new Levely[2] { new Levely(0,20,999), new Levely(1,40,50) };
+        private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         int aktualniLevel = 0;
         private int aktualniRadek = -1;
@@ -32,7 +33,7 @@ namespace noMansResourceMachine
 
             InitializeComponent();
             button9.Enabled = false;
-
+            poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1};
             vypisKonzole();
           
             
@@ -438,7 +439,10 @@ namespace noMansResourceMachine
             konzole.AppendText(Environment.NewLine);
         }
 
-
+        private void setDisebledOthers(string tag)
+        {
+            
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -463,36 +467,37 @@ namespace noMansResourceMachine
             }
         }
 
-
+        private void everyBtnClick(int typPrikazu)
+        {
+            kompilovat.Enabled = false;
+            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, typPrikazu, panel_scrolllll));
+            prikazySeVsim[prikazySeVsim.Count - 1].setBlokPoint(200, 20);
+            aktualniPocetBloku = prikazySeVsim.Count();
+        }
 
         private void jumpIf_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count , 3, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(3);
         }
 
 
         private void jump_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 4, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(4);
         }
         private void pricti1_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 1, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(1);
         }
 
         private void odecti1_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 2, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(2);
         }
 
         private void inputPanel_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 5, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(5);
         }
         public static int getAktpocet()
         {
@@ -505,14 +510,12 @@ namespace noMansResourceMachine
 
         private void prirad_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 0, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(0);
         }
 
         private void pricti_Click(object sender, EventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 7, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(7);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -532,13 +535,12 @@ namespace noMansResourceMachine
 
         private void output_MouseClick(object sender, MouseEventArgs e)
         {
-            prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, 6, panel_scrolllll));
-            aktualniPocetBloku = prikazySeVsim.Count();
+            everyBtnClick(6);
         }
 
         public static void pridejDoPoleImaze(int cilovtIndex, int puvodniIndex)//PrikazZobrazeni pavel)
         {
-            MessageBox.Show("cilovi index " + cilovtIndex.ToString() + "puvodni index" + puvodniIndex.ToString() + " celkovi pocet prikazu" + prikazySeVsim.Count);
+        //    MessageBox.Show("cilovi index " + cilovtIndex.ToString() + "puvodni index" + puvodniIndex.ToString() + " celkovi pocet prikazu" + prikazySeVsim.Count);
             PrikazZobrazeni pavel = prikazySeVsim[puvodniIndex];
             prikazySeVsim.RemoveAt(puvodniIndex);
             PrikazZobrazeni posun = null;// prikazySeVsim[i];
