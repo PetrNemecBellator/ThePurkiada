@@ -248,6 +248,10 @@
   <data name="&gt;&gt;comboBox8.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="kompilovat.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="kompilovat.Location" type="System.Drawing.Point, System.Drawing">
     <value>848, 311</value>
   </data>
@@ -258,7 +262,7 @@
     <value>12</value>
   </data>
   <data name="kompilovat.Text" xml:space="preserve">
-    <value>Kompilovat</value>
+    <value>Start</value>
   </data>
   <data name="&gt;&gt;kompilovat.Name" xml:space="preserve">
     <value>kompilovat</value>
@@ -270,7 +274,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;kompilovat.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
+  </data>
+  <data name="jumpIf.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;comboBox4.Name" xml:space="preserve">
     <value>comboBox4</value>
@@ -327,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;jumpIf.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="comboBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 22</value>
@@ -356,7 +363,6 @@
   <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -404,6 +410,9 @@
   </data>
   <data name="&gt;&gt;comboBox35.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="inputPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -472,7 +481,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputPanel.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -570,6 +579,9 @@
   <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="jump.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="jump.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -652,7 +664,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;jump.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="comboBox11.Location" type="System.Drawing.Point, System.Drawing">
     <value>154, 17</value>
@@ -777,6 +789,90 @@
   <data name="&gt;&gt;comboBox10.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="output.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.Name" xml:space="preserve">
+    <value>comboBox12</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.Parent" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;comboBox12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Name" xml:space="preserve">
+    <value>comboBox13</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.Parent" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;comboBox13.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Name" xml:space="preserve">
+    <value>comboBox14</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.Parent" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;comboBox14.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="output.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1052, 84</value>
+  </data>
+  <data name="output.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 64</value>
+  </data>
+  <data name="output.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;output.Name" xml:space="preserve">
+    <value>output</value>
+  </data>
+  <data name="&gt;&gt;output.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;output.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;output.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -897,26 +993,8 @@
   <data name="&gt;&gt;comboBox14.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="output.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1052, 84</value>
-  </data>
-  <data name="output.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 64</value>
-  </data>
-  <data name="output.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;output.Name" xml:space="preserve">
-    <value>output</value>
-  </data>
-  <data name="&gt;&gt;output.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;output.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;output.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="prirad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="prirad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -1012,7 +1090,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;prirad.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="comboBox18.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1158,6 +1236,9 @@
   <data name="&gt;&gt;comboBox17.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="pricti.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="pricti.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1252,7 +1333,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pricti.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="comboBox19.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1398,6 +1479,9 @@
   <data name="&gt;&gt;comboBox22.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="panel7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="panel7.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1492,7 +1576,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel7.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="comboBox23.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 21</value>
@@ -1638,6 +1722,9 @@
   <data name="&gt;&gt;comboBox26.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="pricti1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="pricti1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1732,7 +1819,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pricti1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1887,6 +1974,9 @@
   <data name="&gt;&gt;comboBox30.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="odecti1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="odecti1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -1981,7 +2071,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;odecti1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2136,26 +2226,8 @@
   <data name="&gt;&gt;comboBox34.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 30</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 20</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="konzole.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="konzole.Font" type="System.Drawing.Font, System.Drawing">
     <value>Consolas, 8pt</value>
@@ -2185,7 +2257,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;konzole.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
   </data>
   <data name="&gt;&gt;panel_scrolllll.Name" xml:space="preserve">
     <value>panel_scrolllll</value>
@@ -2200,7 +2275,7 @@
     <value>0</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>470, 12</value>
+    <value>455, 12</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>358, 678</value>
@@ -2221,7 +2296,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
+  </data>
+  <data name="panel_scrolllll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom</value>
   </data>
   <data name="panel_scrolllll.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2247,6 +2325,9 @@
   <data name="&gt;&gt;panel_scrolllll.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
     <value>848, 394</value>
   </data>
@@ -2257,7 +2338,7 @@
     <value>24</value>
   </data>
   <data name="button9.Text" xml:space="preserve">
-    <value>Dalsi krok</value>
+    <value>Proved kroků</value>
   </data>
   <data name="&gt;&gt;button9.Name" xml:space="preserve">
     <value>button9</value>
@@ -2269,10 +2350,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="velikostKroku.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="velikostKroku.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1052, 412</value>
+    <value>1050, 412</value>
   </data>
   <data name="velikostKroku.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -2293,7 +2377,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;velikostKroku.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="zadani.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 49</value>
@@ -2317,7 +2401,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;zadani.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="inputTB.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 321</value>
@@ -2341,7 +2425,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputTB.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="outputTB.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 259</value>
@@ -2365,7 +2449,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;outputTB.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2392,7 +2476,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2419,6 +2503,60 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>856, 319</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 30</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Zadání: </value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

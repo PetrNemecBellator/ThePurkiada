@@ -33,6 +33,7 @@ namespace noMansResourceMachine
 
             InitializeComponent();
             button9.Enabled = false;
+            kompilovat.Enabled = true;
             poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1};
             vypisKonzole();
           
@@ -53,7 +54,7 @@ namespace noMansResourceMachine
 
             prikazy = new List<List<int>>();
             konzole.Clear();
-            textBox1.Clear();
+            //textBox1.Clear();
             vsechnyLevely[aktualniLevel] = new Levely( aktualniLevel,vsechnyLevely[aktualniLevel].getMin(), vsechnyLevely[aktualniLevel].getMax()) ;
             vypisKonzole();
             konzole.AppendText(Environment.NewLine);
@@ -70,7 +71,7 @@ namespace noMansResourceMachine
             {
                
                 prikaz.Add(prikazySeVsim[i].getTyp());
-                textBox1.Text += "typ" + (prikazySeVsim[i].getTyp()).ToString();
+                //textBox1.Text += "typ" + (prikazySeVsim[i].getTyp()).ToString();
                 if (prikazySeVsim[i].getTyp() == 0)
                 {
                     prikaz.Add(prikazySeVsim[i].getArgument1());
@@ -132,7 +133,7 @@ namespace noMansResourceMachine
 
                 prikazy.Add(prikaz);
 
-                textBox1.Text += "   typ " + (prikazy[i][0]).ToString();
+                //textBox1.Text += "   typ " + (prikazy[i][0]).ToString();
                 
               
                 prikaz = new List<int>();
@@ -340,6 +341,7 @@ namespace noMansResourceMachine
                         else
                         {
                             outputHrace.Add((int)vsechnyLevely[aktualniLevel].getHodnota(specArgument1));
+                            konzole.Clear();
                             konzole.AppendText(Environment.NewLine);
                             konzole.AppendText("output: ");
                             for (int w = 0; w < outputHrace.Count(); w++)
