@@ -71,7 +71,7 @@
             this.comboBox21 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox22 = new System.Windows.Forms.ComboBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.odecti = new System.Windows.Forms.Panel();
             this.comboBox23 = new System.Windows.Forms.ComboBox();
             this.comboBox24 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -110,7 +110,7 @@
             this.output.SuspendLayout();
             this.prirad.SuspendLayout();
             this.pricti.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.odecti.SuspendLayout();
             this.pricti1.SuspendLayout();
             this.odecti1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -425,19 +425,20 @@
             resources.ApplyResources(this.comboBox22, "comboBox22");
             this.comboBox22.Name = "comboBox22";
             // 
-            // panel7
+            // odecti
             // 
-            resources.ApplyResources(this.panel7, "panel7");
-            this.panel7.BackColor = System.Drawing.Color.Firebrick;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.comboBox23);
-            this.panel7.Controls.Add(this.comboBox24);
-            this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.comboBox25);
-            this.panel7.Controls.Add(this.button4);
-            this.panel7.Controls.Add(this.comboBox26);
-            this.panel7.Name = "panel7";
-            this.panel7.Tag = "\"odecti\"";
+            resources.ApplyResources(this.odecti, "odecti");
+            this.odecti.BackColor = System.Drawing.Color.Firebrick;
+            this.odecti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.odecti.Controls.Add(this.comboBox23);
+            this.odecti.Controls.Add(this.comboBox24);
+            this.odecti.Controls.Add(this.label7);
+            this.odecti.Controls.Add(this.comboBox25);
+            this.odecti.Controls.Add(this.button4);
+            this.odecti.Controls.Add(this.comboBox26);
+            this.odecti.Name = "odecti";
+            this.odecti.Tag = "\"odecti\"";
+            this.odecti.MouseClick += new System.Windows.Forms.MouseEventHandler(this.odecti_MouseClick);
             // 
             // comboBox23
             // 
@@ -676,7 +677,7 @@
             this.Controls.Add(this.konzole);
             this.Controls.Add(this.odecti1);
             this.Controls.Add(this.pricti1);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.odecti);
             this.Controls.Add(this.pricti);
             this.Controls.Add(this.prirad);
             this.Controls.Add(this.output);
@@ -700,8 +701,8 @@
             this.prirad.PerformLayout();
             this.pricti.ResumeLayout(false);
             this.pricti.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.odecti.ResumeLayout(false);
+            this.odecti.PerformLayout();
             this.pricti1.ResumeLayout(false);
             this.pricti1.PerformLayout();
             this.odecti1.ResumeLayout(false);
@@ -753,7 +754,7 @@
         private System.Windows.Forms.ComboBox comboBox21;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox22;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel odecti;
         private System.Windows.Forms.ComboBox comboBox23;
         private System.Windows.Forms.ComboBox comboBox24;
         private System.Windows.Forms.Label label7;

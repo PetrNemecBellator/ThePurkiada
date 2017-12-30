@@ -11,6 +11,9 @@ namespace noMansResourceMachine
 {
     class PrikazZobrazeni
     {
+        private Button upButton = new Button();
+        private Button downButton = new Button();
+        private Button deleteButton = new Button();
         private bool alredzDrag = true;
         private int posY;
         public Label nazevPrikazu = new Label();
@@ -31,7 +34,32 @@ namespace noMansResourceMachine
         private static List<PrikazZobrazeni> prikazySeVsim;
         public PrikazZobrazeni(int PosY, int typ, Panel scrollO)
         {
-           
+            this.posY = PosY * 85 + 1;
+            this.typ = typ;
+
+            blok.Width = 200;
+            blok.Height = 65;
+            blok.Top = (posY);
+            blok.Left = (50);
+            // button to navigate blok
+
+            //
+            scrollO.Controls.Add(upButton);
+            scrollO.Controls.Add(downButton);
+            scrollO.Controls.Add(deleteButton);
+            int offset = 20;
+            upButton.SetBounds(250,offset+ this.posY, 20, 20);
+            upButton.Text = "▲";
+            upButton.ForeColor = Color.Black;
+            downButton.SetBounds(250, offset+ this.posY +20, 20, 20);
+            downButton.Text = "▼";
+            downButton.ForeColor = Color.Black;
+            deleteButton.SetBounds(270, offset+ this.posY -(blok.Width/2),20,20);
+            deleteButton.Text = "X";
+            deleteButton.ForeColor = Color.Black;
+            
+            //button to navigate blok
+
             nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
             ScrolHelp = scrollO;
             ScrolHelp.MouseMove += ScrolHelp_MouseMove;
@@ -49,7 +77,7 @@ namespace noMansResourceMachine
                 argument4cb.Items.Add(i);
             }
 
-            this.posY = PosY * 85 + 1;
+            
             this.cisloRadku.Font = new Font("Arial", 15);
             this.cisloRadku.BackColor = Color.FromArgb(1, 64, 64, 64);
             this.cisloRadku.Text = (fakeAktualniPocetBloku + 1).ToString();
@@ -59,11 +87,7 @@ namespace noMansResourceMachine
 
             blok.MouseClick += Blok_MouseClick1;
 
-            this.typ = typ;
-            blok.Width = 200;
-            blok.Height = 65;
-            blok.Top = (posY);
-            blok.Left = (50);
+
 
             argument1cb.Items.Add('A');
             argument1cb.Items.Add('B');
@@ -155,7 +179,7 @@ namespace noMansResourceMachine
 
 
                 blok.BackColor = Color.FromArgb(255, 0, 0, 255);
-                int offset = 0;
+             
                 argument1cb.Text = "-";
                 argument1cb.Size = new Size(30, 00);
                 argument1cb.Location = new Point(20, 32);
@@ -230,7 +254,7 @@ namespace noMansResourceMachine
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(argument1cb);
 
-                nazevPrikazu.SetBounds(150, 25, 80, 30);
+                nazevPrikazu.SetBounds(80, 25, 150, 30);
                 nazevPrikazu.Text = "==> výstup";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 23, 99, 13);
@@ -269,12 +293,35 @@ namespace noMansResourceMachine
 
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
-                this.nazevPrikazu.Text = "<--odecti";
-
+                this.nazevPrikazu.Text = "<--odečti";
                 this.nazevPrikazu.SetBounds(60, 25, 100, 80);
                 this.argument1cb.SetBounds(10, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
             }
+        }
+        public Button getdownButton()
+        {
+            return this.downButton;
+        }
+        public Button getupButton()
+        {
+            return this.upButton;
+        }
+        public Button getDeletebutton()
+        {
+            return this.deleteButton;
+        }
+        public  void setupButtonLocationY(int y)
+        {
+            this.upButton.Top = y;
+        }
+        public void setdownButtonLocationY(int y)
+        {
+            this.downButton.Top = y;
+        }
+        public void setDeletelocation(int y)
+        {
+            this.deleteButton.Top = y+10;
         }
 
         private void NazevPrikazu_MouseClick(object sender, MouseEventArgs e)
@@ -361,6 +408,8 @@ namespace noMansResourceMachine
                     setZokrouhlenouPozici(e.Y);
                     Form1.zmenPole();
                     oneIsalreadySelected = true;
+            //        setdownButtonlocation(300, blok.Top);
+               //     setUPButtonloaton(300, blok.Top);
                 }
                 else
                 {
@@ -368,7 +417,8 @@ namespace noMansResourceMachine
                     setZokrouhlenouPozici(e.Y);
                     Form1.zmenPole();
                     oneIsalreadySelected = true;
-
+                 //   setdownButtonlocation(300, blok.Top);
+                    //setUPButtonloaton(300, blok.Top);
 
                 }
             }
@@ -441,6 +491,16 @@ namespace noMansResourceMachine
             else
                 return 8;
 
+        }
+        private void setUPButtonloaton (int x, int y)
+        {
+            this.upButton.Left = x;
+            this.upButton.Top = y;
+        }
+        private void setdownButtonlocation(int x , int y)
+        {
+            this.downButton.Left = x;
+            this.downButton.Top = y;
         }
         private void ScrolHelp_MouseMove(object sender, MouseEventArgs e)
         {

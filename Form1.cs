@@ -460,11 +460,22 @@ namespace noMansResourceMachine
             PrikazZobrazeni.ScrolHelp.Controls.Clear();
             for (int i = 0; i < prikazySeVsim.Count; i++)
             {
+                int yPos = i * 85;
                 PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getCisloratku());
                 PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getBlok());
-                prikazySeVsim[i].setCisloRadkuPoint(i * 85, 0);
-                prikazySeVsim[i].setBlokPoint(50, i * 85);
+
+                PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getDeletebutton());
+                PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getupButton());
+                PrikazZobrazeni.ScrolHelp.Controls.Add(prikazySeVsim[i].getdownButton());
+
+                prikazySeVsim[i].setCisloRadkuPoint(yPos, 0);
+                prikazySeVsim[i].setBlokPoint(50, yPos);
                 prikazySeVsim[i].setTagPos(i);
+
+
+                prikazySeVsim[i].setupButtonLocationY(yPos);
+                prikazySeVsim[i].setdownButtonLocationY(yPos);
+                prikazySeVsim[i].setDeletelocation(yPos);
                 prikazySeVsim[i].setCisloRadkuText((i + 1).ToString());
             }
         }
@@ -542,12 +553,19 @@ namespace noMansResourceMachine
 
         public static void pridejDoPoleImaze(int cilovtIndex, int puvodniIndex)//PrikazZobrazeni pavel)
         {
-        //    MessageBox.Show("cilovi index " + cilovtIndex.ToString() + "puvodni index" + puvodniIndex.ToString() + " celkovi pocet prikazu" + prikazySeVsim.Count);
-            PrikazZobrazeni pavel = prikazySeVsim[puvodniIndex];
-            prikazySeVsim.RemoveAt(puvodniIndex);
-            PrikazZobrazeni posun = null;// prikazySeVsim[i];
-            //PrikazZobrazeni posun;
-            prikazySeVsim.Insert(cilovtIndex, pavel);/*
+
+            //    MessageBox.Show("cilovi index " + cilovtIndex.ToString() + "puvodni index" + puvodniIndex.ToString() + " celkovi pocet prikazu" + prikazySeVsim.Count);
+            if (cilovtIndex > prikazySeVsim.Count-1) { 
+                prikazySeVsim[prikazySeVsim.Count-1] = prikazySeVsim[puvodniIndex];
+            }
+            else
+            {
+                PrikazZobrazeni pavel = prikazySeVsim[puvodniIndex];
+                prikazySeVsim.RemoveAt(puvodniIndex);
+                PrikazZobrazeni posun = null;// prikazySeVsim[i];
+                                             //PrikazZobrazeni posun;
+                prikazySeVsim.Insert(cilovtIndex, pavel);
+            }/*
             if (cilovtIndex == prikazySeVsim.Count)
             {
                 // MessageBox.Show("podminka");
@@ -619,6 +637,11 @@ namespace noMansResourceMachine
             prikazySeVsim.RemoveAt(pozice);
             aktualniPocetBloku--;
 
+        }
+
+        private void odecti_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(8);
         }
     }
 }
