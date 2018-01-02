@@ -33,7 +33,7 @@ namespace noMansResourceMachine
 
             InitializeComponent();
             button9.Enabled = false;
-            kompilovat.Enabled = true;
+            kompilovat.Enabled = false;
             poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1};
             vypisKonzole();
           
@@ -45,7 +45,15 @@ namespace noMansResourceMachine
 
         }
 
-
+        ArrayList chybneBloky = new ArrayList();
+        public bool jeCisloOk(int cislo)
+        {
+            return cislo == 7012;
+        }
+        public void blokChybaVipis(string typBloku, int radek)
+        {
+            MessageBox.Show("Blok "+ typBloku.ToString()+" na řádku " + radek.ToString() + "\n nemá spravně doplněné argumenty","Chyba!");
+        }
         private void kompilovat_Click(object sender, EventArgs e)
         {
             
@@ -74,6 +82,11 @@ namespace noMansResourceMachine
                 //textBox1.Text += "typ" + (prikazySeVsim[i].getTyp()).ToString();
                 if (prikazySeVsim[i].getTyp() == 0)
                 {
+                    if (prikazySeVsim[i].getArgument1() == 7012 && prikazySeVsim[i].getArgument2() == 7012)
+                    {
+                        blokChybaVipis("přiřaď", i + 1);
+                        goto konecKompilace;
+                    }
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                    // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
 
@@ -84,14 +97,27 @@ namespace noMansResourceMachine
                 }
                 else if (prikazySeVsim[i].getTyp() == 1)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1())){
+                        blokChybaVipis("přičti jedna", i + 1);
+                        goto konecKompilace;
+                    }
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                 }
                 else if (prikazySeVsim[i].getTyp() == 2)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1()))
+                    {
+                        blokChybaVipis("odečti 1", i + 1);
+                        goto konecKompilace;
+                    }
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                 }
                 else if (prikazySeVsim[i].getTyp() == 3) // jump if
-                {
+                {if((jeCisloOk(prikazySeVsim[i].getArgument1())&& jeCisloOk(prikazySeVsim[i].getArgument2())
+                    && jeCisloOk(prikazySeVsim[i].getArgument3()) && jeCisloOk(prikazySeVsim[i].getArgument4()))){
+                        blokChybaVipis("skoč pokud", i + 1);
+                        goto konecKompilace;
+                    }
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                     prikaz.Add(prikazySeVsim[i].getArgument2());
                     prikaz.Add(prikazySeVsim[i].getArgument3());
@@ -99,18 +125,35 @@ namespace noMansResourceMachine
                 }
                 else if (prikazySeVsim[i].getTyp() == 4)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument4()))
+                    {
+                        blokChybaVipis("skoč",i + 1);
+                        goto konecKompilace;
+                    }
                     prikaz.Add(prikazySeVsim[i].getArgument4());
                     //textBox1.Text += "    argument3cb" + (prikazySeVsim[i].getArgument3()).ToString();
                     //textBox1.Text += "  argument1cb" + (prikazy[i][1]).ToString();
                 }
                 else if (prikazySeVsim[i].getTyp() == 5)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1()))
+                    {
+                        blokChybaVipis("vstup", i + 1);
+                        goto konecKompilace;
+                    }
+
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                     //textBox1.Text += "    argument3cb" + (prikazySeVsim[i].getArgument3()).ToString();
                     //textBox1.Text += "  argument1cb" + (prikazy[i][1]).ToString();
                 }
                 else if (prikazySeVsim[i].getTyp() == 6)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1()))
+                    {
+                        blokChybaVipis("výstup", i + 1);
+                        goto konecKompilace;
+                    }
+
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                     //textBox1.Text += "    argument3cb" + (prikazySeVsim[i].getArgument3()).ToString();
                     //textBox1.Text += "  argument1cb" + (prikazy[i][1]).ToString();
@@ -118,6 +161,12 @@ namespace noMansResourceMachine
                 //...
                 else if (prikazySeVsim[i].getTyp() == 7)
                 {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument4()))
+                    {
+                        blokChybaVipis("přicti", i + 1);
+                        goto konecKompilace;
+                    }
+
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                    // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
 
@@ -134,9 +183,10 @@ namespace noMansResourceMachine
                 prikazy.Add(prikaz);
 
                 //textBox1.Text += "   typ " + (prikazy[i][0]).ToString();
-                
-              
+
+                konecKompilace:;
                 prikaz = new List<int>();
+                                
 
             }
             ////////precetli jste   Zaznamenani Zmen
@@ -144,10 +194,21 @@ namespace noMansResourceMachine
 
 
         //// Provadeni Priakazu
-
+        
         private void button9_Click(object sender, EventArgs e)
         {
-               
+            
+            int velikostKrokuint;
+            if (int.TryParse(velikostKroku.Text, out velikostKrokuint))
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("zasejte cislo bez mezer a dalsich znaku");
+                velikostKroku.BackColor = Color.Red;
+                goto konecProgramu;
+            }
             //for (int i = 0; a <= aktualniRadek;i++)
             for (int i = 0; i < int.Parse(velikostKroku.Text); i++ )
             {
@@ -341,7 +402,6 @@ namespace noMansResourceMachine
                         else
                         {
                             outputHrace.Add((int)vsechnyLevely[aktualniLevel].getHodnota(specArgument1));
-                            konzole.Clear();
                             konzole.AppendText(Environment.NewLine);
                             konzole.AppendText("output: ");
                             for (int w = 0; w < outputHrace.Count(); w++)
@@ -402,6 +462,7 @@ namespace noMansResourceMachine
 
                 }
             }
+            konecProgramu:;
         }
         //// precetli jste  Provadeni Priakazu
 
@@ -486,7 +547,9 @@ namespace noMansResourceMachine
 
         private void everyBtnClick(int typPrikazu)
         {
-            kompilovat.Enabled = false;
+            kompilovat.Enabled = true;
+            button9.Enabled = false;
+
             prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, typPrikazu, panel_scrolllll));
             // prikazySeVsim[prikazySeVsim.Count - 1].setBlokPoint(200, 20);
             //prikazySeVsim[prikazySeVsim.Count-1].setBlokPoint(20,)
@@ -545,10 +608,18 @@ namespace noMansResourceMachine
         {
 
         }
-
+        int cislo;
         private void velikostKroku_TextChanged(object sender, EventArgs e)
         {
-
+            
+          if (int.TryParse(velikostKroku.Text,out cislo))
+            {
+                velikostKroku.BackColor = Color.WhiteSmoke;
+            }
+            else
+            {
+                velikostKroku.BackColor = Color.Red;
+            }
         }
 
         private void output_MouseClick(object sender, MouseEventArgs e)

@@ -21,7 +21,7 @@ namespace noMansResourceMachine
         public ComboBox argument1cb = new ComboBox();
         public ComboBox argument2cb = new ComboBox();
         public ComboBox argument3cb = new ComboBox();
-        public ComboBox argument4cb = new ComboBox();
+        public TextBox argument4cb = new TextBox();
         private int blokONline;
         private ArrayList tagAndOrigin = new ArrayList() { -1, true };
         private Panel blok = new Panel();
@@ -77,10 +77,10 @@ namespace noMansResourceMachine
             cisloRadku.Tag = tagAndOrigin;
 
             blokONline = fakeAktualniPocetBloku;
-            for (int i = 1; i < fakeAktualniPocetBloku + 1; i++)
+          /*  for (int i = 1; i < fakeAktualniPocetBloku + 1; i++)
             {
                 argument4cb.Items.Add(i);
-            }
+            }/*/
 
             
             this.cisloRadku.Font = new Font("Arial", 15);
@@ -116,7 +116,7 @@ namespace noMansResourceMachine
                 blok.BackColor = Color.FromArgb(142, 158, 41);
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 142, 158, 41);
-                this.nazevPrikazu.Text = "<--Přiřaď";
+                this.nazevPrikazu.Text = "<==přiřaď";
 
                 this.nazevPrikazu.SetBounds(60, 25, 100, 80);
                 this.argument1cb.SetBounds(10, 25, 30, 30);
@@ -192,12 +192,13 @@ namespace noMansResourceMachine
 
                 argument2cb.Text = "-";                
                 argument2cb.Size = new Size(30, 00);
-                argument2cb.Location = new Point(60, 32);
+                argument2cb.Location =
+                    new Point((50 * 2) , 32);  
                 blok.Controls.Add(argument2cb);
 
                 argument3cb.Text = "-";
                 argument3cb.Size = new Size(30, 00);
-                argument3cb.Location = new Point((50 * 2) + offset, 32);
+                argument3cb.Location = new Point(60, 32);
                 argument3cb.Items.Add('=');
                 argument3cb.Items.Add('<');
                 argument3cb.Items.Add('>');
@@ -283,7 +284,7 @@ namespace noMansResourceMachine
 
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
-                this.nazevPrikazu.Text = "<==pricti";
+                this.nazevPrikazu.Text = "<==přicti";
                 this.nazevPrikazu.SetBounds(60, 25, 100, 80);
                 this.argument1cb.SetBounds(10, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
@@ -332,7 +333,7 @@ namespace noMansResourceMachine
 
         private void UpButton_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Form1.getAktpocet()-1 == 0)
+            if (getIndex() == 0)
             {
                 MessageBox.Show("Dany blok je u6 naho5e nelye ho p5esunout vyše");
             }
@@ -518,26 +519,30 @@ namespace noMansResourceMachine
                 //setZokrouhlenouPozici(e.Y);
             }          */
         }
+        public int  getBlokLine()
+        {
+            return (blok.Top / 85) + 1;
+        }
         public int getArgument1()
         {
 
-            if ('A' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            if ("A" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
                 return 1;
-            else if ('B' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
                 return 2;
-            else if ('C' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem).ToString()))
                 return 3;
-            else if ('D' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
                 return 4;
-            else if ('E' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
                 return 5;
-            else if ('F' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
                 return 6;
-            else if ('i' == char.Parse(this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+            else if ("i" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem).ToString()))
                 return 0;
 
             else
-                return 8;
+                return 7012;
 
         }
         private void setUPButtonloaton (int x, int y)
@@ -578,8 +583,9 @@ namespace noMansResourceMachine
         }
         public int getIndex()
         {
-            ArrayList ar = (ArrayList)blok.Tag;
-            return (int)ar[0];
+            return (blok.Top / 85);
+           // ArrayList ar = (ArrayList)blok.Tag;
+            //return (int)ar[0];
         }
         private void Blok_MouseClick1(object sender, MouseEventArgs e)
         {
@@ -631,40 +637,48 @@ namespace noMansResourceMachine
         }
         public int getArgument2()
         {
-            if ('A' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 1;
-            else if ('B' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 2;
-            else if ('C' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 3;
-            else if ('D' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 4;
-            else if ('E' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 5;
-            else if ('F' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 6;
-            else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return 0;
-            else
-                return 7;
+            int cislo;
+            if ( int.TryParse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString(), out cislo)){
+                return cislo;
+            }else{
+                if ("A" == this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString())
+                    return 1;
+                else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                    return 2;
+                else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                    return 3;
+                else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                    return 4;
+                else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString()))
+                    return 5;
+                else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                    return 6;
+                else if ("i" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                    return 0;
+                else
+                    return 7012;
+
+            }
         }
         public int getArgument3()
         {
-            if ('=' == char.Parse(this.argument3cb.GetItemText(this.argument3cb.SelectedItem)))
+            if ("=" == (this.argument3cb.GetItemText(this.argument3cb.SelectedItem)).ToString())
                 return 1;
-            else if ('<' == char.Parse(this.argument3cb.GetItemText(this.argument3cb.SelectedItem)))
+            else if ("<" == (this.argument3cb.GetItemText(this.argument3cb.SelectedItem)).ToString())
                 return 2;
-            else if ('>' == char.Parse(this.argument3cb.GetItemText(this.argument3cb.SelectedItem)))
+            else if (">" == (this.argument3cb.GetItemText(this.argument3cb.SelectedItem)).ToString())
                 return 3;
-            return 4;
+            return 7012;
         }
         public int getArgument4()
         {
-
+            int cislo;
             //if (argument4cbcb.SelectedItem != null)
-                return (int.Parse(argument4cb.Text.ToString()));
+            if(int.TryParse(argument4cb.Text.ToString(),out cislo)){
+                return cislo;
+            }
             //return 7012;
-            
+            return 7012;
         }
 
         

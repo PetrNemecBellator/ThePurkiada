@@ -102,7 +102,6 @@
             this.outputTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -649,11 +648,6 @@
             this.label13.ForeColor = System.Drawing.SystemColors.InfoText;
             this.label13.Name = "label13";
             // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
-            // 
             // label15
             // 
             resources.ApplyResources(this.label15, "label15");
@@ -665,7 +659,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.outputTB);
@@ -788,7 +781,6 @@
         private System.Windows.Forms.TextBox outputTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
     }
 }
