@@ -457,6 +457,11 @@ namespace noMansResourceMachine
       
         public static void zmenPole()
         {
+            /* todo 
+             * smaze fraficke pole a nahradi je 
+             * aktulanim polem z prikazySeVsim            * 
+             * 
+             * */
             PrikazZobrazeni.ScrolHelp.Controls.Clear();
             for (int i = 0; i < prikazySeVsim.Count; i++)
             {
@@ -471,10 +476,9 @@ namespace noMansResourceMachine
                 prikazySeVsim[i].setCisloRadkuPoint(yPos, 0);
                 prikazySeVsim[i].setBlokPoint(50, yPos);
                 prikazySeVsim[i].setTagPos(i);
-
-
+                
                 prikazySeVsim[i].setupButtonLocationY(yPos);
-                prikazySeVsim[i].setdownButtonLocationY(yPos);
+                prikazySeVsim[i].setdownButtonLocationY(yPos+20);
                 prikazySeVsim[i].setDeletelocation(yPos);
                 prikazySeVsim[i].setCisloRadkuText((i + 1).ToString());
             }
@@ -484,7 +488,8 @@ namespace noMansResourceMachine
         {
             kompilovat.Enabled = false;
             prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, typPrikazu, panel_scrolllll));
-            prikazySeVsim[prikazySeVsim.Count - 1].setBlokPoint(200, 20);
+            // prikazySeVsim[prikazySeVsim.Count - 1].setBlokPoint(200, 20);
+            //prikazySeVsim[prikazySeVsim.Count-1].setBlokPoint(20,)
             aktualniPocetBloku = prikazySeVsim.Count();
         }
 
@@ -562,7 +567,7 @@ namespace noMansResourceMachine
             {
                 PrikazZobrazeni pavel = prikazySeVsim[puvodniIndex];
                 prikazySeVsim.RemoveAt(puvodniIndex);
-                PrikazZobrazeni posun = null;// prikazySeVsim[i];
+            //    PrikazZobrazeni posun = null;// prikazySeVsim[i];
                                              //PrikazZobrazeni posun;
                 prikazySeVsim.Insert(cilovtIndex, pavel);
             }/*

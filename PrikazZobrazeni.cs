@@ -41,9 +41,14 @@ namespace noMansResourceMachine
             blok.Height = 65;
             blok.Top = (posY);
             blok.Left = (50);
+
             // button to navigate blok
 
             //
+            upButton.MouseClick += UpButton_MouseClick;
+            downButton.MouseClick += DownButton_MouseClick;
+            deleteButton.MouseClick += DeleteButton_MouseClick;
+
             scrollO.Controls.Add(upButton);
             scrollO.Controls.Add(downButton);
             scrollO.Controls.Add(deleteButton);
@@ -54,7 +59,7 @@ namespace noMansResourceMachine
             downButton.SetBounds(250, offset+ this.posY +20, 20, 20);
             downButton.Text = "▼";
             downButton.ForeColor = Color.Black;
-            deleteButton.SetBounds(270, offset+ this.posY -(blok.Width/2),20,20);
+            deleteButton.SetBounds(270, offset+ this.posY +13,20,20);
             deleteButton.Text = "X";
             deleteButton.ForeColor = Color.Black;
             
@@ -299,6 +304,45 @@ namespace noMansResourceMachine
                 this.argument2cb.SetBounds(160, 25, 30, 30);
             }
         }
+
+        private void DeleteButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazní", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                ArrayList ar = this.tagAndOrigin;
+                Form1.deleFromMainArray((int)ar[0]);
+                Form1.zmenPole();
+            }
+
+        }
+
+        private void DownButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (Form1.getAktpocet()-1 == getIndex())
+            {
+                MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže");
+            }
+            else
+            {
+                Form1.pridejDoPoleImaze(getIndex() + 1, getIndex());
+                Form1.zmenPole();
+            }
+        }
+
+        private void UpButton_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (Form1.getAktpocet()-1 == 0)
+            {
+                MessageBox.Show("Dany blok je u6 naho5e nelye ho p5esunout vyše");
+            }
+            else
+            {                
+                Form1.pridejDoPoleImaze(getIndex()-1 , getIndex());                
+                Form1.zmenPole();
+             }
+         }
+
         public Button getdownButton()
         {
             return this.downButton;
@@ -313,15 +357,15 @@ namespace noMansResourceMachine
         }
         public  void setupButtonLocationY(int y)
         {
-            this.upButton.Top = y;
+            this.upButton.Top = y+20;
         }
         public void setdownButtonLocationY(int y)
         {
-            this.downButton.Top = y;
+            this.downButton.Top = y+20;
         }
-        public void setDeletelocation(int y)
+        public void setDeletelocation(int y  )
         {
-            this.deleteButton.Top = y+10;
+            this.deleteButton.Top = ((y+27));
         }
 
         private void NazevPrikazu_MouseClick(object sender, MouseEventArgs e)
@@ -372,6 +416,10 @@ namespace noMansResourceMachine
         public int getTyp()
         {
             return this.typ;
+        }
+        public int getBlokWidth()
+        {
+            return blok.Width;
         }
         public void setZokrouhlenouPozici(int y)
         {
