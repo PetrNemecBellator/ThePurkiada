@@ -103,6 +103,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.napSkocKdyz = new System.Windows.Forms.Button();
+            this.napSkoc = new System.Windows.Forms.Button();
+            this.napPricti1 = new System.Windows.Forms.Button();
+            this.napOdecti1 = new System.Windows.Forms.Button();
+            this.napOdecti = new System.Windows.Forms.Button();
+            this.napPricti = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.napVystup = new System.Windows.Forms.Button();
+            this.napVstup = new System.Windows.Forms.Button();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -654,10 +663,90 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label15.Name = "label15";
             // 
+            // napSkocKdyz
+            // 
+            resources.ApplyResources(this.napSkocKdyz, "napSkocKdyz");
+            this.napSkocKdyz.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napSkocKdyz.Name = "napSkocKdyz";
+            this.napSkocKdyz.UseVisualStyleBackColor = true;
+            this.napSkocKdyz.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // napSkoc
+            // 
+            resources.ApplyResources(this.napSkoc, "napSkoc");
+            this.napSkoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napSkoc.Name = "napSkoc";
+            this.napSkoc.UseVisualStyleBackColor = true;
+            this.napSkoc.Click += new System.EventHandler(this.napSkoc_Click);
+            // 
+            // napPricti1
+            // 
+            resources.ApplyResources(this.napPricti1, "napPricti1");
+            this.napPricti1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napPricti1.Name = "napPricti1";
+            this.napPricti1.UseVisualStyleBackColor = true;
+            this.napPricti1.Click += new System.EventHandler(this.napPricti1_Click);
+            // 
+            // napOdecti1
+            // 
+            resources.ApplyResources(this.napOdecti1, "napOdecti1");
+            this.napOdecti1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napOdecti1.Name = "napOdecti1";
+            this.napOdecti1.UseVisualStyleBackColor = true;
+            this.napOdecti1.Click += new System.EventHandler(this.napOdecti1_Click);
+            // 
+            // napOdecti
+            // 
+            resources.ApplyResources(this.napOdecti, "napOdecti");
+            this.napOdecti.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napOdecti.Name = "napOdecti";
+            this.napOdecti.UseVisualStyleBackColor = true;
+            this.napOdecti.Click += new System.EventHandler(this.napOdecti_Click);
+            // 
+            // napPricti
+            // 
+            resources.ApplyResources(this.napPricti, "napPricti");
+            this.napPricti.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napPricti.Name = "napPricti";
+            this.napPricti.UseVisualStyleBackColor = true;
+            this.napPricti.Click += new System.EventHandler(this.napPricti_Click);
+            // 
+            // button16
+            // 
+            resources.ApplyResources(this.button16, "button16");
+            this.button16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button16.Name = "button16";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // napVystup
+            // 
+            resources.ApplyResources(this.napVystup, "napVystup");
+            this.napVystup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napVystup.Name = "napVystup";
+            this.napVystup.UseVisualStyleBackColor = true;
+            this.napVystup.Click += new System.EventHandler(this.napVystup_Click);
+            // 
+            // napVstup
+            // 
+            resources.ApplyResources(this.napVstup, "napVstup");
+            this.napVstup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.napVstup.Name = "napVstup";
+            this.napVstup.UseVisualStyleBackColor = true;
+            this.napVstup.Click += new System.EventHandler(this.button18_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.napVstup);
+            this.Controls.Add(this.napVystup);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.napPricti);
+            this.Controls.Add(this.napOdecti);
+            this.Controls.Add(this.napOdecti1);
+            this.Controls.Add(this.napPricti1);
+            this.Controls.Add(this.napSkoc);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
@@ -678,6 +767,7 @@
             this.Controls.Add(this.inputPanel);
             this.Controls.Add(this.jumpIf);
             this.Controls.Add(this.kompilovat);
+            this.Controls.Add(this.napSkocKdyz);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -782,6 +872,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button napSkocKdyz;
+        private System.Windows.Forms.Button napSkoc;
+        private System.Windows.Forms.Button napPricti1;
+        private System.Windows.Forms.Button napOdecti1;
+        private System.Windows.Forms.Button napOdecti;
+        private System.Windows.Forms.Button napPricti;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button napVystup;
+        private System.Windows.Forms.Button napVstup;
     }
 }
 

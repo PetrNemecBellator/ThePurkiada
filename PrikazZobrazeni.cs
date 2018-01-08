@@ -36,7 +36,6 @@ namespace noMansResourceMachine
         {
             this.posY = PosY * 85 + 1;
             this.typ = typ;
-
             blok.Width = 200;
             blok.Height = 65;
             blok.Top = (posY);
@@ -308,7 +307,7 @@ namespace noMansResourceMachine
 
         private void DeleteButton_MouseClick(object sender, MouseEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazní", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smázni!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 ArrayList ar = this.tagAndOrigin;
@@ -322,7 +321,7 @@ namespace noMansResourceMachine
         {
             if (Form1.getAktpocet()-1 == getIndex())
             {
-                MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže");
+                MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže","Varování!");
             }
             else
             {
@@ -335,7 +334,7 @@ namespace noMansResourceMachine
         {
             if (getIndex() == 0)
             {
-                MessageBox.Show("Dany blok je u6 naho5e nelye ho p5esunout vyše");
+                MessageBox.Show("Dany blok je už nahoře nelze ho přesunout vyše","Varování");
             }
             else
             {                
@@ -395,7 +394,7 @@ namespace noMansResourceMachine
             else if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
 
-                DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazní", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smazání", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     ArrayList ar = this.tagAndOrigin;
@@ -637,28 +636,34 @@ namespace noMansResourceMachine
         }
         public int getArgument2()
         {
-            int cislo;
-            if ( int.TryParse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString(), out cislo)){
-                return cislo;
-            }else{
-                if ("A" == this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString())
+            int cislo = 0;
+            if ('A' == char.Parse(argument2cb.Text.ToString()) || 'B' == char.Parse(argument2cb.Text.ToString()) || 'C' == char.Parse(argument2cb.Text.ToString()) || 'D' == char.Parse(argument2cb.Text.ToString()) || 'E' == char.Parse(argument2cb.Text.ToString()) || 'F' == char.Parse(argument2cb.Text.ToString()))
+            {
+
+
+                if ('A' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 1;
-                else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                else if ('B' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 2;
-                else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                else if ('C' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 3;
-                else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                else if ('D' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 4;
-                else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem).ToString()))
+                else if ('E' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 5;
-                else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                else if ('F' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 6;
-                else if ("i" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)).ToString())
+                else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                     return 0;
-                else
-                    return 7012;
 
             }
+            else if (int.TryParse(argument2cb.Text.ToString(), out cislo))
+            {
+                return cislo;
+            }
+
+            return -1;
+
         }
         public int getArgument3()
         {

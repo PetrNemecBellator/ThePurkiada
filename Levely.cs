@@ -10,72 +10,119 @@ namespace noMansResourceMachine
 
     class Levely                                      
     {
-        List<int> input = new List<int>();
-        List<int> output = new List<int>();
-        int? hodnotaA = null;
-        int? hodnotaB = null;
-        int? hodnotaC = null;
-        int? hodnotaD = null;
-        int? hodnotaE = null;
-        int? hodnotaF = null;
-        int min;
-        int max;
-        static Random rnd = new Random();
+      private  List<int> input = new List<int>();
+      private  List<int> output = new List<int>();
+      private  string zadaniText;
+      private  string typVstupu;
+      private  int maxPocetRadku = 0;
+      private  int maxPocetPrvedenychInstrukci = 0;
+      private  int maxPocetPromenych = 0;
 
-        public Levely(int aktualniLevel, int min,int max)  // vsechny zadani: vynasob A s B, z 20 udelej 5, vynasob vstup sestnacti ,
+      private  int? hodnotaA = null;
+      private int? hodnotaB = null;
+      private  int? hodnotaC = null;
+      private  int? hodnotaD = null;
+      private int? hodnotaE = null;
+      private  int? hodnotaF = null;
+
+        private static Random rnd = new Random();
+
+        public Levely(int aktualniLevel)  // vsechny zadani: vynasob A s B, z 20 udelej 5, vynasob vstup sestnacti ,
         {
-            this.min = min;
-            this.max = max;
-            input.Add(rnd.Next(min, max));
-            input.Add(rnd.Next(min, max));
+            input.Clear();
+
             if (aktualniLevel == 0)
             {
+                maxPocetRadku = 4;
+                maxPocetPrvedenychInstrukci = 4;
+                maxPocetPromenych = 2;
+                typVstupu = "jakekoli cislo";
+                zadaniText = "Do vystupu dej vstup v obracenem poradi (napr.: vstup: 5;3 vystup: 3;5)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
+                input.Add(rnd.Next(-999, 999));
+                input.Add(rnd.Next(-999, 999));
                 output.Add(input[1]);
                 output.Add(input[0]);
-                this.hodnotaA = 3;
-                this.hodnotaB = 5;
-                this.hodnotaC = -9;
-                this.hodnotaD = 71000;
+                this.hodnotaA = null;
+                this.hodnotaB = null;
+                this.hodnotaC = null;
+                this.hodnotaD = null;
+                this.hodnotaE = null;
+                this.hodnotaF = null;
 
             }
             else if (aktualniLevel == 1)
             {
-                input.Clear();
-                input.Add(8);
-                input.Add(5);
-                
+                maxPocetRadku = 8;
+                maxPocetPrvedenychInstrukci = 999;
+                maxPocetPromenych = 3;
+                typVstupu = "jakekoli cislo od dvou";
+                zadaniText = "Do vystupu dej prvni cislo ze vstupu vynasobeny druhym cislem ze vstupu (napr.: vstup: 5;3 vystup: 15)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
+                input.Add(rnd.Next(2, 7));
+                input.Add(rnd.Next(2, 7));
+                output.Add(input[0] * input[1]);
+                this.hodnotaA = null;
+                this.hodnotaB = null;
+                this.hodnotaC = null;
+                this.hodnotaD = null;
+                this.hodnotaE = null;
+                this.hodnotaF = null;
+
+
+            }
+            else if (aktualniLevel == 2)
+            {
+                maxPocetRadku = 999;
+                maxPocetPrvedenychInstrukci = 6;
+                maxPocetPromenych = 999;
+                typVstupu = "jakekoli cislo ";
+                zadaniText = "Do vystupu dej vynasobeny sestnacti (napr.: vstup: 3 vystup: 42)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
+                input.Add(rnd.Next(3, 7));
+
+                output.Add(input[0] * 16);
+
+                this.hodnotaA = null;
+                this.hodnotaB = null;
+                this.hodnotaC = null;
+                this.hodnotaD = null;
+                this.hodnotaE = null;
+                this.hodnotaF = null;
+
             }
         }
-        public int getMin()
+        public string getZadani()
         {
-            return this.min;
+            return this.zadaniText;
         }
-        public int getMax()
+        public int getMaxPocetRadku()
         {
-            return this.max;
+            return this.maxPocetRadku;
+        }
+        public int getMaxPocetInstrukci()
+        {
+            return this.maxPocetPrvedenychInstrukci;
+        }
+        public int getMaxPocetPromenych()
+        {
+            return this.maxPocetPromenych;
         }
         public int getInput()
         {
-            if (input.Count != 0)
-            {
-                int x = this.input[0];
-                this.input.RemoveAt(0);
-                return x;
-            }else
-            {
-                MessageBox.Show("nejsou dostupne žádné další inputy" + (-int.MaxValue).ToString() );
-                return -int.MaxValue;
-            }
+            int x = this.input[0];
+            this.input.RemoveAt(0);
+            return x;
         }
         public List<int> getInputCely()
         {
-            
+
             return this.input;
         }
 
         public List<int> getOutput()
         {
-            
+
             return output;
         }
 

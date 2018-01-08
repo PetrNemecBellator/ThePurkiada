@@ -22,10 +22,12 @@ namespace noMansResourceMachine
         List<int> prikaz = new List<int>();
         List<int> outputHrace = new List<int>();
       static  List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-        Levely[] vsechnyLevely= new Levely[2] { new Levely(0,20,999), new Levely(1,40,50) };
+        Levely[] vsechnyLevely= new Levely[3] { new Levely(0), new Levely(1), new Levely(2) };
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         int aktualniLevel = 0;
+        int pocetProvedenychInstrukci = 0;
+        int pocetPouzitychPromenych = 0;
         private int aktualniRadek = -1;
         public Form1()
         {
@@ -36,9 +38,13 @@ namespace noMansResourceMachine
             kompilovat.Enabled = false;
             poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1};
             vypisKonzole();
-          
-            
-        }        
+//            vypisKonzole();
+            zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
+
+
+
+
+        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -63,7 +69,7 @@ namespace noMansResourceMachine
             prikazy = new List<List<int>>();
             konzole.Clear();
             //textBox1.Clear();
-            vsechnyLevely[aktualniLevel] = new Levely( aktualniLevel,vsechnyLevely[aktualniLevel].getMin(), vsechnyLevely[aktualniLevel].getMax()) ;
+            vsechnyLevely[aktualniLevel] = new Levely( aktualniLevel) ;
             vypisKonzole();
             konzole.AppendText(Environment.NewLine);
 
@@ -194,28 +200,44 @@ namespace noMansResourceMachine
 
 
         //// Provadeni Priakazu
-        
+        private void vyhra()
+        {
+            MessageBox.Show("Vyhral jsi!");
+            aktualniLevel++;
+            prikazySeVsim.Clear();
+            panel_scrolllll.Controls.Clear();
+            konzole.Clear();
+            vypisKonzole();
+            inputTB.Clear();
+            outputTB.Clear();
+            zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
+            pocetProvedenychInstrukci = 0;
+            pocetPouzitychPromenych = 0;
+        }
         private void button9_Click(object sender, EventArgs e)
         {
-            
-            int velikostKrokuint;
-            if (int.TryParse(velikostKroku.Text, out velikostKrokuint))
+
+            if (int.Parse(velikostKroku.Text) == 2522000)
             {
-                
+
+                vyhra();
+                goto konecProcesovani;
             }
-            else
+
+
+            else if (int.Parse(velikostKroku.Text) > 100)
             {
-                MessageBox.Show("zasejte cislo bez mezer a dalsich znaku");
-                velikostKroku.BackColor = Color.Red;
-                goto konecProgramu;
+                MessageBox.Show("Pocet kroku je moc velky, musi byt pod 100");
+                goto konecProcesovani;
+
             }
-            //for (int i = 0; a <= aktualniRadek;i++)
-            for (int i = 0; i < int.Parse(velikostKroku.Text); i++ )
+            for (int i = 0; i < int.Parse(velikostKroku.Text); i++)
             {
-                
+
+                pocetProvedenychInstrukci += 1;
                 aktualniRadek += 1;
                 //MessageBox.Show("aktualni radek: " + aktualniRadek.ToString());
-                
+
                 if (aktualniRadek < prikazy.Count)
                 {
 
@@ -224,8 +246,8 @@ namespace noMansResourceMachine
                     if (prikazy[aktualniRadek][0] == 0) // Prirad
                     {
                         int? hodA = vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]);
-                      
-          
+
+
                         if (hodA == null)
                         {
 
@@ -236,7 +258,7 @@ namespace noMansResourceMachine
 
                             vsechnyLevely[aktualniLevel].setHodnota(prikazy[aktualniRadek][1], (int)hodA);
                             //textbox text co se stalo(priradilo se A k B)
-
+                            konzole.AppendText(aktualniRadek + ". ");
                             vypisKonzole();
                             //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
@@ -258,7 +280,7 @@ namespace noMansResourceMachine
 
                             vsechnyLevely[aktualniLevel].setHodnota(prikazy[aktualniRadek][1], (int)hodA + 1);
                             //textbox text co se stalo(priradilo se A k B)
-
+                            konzole.AppendText(aktualniRadek + ". ");
                             vypisKonzole();
                             //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
@@ -280,12 +302,12 @@ namespace noMansResourceMachine
 
                             vsechnyLevely[aktualniLevel].setHodnota(prikazy[aktualniRadek][1], (int)hodA - 1);
                             //textbox text co se stalo(priradilo se A k B)
-
+                            konzole.AppendText(aktualniRadek + ". ");
                             vypisKonzole();
                             //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
                         }
-                        
+
                     }
                     else if (prikazy[aktualniRadek][0] == 3) // jump if
                     {
@@ -297,16 +319,18 @@ namespace noMansResourceMachine
                         }
                         else
                         {
-                            if(prikazy[aktualniRadek][3] == 1)
+                            if (prikazy[aktualniRadek][3] == 1)
                             {
-                                if(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) == vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]))
+                                if (vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) == vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]))
                                 {
                                     aktualniRadek = kamSkocit - 2;
+                                    konzole.AppendText(aktualniRadek + ". ");
                                     konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
+                                    konzole.AppendText(aktualniRadek + ". ");
                                     konzole.AppendText("Podminka nesplnena ");
                                     konzole.AppendText(Environment.NewLine);
                                 }
@@ -316,11 +340,13 @@ namespace noMansResourceMachine
                                 if (vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) < vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]))
                                 {
                                     aktualniRadek = kamSkocit - 2;
+                                    konzole.AppendText(aktualniRadek + ". ");
                                     konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
+                                    konzole.AppendText(aktualniRadek + ". ");
                                     konzole.AppendText("Podminka nesplnena ");
                                     konzole.AppendText(Environment.NewLine);
                                 }
@@ -331,19 +357,21 @@ namespace noMansResourceMachine
                                 if (vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) > vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]))
                                 {
                                     aktualniRadek = kamSkocit - 2;
+                                    konzole.AppendText(aktualniRadek + ". ");
                                     konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
-                                    konzole.AppendText("Podminka nesplnena " ); 
+                                    konzole.AppendText(aktualniRadek + ". ");
+                                    konzole.AppendText("Podminka nesplnena ");
                                     konzole.AppendText(Environment.NewLine);
 
                                 }
 
                             }
 
-                            
+
                             // MessageBox.Show("aktialni rakde " + aktualniRadek.ToString());
                         }
 
@@ -361,6 +389,7 @@ namespace noMansResourceMachine
                         {
 
                             aktualniRadek = kamSkocit - 2;
+                            konzole.AppendText(aktualniRadek + ". ");
                             konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                             konzole.AppendText(Environment.NewLine);
                             // MessageBox.Show("aktialni rakde " + aktualniRadek.ToString());
@@ -371,23 +400,24 @@ namespace noMansResourceMachine
 
                     else if (prikazy[aktualniRadek][0] == 5) // input
                     {
-                        
+
                         int specArgument1 = prikazy[aktualniRadek][1]; // kam
-                        if ((vsechnyLevely[aktualniLevel].getHodnota(specArgument1)) == null)
+                        vsechnyLevely[aktualniLevel].setHodnota(specArgument1, vsechnyLevely[aktualniLevel].getInput());
+                        //textbox text co se stalo(priradilo se A k B)
+                        inputTB.Clear();
+                        for (int mocforcylklu = 0; mocforcylklu < vsechnyLevely[aktualniLevel].getInputCely().Count(); mocforcylklu++)
                         {
 
-
+                            inputTB.AppendText(vsechnyLevely[aktualniLevel].getInputCely()[i].ToString() + "  ");
                         }
-                        else
-                        {
+                        konzole.AppendText(aktualniRadek + ". ");
+                        vypisKonzole();
+                        //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
-                            vsechnyLevely[aktualniLevel].setHodnota(specArgument1, vsechnyLevely[aktualniLevel].getInput());
-                            //textbox text co se stalo(priradilo se A k B)
 
-                            vypisKonzole();
-                            //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
-                        }
+
+
 
                     }
                     else if (prikazy[aktualniRadek][0] == 6) // output
@@ -402,12 +432,12 @@ namespace noMansResourceMachine
                         else
                         {
                             outputHrace.Add((int)vsechnyLevely[aktualniLevel].getHodnota(specArgument1));
+                            konzole.AppendText(aktualniRadek + ". ");
+                            konzole.AppendText("Do vystupu bylo pridano cislo");
                             konzole.AppendText(Environment.NewLine);
-                            konzole.AppendText("output: ");
-                            for (int w = 0; w < outputHrace.Count(); w++)
-                            {
-                                konzole.AppendText(outputHrace[w].ToString());
-                            }
+
+                            outputTB.AppendText(vsechnyLevely[aktualniLevel].getHodnota(specArgument1).ToString() + " ");
+
 
                             if (outputHrace.Count() == vsechnyLevely[aktualniLevel].getOutput().Count())
                             {
@@ -419,24 +449,61 @@ namespace noMansResourceMachine
                                         bl = false;
                                         break;
                                     }
-                                   
+
 
 
                                 }
-                                if(bl)
+
+                                if (bl)
                                 {
-                                    konzole.AppendText(Environment.NewLine);
-                                    konzole.AppendText("Vyhral jsi!");
+                                    if (vsechnyLevely[aktualniLevel].getMaxPocetRadku() != 0)
+                                    {
+                                        if (prikazy.Count() > vsechnyLevely[aktualniLevel].getMaxPocetRadku())
+                                        {
+
+                                            MessageBox.Show("Výstup máš správně, ale máš moc (" + prikazy.Count() + ") řádků");
+                                            break;
+                                        }
+                                    }
+                                    if (vsechnyLevely[aktualniLevel].getMaxPocetInstrukci() != 0)
+                                    {
+                                        if (pocetProvedenychInstrukci > vsechnyLevely[aktualniLevel].getMaxPocetInstrukci())
+                                        {
+                                            MessageBox.Show("Výstup máš správně, ale provedl jsi moc (" + pocetProvedenychInstrukci + ") instrukcí(příkazů)");
+                                            break;
+                                        }
+                                    }
+
+                                    if (vsechnyLevely[aktualniLevel].getMaxPocetPromenych() != 0)
+                                    {
+                                        for (int idk = 1; idk < 7; idk++)
+                                        {
+                                            if (vsechnyLevely[aktualniLevel].getHodnota(idk) != null)
+                                            {
+                                                pocetPouzitychPromenych += 1;
+                                            }
+                                        }
+                                        if (pocetPouzitychPromenych > vsechnyLevely[aktualniLevel].getMaxPocetPromenych())
+                                        {
+                                            MessageBox.Show("Výstup máš správně, ale použil jsi moc (" + pocetPouzitychPromenych + ") proměnných");
+                                            break;
+                                        }
+
+
+                                    }
+
+                                    vyhra();
+                                    break;
                                 }
 
-                            }    
+                            }
 
                             //MessageBox.Show(aktualniRadek.ToString() + "  typ  " + prikazy[aktualniRadek][0].ToString());
 
                         }
 
                     }
-                    
+
                     else if (prikazy[aktualniRadek][0] == 7) // pricti
                     {
                         //MessageBox.Show("  mmmmmmm " + aktualniRadek.ToString());
@@ -453,7 +520,29 @@ namespace noMansResourceMachine
 
                             vsechnyLevely[aktualniLevel].setHodnota(prikazy[aktualniRadek][1], (int)hodA + (int)vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]));
                             //textbox text co se stalo(priradilo se A k B)
+                            konzole.AppendText(aktualniRadek + ". ");
+                            vypisKonzole();
 
+                        }
+
+                    }
+                    else if (prikazy[aktualniRadek][0] == 8) // odecti
+                    {
+                        //MessageBox.Show("  mmmmmmm " + aktualniRadek.ToString());
+                        int? hodA = vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]);
+
+
+                        if (hodA == null)
+                        {
+
+
+                        }
+                        else
+                        {
+
+                            vsechnyLevely[aktualniLevel].setHodnota(prikazy[aktualniRadek][1], (int)vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) - (int)hodA);
+                            //textbox text co se stalo(priradilo se A k B)
+                            konzole.AppendText(aktualniRadek + ". ");
                             vypisKonzole();
 
                         }
@@ -461,13 +550,15 @@ namespace noMansResourceMachine
                     }
 
                 }
+
             }
-            konecProgramu:;
+            konecProcesovani:;
         }
         //// precetli jste  Provadeni Priakazu
 
         private void vypisKonzole()
         {
+            
             konzole.AppendText("a = " + vsechnyLevely[aktualniLevel].getHodnotaA());
             for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaA().ToString().Length; i++)
             {
@@ -514,6 +605,10 @@ namespace noMansResourceMachine
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        public void zobrazNapovedu(string nadpis,string obsahNapovedy)
+        {
+            MessageBox.Show(obsahNapovedy,nadpis);
         }
       
         public static void zmenPole()
@@ -608,11 +703,12 @@ namespace noMansResourceMachine
         {
 
         }
-        int cislo;
+
         private void velikostKroku_TextChanged(object sender, EventArgs e)
         {
-            
-          if (int.TryParse(velikostKroku.Text,out cislo))
+            int cislo;
+
+            if (int.TryParse(velikostKroku.Text,out cislo))
             {
                 velikostKroku.BackColor = Color.WhiteSmoke;
             }
@@ -718,6 +814,65 @@ namespace noMansResourceMachine
         private void odecti_MouseClick(object sender, MouseEventArgs e)
         {
             everyBtnClick(8);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("skoč když", "Když se splní podminka skočí na jiný řádek."+
+                "\n\t příklad: 1. pole \"5\" 2. pole \">\" 3. pole \"2\" 4.pole \"1\" \n\t  " +
+                "5 je vetši než 2 takže program pokračuje od 1 řadku \n\t " +
+                "pokud by byla podminka nepravdiva nic se neděje program \n\t pokračuje dale.");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("vstup", "Vezme 1 cislo ze vstupu a uloziho do promene zadane v 1.poly ");
+        }
+
+        private void napSkoc_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("skoč", "Vždy skočí na řádek zadaný v poli");
+        }
+
+        private void napPricti1_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("přičti jedna", "K promněnne v 1. poli přičte jedna \n\t"+
+                "příklad: pole obsahuje \"5\"  vysledna hodnota je 6 (5+1) ");
+        }
+
+        private void napOdecti1_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("odečti jedna", "K promněnne v 1. poli odečte jedna \n\t" +
+                "příklad: pole obsahuje \"6\"  vysledna hodnota je 5 (6-1) ");
+        }
+
+        private void napVystup_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("výstup", "Vezme čislo z proměnné zadané v 1. poli \n" +
+                "poté je dá do výstupu ");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("přiřaď", "Proměnnou napsanou 1. poli nahradí hodnoutou proměnné nebo čila zadaneho v 2. poli \n\t"+
+                "příklad: A=1 B=5 1.pole \"A\" 2. pole \"5\" \n\t vysledne hodnoty  A =5 B=5");
+        }
+
+        private void napPricti_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("příčti", "K promněnne v 1. poli příčte proměnnou nebo čislo z 2. pole \n\t" +
+                "příklad:(proměnná)  A=6 1.pole obsahuje \"A= 6\" (proměnná) B=5 2.pole \"B=5\"  vysledna hodnota je A= 11  (5+6), B= 5. ");
+        }
+
+        private void napOdecti_Click(object sender, EventArgs e)
+        {
+            zobrazNapovedu("příčti", "K promněnne v 1. poli odečte proměnnou nebo čislo z 2. pole \n\t" +
+                "příklad: (proměnná A=6) 1.pole obsahuje \"A\" (proměnná B=5) 2.pole \"B\"  vysledna hodnota  A = -1  (5-6), B= 5. ");
         }
     }
 }
