@@ -228,7 +228,7 @@ namespace noMansResourceMachine
 
 
                 blok.BackColor = Color.FromArgb(255, 0, 0, 255);
-
+                
                 // blok.MouseClick += Blok_MouseClick;
                 argument4cb.Text = "-";
                 argument4cb.Size = new Size(30, 00);
@@ -381,12 +381,7 @@ namespace noMansResourceMachine
                     setBlokPoint(e.X + 20, e.Y + 20);
 
                 }
-                else
-                {
-                    blok.Left = 50;
-                    blok.Top = (int)((e.Y + 40) / 85) * 85;
-                    oneIsalreadySelected = true;
-                }
+                
 
 
 
@@ -593,20 +588,25 @@ namespace noMansResourceMachine
             ArrayList smazPomoc = new ArrayList();
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-             //   MessageBox.Show(selected.ToString() + "je vybran ten druhej " + oneIsalreadySelected.ToString());
+                //   MessageBox.Show(selected.ToString() + "je vybran ten druhej " + oneIsalreadySelected.ToString());
                 if (oneIsalreadySelected)
                 {
                     this.selected = true;
                     oneIsalreadySelected = false;
                     setBlokPoint(e.X + 20, e.Y + 20);
+                    if (selected)
+                    {
 
+                    }
+                    
+                    
                 }
-                else
+               /* else
                 {
                     blok.Left = 50;
                     blok.Top = (int)((e.Y + 40) / 85) * 85;
-                    oneIsalreadySelected = true;
-                }
+
+                }*/
 
 
 

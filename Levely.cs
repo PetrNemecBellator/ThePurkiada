@@ -18,12 +18,12 @@ namespace noMansResourceMachine
       private  int maxPocetPrvedenychInstrukci = 0;
       private  int maxPocetPromenych = 0;
 
-      private  int? hodnotaA = null;
-      private int? hodnotaB = null;
-      private  int? hodnotaC = null;
-      private  int? hodnotaD = null;
-      private int? hodnotaE = null;
-      private  int? hodnotaF = null;
+      private  int? hodnotaA;
+      private int? hodnotaB;
+      private  int? hodnotaC;
+      private  int? hodnotaD;
+      private int? hodnotaE;
+      private  int? hodnotaF;
 
         private static Random rnd = new Random();
 
@@ -36,7 +36,7 @@ namespace noMansResourceMachine
                 maxPocetRadku = 4;
                 maxPocetPrvedenychInstrukci = 4;
                 maxPocetPromenych = 2;
-                typVstupu = "jakekoli cislo";
+                typVstupu = "pouze dve cisla";
                 zadaniText = "Do vystupu dej vstup v obracenem poradi (napr.: vstup: 5;3 vystup: 3;5)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 input.Add(rnd.Next(-999, 999));
@@ -62,12 +62,12 @@ namespace noMansResourceMachine
                 input.Add(rnd.Next(2, 7));
                 input.Add(rnd.Next(2, 7));
                 output.Add(input[0] * input[1]);
-                this.hodnotaA = null;
-                this.hodnotaB = null;
-                this.hodnotaC = null;
-                this.hodnotaD = null;
-                this.hodnotaE = null;
-                this.hodnotaF = null;
+                this.hodnotaA = 0;
+                this.hodnotaB = 0;
+                this.hodnotaC = 0;
+                this.hodnotaD = 0;
+                this.hodnotaE = 0;
+                this.hodnotaF = 0;
 
 
             }

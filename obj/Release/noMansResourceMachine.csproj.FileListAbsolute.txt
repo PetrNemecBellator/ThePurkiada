@@ -1,0 +1,12 @@
+C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.exe.config
+C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.pdb
+C:\Users\Petr\Desktop\no mans  machine\bin\Release\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csprojResolveAssemblyReference.cache
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Form1.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Properties.Resources.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Form1.aa.resources
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csproj.GenerateResource.Cache
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\aa\noMansResourceMachine.resources.dll
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.exe
+C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.pdb

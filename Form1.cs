@@ -824,14 +824,14 @@ namespace noMansResourceMachine
         private void button13_Click(object sender, EventArgs e)
         {
             zobrazNapovedu("skoč když", "Když se splní podminka skočí na jiný řádek."+
-                "\n\t příklad: 1. pole \"5\" 2. pole \">\" 3. pole \"2\" 4.pole \"1\" \n\t  " +
-                "5 je vetši než 2 takže program pokračuje od 1 řadku \n\t " +
-                "pokud by byla podminka nepravdiva nic se neděje program \n\t pokračuje dale.");
+                "\n   příklad: 1. pole \"5\" 2. pole \">\" 3. pole \"2\" 4.pole \"4\" \n  " +
+                "5 je vetši než 2 takže program pokračuje od 4 řadku \n  " +
+                "pokud by byla podminka nepravdiva nic se neděje program \n   pokračuje dale.");
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("vstup", "Vezme 1 cislo ze vstupu a uloziho do promene zadane v 1.poly ");
+            zobrazNapovedu("vstup", "Vezme 1 cislo ze vstupu a uloziho do promene zadane v 1.poli ");
         }
 
         private void napSkoc_Click(object sender, EventArgs e)
@@ -841,31 +841,31 @@ namespace noMansResourceMachine
 
         private void napPricti1_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("přičti jedna", "K promněnne v 1. poli přičte jedna \n\t"+
+            zobrazNapovedu("přičti jedna", "K promněnne v 1. poli přičte jedna \n  "+
                 "příklad: pole obsahuje \"5\"  vysledna hodnota je 6 (5+1) ");
         }
 
         private void napOdecti1_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("odečti jedna", "K promněnne v 1. poli odečte jedna \n\t" +
+            zobrazNapovedu("odečti jedna", "K promněnne v 1. poli odečte jedna \n  " +
                 "příklad: pole obsahuje \"6\"  vysledna hodnota je 5 (6-1) ");
         }
 
         private void napVystup_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("výstup", "Vezme čislo z proměnné zadané v 1. poli \n" +
+            zobrazNapovedu("výstup", "Vezme čislo z proměnné zadané v 1. poli \n  " +
                 "poté je dá do výstupu ");
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             zobrazNapovedu("přiřaď", "Proměnnou napsanou 1. poli nahradí hodnoutou proměnné nebo čila zadaneho v 2. poli \n\t"+
-                "příklad: A=1 B=5 1.pole \"A\" 2. pole \"5\" \n\t vysledne hodnoty  A =5 B=5");
+                "příklad: A=1 B=5 1.pole \"A\" 2. pole \"5\" \n   vysledne hodnoty  A =5 B=5");
         }
 
         private void napPricti_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("příčti", "K promněnne v 1. poli příčte proměnnou nebo čislo z 2. pole \n\t" +
+            zobrazNapovedu("příčti", "K promněnne v 1. poli příčte proměnnou nebo čislo z 2. pole \n  " +
                 "příklad:(proměnná)  A=6 1.pole obsahuje \"A= 6\" (proměnná) B=5 2.pole \"B=5\"  vysledna hodnota je A= 11  (5+6), B= 5. ");
         }
 
@@ -873,6 +873,51 @@ namespace noMansResourceMachine
         {
             zobrazNapovedu("příčti", "K promněnne v 1. poli odečte proměnnou nebo čislo z 2. pole \n\t" +
                 "příklad: (proměnná A=6) 1.pole obsahuje \"A\" (proměnná B=5) 2.pole \"B\"  vysledna hodnota  A = -1  (5-6), B= 5. ");
+        }
+
+        private void skocKdyzLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(3);
+        }
+
+        private void skocLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(4);
+        }
+
+        private void pricti1Label_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(1);
+        }
+
+        private void odecti1Label_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(2);
+        }
+
+        private void vstupLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(5);
+        }
+
+        private void vystupLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(6);
+        }
+
+        private void priradLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(0);
+        }
+
+        private void prictiLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(7);
+        }
+
+        private void odectiLabel_MouseClick(object sender, MouseEventArgs e)
+        {
+            everyBtnClick(8);
         }
     }
 }

@@ -291,16 +291,16 @@
   <data name="&gt;&gt;comboBox4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
+  <data name="&gt;&gt;skocKdyzLabel.Name" xml:space="preserve">
+    <value>skocKdyzLabel</value>
   </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.Parent" xml:space="preserve">
     <value>jumpIf</value>
   </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;comboBox35.Name" xml:space="preserve">
@@ -357,37 +357,37 @@
   <data name="&gt;&gt;comboBox4.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+  <data name="skocKdyzLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="skocKdyzLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="skocKdyzLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="skocKdyzLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="skocKdyzLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 25</value>
   </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+  <data name="skocKdyzLabel.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
+  <data name="skocKdyzLabel.Text" xml:space="preserve">
     <value>skoč když</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
+  <data name="&gt;&gt;skocKdyzLabel.Name" xml:space="preserve">
+    <value>skocKdyzLabel</value>
   </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.Parent" xml:space="preserve">
     <value>jumpIf</value>
   </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;skocKdyzLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="comboBox35.Location" type="System.Drawing.Point, System.Drawing">
@@ -414,16 +414,16 @@
   <data name="inputPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;vstupLabel.Name" xml:space="preserve">
+    <value>vstupLabel</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.Parent" xml:space="preserve">
     <value>inputPanel</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
@@ -483,37 +483,37 @@
   <data name="&gt;&gt;inputPanel.ZOrder" xml:space="preserve">
     <value>25</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="vstupLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="vstupLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="vstupLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="vstupLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 18</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="vstupLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 25</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="vstupLabel.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="vstupLabel.Text" xml:space="preserve">
     <value>&lt;== vstup</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;vstupLabel.Name" xml:space="preserve">
+    <value>vstupLabel</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.Parent" xml:space="preserve">
     <value>inputPanel</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;vstupLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
@@ -597,16 +597,16 @@
   <data name="&gt;&gt;comboBox11.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="&gt;&gt;skocLabel.Name" xml:space="preserve">
+    <value>skocLabel</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.Parent" xml:space="preserve">
     <value>jump</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;comboBox9.Name" xml:space="preserve">
@@ -687,37 +687,37 @@
   <data name="&gt;&gt;comboBox11.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+  <data name="skocLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="skocLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="skocLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="skocLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 17</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="skocLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 25</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+  <data name="skocLabel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
+  <data name="skocLabel.Text" xml:space="preserve">
     <value>skoč</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="&gt;&gt;skocLabel.Name" xml:space="preserve">
+    <value>skocLabel</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.Parent" xml:space="preserve">
     <value>jump</value>
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;skocLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="comboBox9.Location" type="System.Drawing.Point, System.Drawing">
@@ -792,16 +792,16 @@
   <data name="output.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;vystupLabel.Name" xml:space="preserve">
+    <value>vystupLabel</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.Parent" xml:space="preserve">
     <value>output</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;comboBox12.Name" xml:space="preserve">
@@ -873,37 +873,37 @@
   <data name="&gt;&gt;output.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="vystupLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="vystupLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="vystupLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="vystupLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>83, 16</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="vystupLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 25</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="vystupLabel.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="vystupLabel.Text" xml:space="preserve">
     <value>==&gt; výstup</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;vystupLabel.Name" xml:space="preserve">
+    <value>vystupLabel</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.Parent" xml:space="preserve">
     <value>output</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;vystupLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="comboBox12.Location" type="System.Drawing.Point, System.Drawing">
@@ -1023,16 +1023,16 @@
   <data name="&gt;&gt;comboBox15.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;priradLabel.Name" xml:space="preserve">
+    <value>priradLabel</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.Parent" xml:space="preserve">
     <value>prirad</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;comboBox16.Name" xml:space="preserve">
@@ -1134,37 +1134,37 @@
   <data name="&gt;&gt;comboBox15.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+  <data name="priradLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="priradLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="priradLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="priradLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 17</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="priradLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 25</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+  <data name="priradLabel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
+  <data name="priradLabel.Text" xml:space="preserve">
     <value>&lt;== prirad</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;priradLabel.Name" xml:space="preserve">
+    <value>priradLabel</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.Parent" xml:space="preserve">
     <value>prirad</value>
   </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;priradLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="comboBox16.Location" type="System.Drawing.Point, System.Drawing">
@@ -1266,16 +1266,16 @@
   <data name="&gt;&gt;comboBox20.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="&gt;&gt;prictiLabel.Name" xml:space="preserve">
+    <value>prictiLabel</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.Parent" xml:space="preserve">
     <value>pricti</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;comboBox21.Name" xml:space="preserve">
@@ -1377,37 +1377,37 @@
   <data name="&gt;&gt;comboBox20.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+  <data name="prictiLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="prictiLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="prictiLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="prictiLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>54, 21</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="prictiLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 25</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+  <data name="prictiLabel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
+  <data name="prictiLabel.Text" xml:space="preserve">
     <value>&lt;== přičti</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="&gt;&gt;prictiLabel.Name" xml:space="preserve">
+    <value>prictiLabel</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.Parent" xml:space="preserve">
     <value>pricti</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;prictiLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="comboBox21.Location" type="System.Drawing.Point, System.Drawing">
@@ -1509,16 +1509,16 @@
   <data name="&gt;&gt;comboBox24.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="&gt;&gt;odectiLabel.Name" xml:space="preserve">
+    <value>odectiLabel</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.Parent" xml:space="preserve">
     <value>odecti</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;comboBox25.Name" xml:space="preserve">
@@ -1620,37 +1620,37 @@
   <data name="&gt;&gt;comboBox24.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+  <data name="odectiLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="odectiLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="odectiLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="odectiLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 21</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="odectiLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 25</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+  <data name="odectiLabel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+  <data name="odectiLabel.Text" xml:space="preserve">
     <value>&lt;== odečti</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="&gt;&gt;odectiLabel.Name" xml:space="preserve">
+    <value>odectiLabel</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.Parent" xml:space="preserve">
     <value>odecti</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;odectiLabel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="comboBox25.Location" type="System.Drawing.Point, System.Drawing">
@@ -1728,16 +1728,16 @@
   <data name="pricti1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;pricti1Label.Name" xml:space="preserve">
+    <value>pricti1Label</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.Parent" xml:space="preserve">
     <value>pricti1</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;comboBox31.Name" xml:space="preserve">
@@ -1821,37 +1821,37 @@
   <data name="&gt;&gt;pricti1.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+  <data name="pricti1Label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="pricti1Label.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="pricti1Label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="pricti1Label.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 15</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pricti1Label.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 25</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+  <data name="pricti1Label.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
+  <data name="pricti1Label.Text" xml:space="preserve">
     <value>přičti 1</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
+  <data name="&gt;&gt;pricti1Label.Name" xml:space="preserve">
+    <value>pricti1Label</value>
   </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.Parent" xml:space="preserve">
     <value>pricti1</value>
   </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pricti1Label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="comboBox31.Location" type="System.Drawing.Point, System.Drawing">
@@ -1980,16 +1980,16 @@
   <data name="odecti1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
+  <data name="&gt;&gt;odecti1Label.Name" xml:space="preserve">
+    <value>odecti1Label</value>
   </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.Parent" xml:space="preserve">
     <value>odecti1</value>
   </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;comboBox27.Name" xml:space="preserve">
@@ -2073,37 +2073,37 @@
   <data name="&gt;&gt;odecti1.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+  <data name="odecti1Label.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="odecti1Label.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>
   </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="odecti1Label.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="odecti1Label.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 15</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="odecti1Label.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
   </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+  <data name="odecti1Label.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
+  <data name="odecti1Label.Text" xml:space="preserve">
     <value>odečti 1</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
+  <data name="&gt;&gt;odecti1Label.Name" xml:space="preserve">
+    <value>odecti1Label</value>
   </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.Parent" xml:space="preserve">
     <value>odecti1</value>
   </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;odecti1Label.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="comboBox27.Location" type="System.Drawing.Point, System.Drawing">
@@ -2404,7 +2404,7 @@
     <value>13</value>
   </data>
   <data name="inputTB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 321</value>
+    <value>12, 261</value>
   </data>
   <data name="inputTB.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2428,7 +2428,7 @@
     <value>12</value>
   </data>
   <data name="outputTB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 259</value>
+    <value>12, 317</value>
   </data>
   <data name="outputTB.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>

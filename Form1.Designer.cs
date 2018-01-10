@@ -38,21 +38,21 @@
             this.kompilovat = new System.Windows.Forms.Button();
             this.jumpIf = new System.Windows.Forms.Panel();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.skocKdyzLabel = new System.Windows.Forms.Label();
             this.comboBox35 = new System.Windows.Forms.ComboBox();
             this.inputPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.vstupLabel = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.jump = new System.Windows.Forms.Panel();
             this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.skocLabel = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.output = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.vystupLabel = new System.Windows.Forms.Label();
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox13 = new System.Windows.Forms.ComboBox();
@@ -60,33 +60,33 @@
             this.prirad = new System.Windows.Forms.Panel();
             this.comboBox18 = new System.Windows.Forms.ComboBox();
             this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.priradLabel = new System.Windows.Forms.Label();
             this.comboBox16 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox17 = new System.Windows.Forms.ComboBox();
             this.pricti = new System.Windows.Forms.Panel();
             this.comboBox19 = new System.Windows.Forms.ComboBox();
             this.comboBox20 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.prictiLabel = new System.Windows.Forms.Label();
             this.comboBox21 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox22 = new System.Windows.Forms.ComboBox();
             this.odecti = new System.Windows.Forms.Panel();
             this.comboBox23 = new System.Windows.Forms.ComboBox();
             this.comboBox24 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.odectiLabel = new System.Windows.Forms.Label();
             this.comboBox25 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox26 = new System.Windows.Forms.ComboBox();
             this.pricti1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pricti1Label = new System.Windows.Forms.Label();
             this.comboBox31 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox29 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox30 = new System.Windows.Forms.ComboBox();
             this.odecti1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.odecti1Label = new System.Windows.Forms.Label();
             this.comboBox27 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox33 = new System.Windows.Forms.ComboBox();
@@ -174,7 +174,7 @@
             this.jumpIf.BackColor = System.Drawing.Color.Blue;
             this.jumpIf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.jumpIf.Controls.Add(this.comboBox4);
-            this.jumpIf.Controls.Add(this.label12);
+            this.jumpIf.Controls.Add(this.skocKdyzLabel);
             this.jumpIf.Controls.Add(this.comboBox35);
             this.jumpIf.Controls.Add(this.comboBox5);
             this.jumpIf.Controls.Add(this.priradit);
@@ -192,11 +192,12 @@
             resources.ApplyResources(this.comboBox4, "comboBox4");
             this.comboBox4.Name = "comboBox4";
             // 
-            // label12
+            // skocKdyzLabel
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Name = "label12";
+            resources.ApplyResources(this.skocKdyzLabel, "skocKdyzLabel");
+            this.skocKdyzLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.skocKdyzLabel.Name = "skocKdyzLabel";
+            this.skocKdyzLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.skocKdyzLabel_MouseClick);
             // 
             // comboBox35
             // 
@@ -209,7 +210,7 @@
             resources.ApplyResources(this.inputPanel, "inputPanel");
             this.inputPanel.BackColor = System.Drawing.Color.Green;
             this.inputPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.inputPanel.Controls.Add(this.label2);
+            this.inputPanel.Controls.Add(this.vstupLabel);
             this.inputPanel.Controls.Add(this.comboBox1);
             this.inputPanel.Controls.Add(this.button1);
             this.inputPanel.Controls.Add(this.comboBox2);
@@ -218,11 +219,12 @@
             this.inputPanel.Tag = "\"vstup\"";
             this.inputPanel.Click += new System.EventHandler(this.inputPanel_Click);
             // 
-            // label2
+            // vstupLabel
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.vstupLabel, "vstupLabel");
+            this.vstupLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.vstupLabel.Name = "vstupLabel";
+            this.vstupLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.vstupLabel_MouseClick);
             // 
             // comboBox1
             // 
@@ -248,7 +250,7 @@
             this.jump.BackColor = System.Drawing.Color.Blue;
             this.jump.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.jump.Controls.Add(this.comboBox11);
-            this.jump.Controls.Add(this.label3);
+            this.jump.Controls.Add(this.skocLabel);
             this.jump.Controls.Add(this.comboBox9);
             this.jump.Controls.Add(this.button5);
             this.jump.Controls.Add(this.comboBox10);
@@ -262,11 +264,12 @@
             resources.ApplyResources(this.comboBox11, "comboBox11");
             this.comboBox11.Name = "comboBox11";
             // 
-            // label3
+            // skocLabel
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.skocLabel, "skocLabel");
+            this.skocLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.skocLabel.Name = "skocLabel";
+            this.skocLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.skocLabel_MouseClick);
             // 
             // comboBox9
             // 
@@ -291,7 +294,7 @@
             resources.ApplyResources(this.output, "output");
             this.output.BackColor = System.Drawing.Color.Green;
             this.output.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.output.Controls.Add(this.label4);
+            this.output.Controls.Add(this.vystupLabel);
             this.output.Controls.Add(this.comboBox12);
             this.output.Controls.Add(this.button6);
             this.output.Controls.Add(this.comboBox13);
@@ -300,11 +303,12 @@
             this.output.Tag = "\"vystup\"";
             this.output.MouseClick += new System.Windows.Forms.MouseEventHandler(this.output_MouseClick);
             // 
-            // label4
+            // vystupLabel
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.vystupLabel, "vystupLabel");
+            this.vystupLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.vystupLabel.Name = "vystupLabel";
+            this.vystupLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.vystupLabel_MouseClick);
             // 
             // comboBox12
             // 
@@ -337,7 +341,7 @@
             this.prirad.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.prirad.Controls.Add(this.comboBox18);
             this.prirad.Controls.Add(this.comboBox15);
-            this.prirad.Controls.Add(this.label5);
+            this.prirad.Controls.Add(this.priradLabel);
             this.prirad.Controls.Add(this.comboBox16);
             this.prirad.Controls.Add(this.button2);
             this.prirad.Controls.Add(this.comboBox17);
@@ -358,11 +362,12 @@
             resources.ApplyResources(this.comboBox15, "comboBox15");
             this.comboBox15.Name = "comboBox15";
             // 
-            // label5
+            // priradLabel
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Name = "label5";
+            resources.ApplyResources(this.priradLabel, "priradLabel");
+            this.priradLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.priradLabel.Name = "priradLabel";
+            this.priradLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.priradLabel_MouseClick);
             // 
             // comboBox16
             // 
@@ -389,7 +394,7 @@
             this.pricti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pricti.Controls.Add(this.comboBox19);
             this.pricti.Controls.Add(this.comboBox20);
-            this.pricti.Controls.Add(this.label6);
+            this.pricti.Controls.Add(this.prictiLabel);
             this.pricti.Controls.Add(this.comboBox21);
             this.pricti.Controls.Add(this.button3);
             this.pricti.Controls.Add(this.comboBox22);
@@ -409,11 +414,12 @@
             resources.ApplyResources(this.comboBox20, "comboBox20");
             this.comboBox20.Name = "comboBox20";
             // 
-            // label6
+            // prictiLabel
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.prictiLabel, "prictiLabel");
+            this.prictiLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.prictiLabel.Name = "prictiLabel";
+            this.prictiLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.prictiLabel_MouseClick);
             // 
             // comboBox21
             // 
@@ -440,7 +446,7 @@
             this.odecti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.odecti.Controls.Add(this.comboBox23);
             this.odecti.Controls.Add(this.comboBox24);
-            this.odecti.Controls.Add(this.label7);
+            this.odecti.Controls.Add(this.odectiLabel);
             this.odecti.Controls.Add(this.comboBox25);
             this.odecti.Controls.Add(this.button4);
             this.odecti.Controls.Add(this.comboBox26);
@@ -460,12 +466,13 @@
             resources.ApplyResources(this.comboBox24, "comboBox24");
             this.comboBox24.Name = "comboBox24";
             // 
-            // label7
+            // odectiLabel
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Firebrick;
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Name = "label7";
+            resources.ApplyResources(this.odectiLabel, "odectiLabel");
+            this.odectiLabel.BackColor = System.Drawing.Color.Firebrick;
+            this.odectiLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.odectiLabel.Name = "odectiLabel";
+            this.odectiLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.odectiLabel_MouseClick);
             // 
             // comboBox25
             // 
@@ -490,7 +497,7 @@
             resources.ApplyResources(this.pricti1, "pricti1");
             this.pricti1.BackColor = System.Drawing.Color.DarkOrange;
             this.pricti1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pricti1.Controls.Add(this.label9);
+            this.pricti1.Controls.Add(this.pricti1Label);
             this.pricti1.Controls.Add(this.comboBox31);
             this.pricti1.Controls.Add(this.label8);
             this.pricti1.Controls.Add(this.comboBox29);
@@ -500,12 +507,13 @@
             this.pricti1.Tag = "\"priciti1\"";
             this.pricti1.Click += new System.EventHandler(this.pricti1_Click);
             // 
-            // label9
+            // pricti1Label
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.BackColor = System.Drawing.Color.DarkOrange;
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Name = "label9";
+            resources.ApplyResources(this.pricti1Label, "pricti1Label");
+            this.pricti1Label.BackColor = System.Drawing.Color.DarkOrange;
+            this.pricti1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.pricti1Label.Name = "pricti1Label";
+            this.pricti1Label.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pricti1Label_MouseClick);
             // 
             // comboBox31
             // 
@@ -543,7 +551,7 @@
             resources.ApplyResources(this.odecti1, "odecti1");
             this.odecti1.BackColor = System.Drawing.Color.DarkOrange;
             this.odecti1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.odecti1.Controls.Add(this.label10);
+            this.odecti1.Controls.Add(this.odecti1Label);
             this.odecti1.Controls.Add(this.comboBox27);
             this.odecti1.Controls.Add(this.label11);
             this.odecti1.Controls.Add(this.comboBox33);
@@ -553,13 +561,14 @@
             this.odecti1.Tag = "\"odecti1\"";
             this.odecti1.Click += new System.EventHandler(this.odecti1_Click);
             // 
-            // label10
+            // odecti1Label
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.BackColor = System.Drawing.Color.DarkOrange;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.odecti1Label, "odecti1Label");
+            this.odecti1Label.BackColor = System.Drawing.Color.DarkOrange;
+            this.odecti1Label.Cursor = System.Windows.Forms.Cursors.Default;
+            this.odecti1Label.ForeColor = System.Drawing.SystemColors.Control;
+            this.odecti1Label.Name = "odecti1Label";
+            this.odecti1Label.MouseClick += new System.Windows.Forms.MouseEventHandler(this.odecti1Label_MouseClick);
             // 
             // comboBox27
             // 
@@ -810,22 +819,22 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label vstupLabel;
         private System.Windows.Forms.Panel jump;
         private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label skocLabel;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.Panel output;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label vystupLabel;
         private System.Windows.Forms.ComboBox comboBox12;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.ComboBox comboBox14;
         private System.Windows.Forms.Panel prirad;
         private System.Windows.Forms.ComboBox comboBox15;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label priradLabel;
         private System.Windows.Forms.ComboBox comboBox16;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox17;
@@ -833,14 +842,14 @@
         private System.Windows.Forms.Panel pricti;
         private System.Windows.Forms.ComboBox comboBox19;
         private System.Windows.Forms.ComboBox comboBox20;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label prictiLabel;
         private System.Windows.Forms.ComboBox comboBox21;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox22;
         private System.Windows.Forms.Panel odecti;
         private System.Windows.Forms.ComboBox comboBox23;
         private System.Windows.Forms.ComboBox comboBox24;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label odectiLabel;
         private System.Windows.Forms.ComboBox comboBox25;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox26;
@@ -850,16 +859,16 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox comboBox30;
         private System.Windows.Forms.ComboBox comboBox31;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label pricti1Label;
         private System.Windows.Forms.ComboBox comboBox35;
         private System.Windows.Forms.Panel odecti1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label odecti1Label;
         private System.Windows.Forms.ComboBox comboBox27;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox33;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ComboBox comboBox34;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label skocKdyzLabel;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox konzole;
         private System.Windows.Forms.GroupBox groupBox1;
