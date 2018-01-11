@@ -144,7 +144,7 @@ namespace noMansResourceMachine
             else if (argument1 == int.MaxValue - 5)
                 return this.hodnotaE;
             else if (argument1 == int.MaxValue - 6)
-                return this.hodnotaF;                         
+                return this.hodnotaF;                    
 
             else
                 return argument1;

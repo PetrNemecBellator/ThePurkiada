@@ -379,7 +379,6 @@ namespace noMansResourceMachine
                     this.selected = true;
                     oneIsalreadySelected = false;
                     setBlokPoint(e.X + 20, e.Y + 20);
-
                 }
                 
 
@@ -464,6 +463,7 @@ namespace noMansResourceMachine
                     //setUPButtonloaton(300, blok.Top);
 
                 }
+                selected = false;
             }
             /*
                setZokrouhlenouPozici(e.Y); 
@@ -594,10 +594,7 @@ namespace noMansResourceMachine
                     this.selected = true;
                     oneIsalreadySelected = false;
                     setBlokPoint(e.X + 20, e.Y + 20);
-                    if (selected)
-                    {
 
-                    }
                     
                     
                 }

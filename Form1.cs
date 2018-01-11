@@ -316,7 +316,7 @@ namespace noMansResourceMachine
                         int kamSkocit = prikazy[aktualniRadek][4];
                         if (kamSkocit < 0 || kamSkocit > prikazy.Count)
                         {
-                            // MessageBox.Show("mmmmm lysarny " + prikazy[aktualniRadek][1].ToString() + " prikk " + prikazy.Count.ToString());
+                             MessageBox.Show("Nelze skocit na radek"+kamSkocit.ToString(),"Chyba!!");
                         }
                         else
                         {
@@ -345,13 +345,13 @@ namespace noMansResourceMachine
                                 {
                                     MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " < " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     aktualniRadek = kamSkocit - 2;
-                                   konzole.AppendText(aktualniRadek + 1+". ");
+                                    konzole.AppendText(aktualniRadek + 1+". ");
                                     konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
-                                    MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " = " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
+                                    MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " < " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     konzole.AppendText(aktualniRadek + 1+". ");
                                     konzole.AppendText("Podminka nesplnena ");
                                     konzole.AppendText(Environment.NewLine);
@@ -370,7 +370,7 @@ namespace noMansResourceMachine
                                 }
                                 else
                                 {
-                                    MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " = " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
+                                    MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " > " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     konzole.AppendText(aktualniRadek + 1+". ");
                                     konzole.AppendText("Podminka nesplnena ");
                                     konzole.AppendText(Environment.NewLine);
