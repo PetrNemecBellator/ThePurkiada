@@ -257,7 +257,7 @@ namespace noMansResourceMachine
             {
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                blok.Controls.Add(argument1cb);
+                blok.Controls.Add(argument2cb);
 
                 nazevPrikazu.SetBounds(80, 25, 150, 30);
                 nazevPrikazu.Text = "==> výstup";
@@ -267,9 +267,9 @@ namespace noMansResourceMachine
 
                 blok.BackColor = Color.FromArgb(255, 23, 99, 13);
 
-                argument1cb.Text = "-";
-                argument1cb.Size = new Size(30, 00);
-                argument1cb.Location = new Point(5, 20);
+                argument2cb.Text = "-";
+                argument2cb.Size = new Size(30, 00);
+                argument2cb.Location = new Point(5, 20);
             }
             else if (typ == 7)
             {
@@ -637,31 +637,43 @@ namespace noMansResourceMachine
         public int getArgument2()
         {
             int cislo = 0;
-            if ('A' == char.Parse(argument2cb.Text.ToString()) || 'B' == char.Parse(argument2cb.Text.ToString()) || 'C' == char.Parse(argument2cb.Text.ToString()) || 'D' == char.Parse(argument2cb.Text.ToString()) || 'E' == char.Parse(argument2cb.Text.ToString()) || 'F' == char.Parse(argument2cb.Text.ToString()))
+            if (this.typ ==6)
             {
-
-
-                if ('A' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 1;
+               if ( int.TryParse(this.argument2cb.Text ,out cislo))
+                {
+                    if (cislo == 0 || cislo == 1)
+                    {
+                        return cislo;
+                    }
+                    
+                    
+                        
+                }
+            }
+            if (this.typ == 3)
+            {
+                if (int.TryParse(this.argument2cb.Text, out cislo)){
+                    
+                        return cislo;
+                    
+                }
+            }
+            if ('A' == char.Parse( this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue- 1;
                 else if ('B' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 2;
+                    return int.MaxValue - 2;
                 else if ('C' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 3;
+                    return int.MaxValue - 3;
                 else if ('D' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 4;
+                    return int.MaxValue - 4;
                 else if ('E' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 5;
+                    return int.MaxValue - 5;
                 else if ('F' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 6;
-                else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return 0;
+                return int.MaxValue - 6;
 
-            }
-            else if (int.TryParse(argument2cb.Text.ToString(), out cislo))
-            {
-                return cislo;
-            }
 
+
+            //MessageBox.Show("argument je spatne zadaný na řadku: "+((this.posY/85)+1).ToString(), "Chyba!!");
             return -1;
 
         }

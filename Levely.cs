@@ -110,6 +110,10 @@ namespace noMansResourceMachine
         }
         public int getInput()
         {
+            if (this.input.Count == 0) {
+                MessageBox.Show("Chyba","došli inputy nemužeš brat další čísla");
+                return 7012;
+            }
             int x = this.input[0];
             this.input.RemoveAt(0);
             return x;
@@ -129,40 +133,43 @@ namespace noMansResourceMachine
 
         public int? getHodnota(int argument1)
         {
-            if (argument1 == 1)
+            if (argument1 == int.MaxValue - 1)
                 return this.hodnotaA;
-            else if (argument1 == 2)
+            else if (argument1 == int.MaxValue - 2)
                 return this.hodnotaB;
-            else if (argument1 == 3)
+            else if (argument1 == int.MaxValue - 3)
                 return this.hodnotaC;
-            else if (argument1 == 4)
+            else if (argument1 == int.MaxValue - 4)
                 return this.hodnotaD;
-            else if (argument1 == 5)
+            else if (argument1 == int.MaxValue - 5)
                 return this.hodnotaE;
-            else if (argument1 == 6)
-                return this.hodnotaF;
-            else if (argument1 == 0)
-                return getInput();
+            else if (argument1 == int.MaxValue - 6)
+                return this.hodnotaF;                         
 
             else
-                return null;
+                return argument1;
 
         }
 
         public void setHodnota(int argument2, int operacaniHodnota)
         {
-            if (argument2 == 1)
+            /*
+             * 
+             
+             * 
+             */
+            if (argument2 ==1)
                 this.hodnotaA = operacaniHodnota;
             //textBox2.Text += "Hodnota promene A se zmenila na ";
-            else if (argument2 == 2)
+            else if (argument2 ==  2)
                 this.hodnotaB = operacaniHodnota;
-            else if (argument2 == 3)
+            else if (argument2 ==  3)
                 this.hodnotaC = operacaniHodnota;
-            else if (argument2 == 4)
+            else if (argument2 ==   4)
                 this.hodnotaD = operacaniHodnota;
             else if (argument2 == 5)
                 this.hodnotaE = operacaniHodnota;
-            else if (argument2 == 6)
+            else if (argument2 ==  6)
                 this.hodnotaF = operacaniHodnota;
 
         }
