@@ -65,9 +65,14 @@ namespace noMansResourceMachine
             
             aktualniRadek = -1;
             button9.Enabled = true;
-
+            pocetProvedenychInstrukci = 0;
+            pocetPouzitychPromenych = 0;
+            
             prikazy = new List<List<int>>();
             konzole.Clear();
+            inputTB.Clear();
+            outputTB.Clear();
+            outputHrace.Clear();
             //textBox1.Clear();
             vsechnyLevely[aktualniLevel] = new Levely( aktualniLevel) ;
             vypisKonzole();
@@ -94,7 +99,7 @@ namespace noMansResourceMachine
                         goto konecKompilace;
                     }
                     prikaz.Add(prikazySeVsim[i].getArgument1());
-                   // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
+                    // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
 
                     prikaz.Add(prikazySeVsim[i].getArgument2());
                     // textBox1.Text += "    argument2cb" + (prikazySeVsim[i].getArgument2()).ToString();
@@ -103,7 +108,7 @@ namespace noMansResourceMachine
                 }
                 else if (prikazySeVsim[i].getTyp() == 1)
                 {
-                    if (jeCisloOk(prikazySeVsim[i].getArgument1())){
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1())) {
                         blokChybaVipis("přičti jedna", i + 1);
                         goto konecKompilace;
                     }
@@ -119,11 +124,11 @@ namespace noMansResourceMachine
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                 }
                 else if (prikazySeVsim[i].getTyp() == 3) // jump if
-                {if((jeCisloOk(prikazySeVsim[i].getArgument1())&& jeCisloOk(prikazySeVsim[i].getArgument2())
-                    && jeCisloOk(prikazySeVsim[i].getArgument3()) && jeCisloOk(prikazySeVsim[i].getArgument4()))){
+                { /*if ((jeCisloOk(prikazySeVsim[i].getArgument1()) && jeCisloOk(prikazySeVsim[i].getArgument2())
+                     && jeCisloOk(prikazySeVsim[i].getArgument3()) && jeCisloOk(prikazySeVsim[i].getArgument4()))) {
                         blokChybaVipis("skoč pokud", i + 1);
                         goto konecKompilace;
-                    }
+                    }*/
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                     prikaz.Add(prikazySeVsim[i].getArgument2());
                     prikaz.Add(prikazySeVsim[i].getArgument3());
@@ -133,7 +138,7 @@ namespace noMansResourceMachine
                 {
                     if (jeCisloOk(prikazySeVsim[i].getArgument4()))
                     {
-                        blokChybaVipis("skoč",i + 1);
+                        blokChybaVipis("skoč", i + 1);
                         goto konecKompilace;
                     }
                     prikaz.Add(prikazySeVsim[i].getArgument4());
@@ -168,7 +173,7 @@ namespace noMansResourceMachine
                 //...
                 else if (prikazySeVsim[i].getTyp() == 7)
                 {
-                    if (jeCisloOk(prikazySeVsim[i].getArgument4()))
+                    if (jeCisloOk(prikazySeVsim[i].getArgument2()) || jeCisloOk(prikazySeVsim[i].getArgument1()))
                     {
                         blokChybaVipis("přicti", i + 1);
                         goto konecKompilace;
@@ -182,12 +187,26 @@ namespace noMansResourceMachine
                     //textBox1.Text += "  argument1cb" + (prikazy[i][1]).ToString();
                     //textBox1.Text += "  argument2cb" + (prikazy[i][2]).ToString();
                 }
+                else if (prikazySeVsim[i].getTyp() == 8)
+                {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument2()) || jeCisloOk(prikazySeVsim[i].getArgument1()))
+                    {
+                        blokChybaVipis("odecti", i + 1);
+                        goto konecKompilace;
+                    }
+
+                    prikaz.Add(prikazySeVsim[i].getArgument1());
+                    // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
+
+                    prikaz.Add(prikazySeVsim[i].getArgument2());
+                    // textBox1.Text += "    argument2cb" + (prikazySeVsim[i].getArgu
+                }
 
 
-                // ||
+                    // ||
 
 
-                prikazy.Add(prikaz);
+                    prikazy.Add(prikaz);
 
                 //textBox1.Text += "   typ " + (prikazy[i][0]).ToString();
 
@@ -314,19 +333,19 @@ namespace noMansResourceMachine
                     {
                         //MessageBox.Show("typ ", prikazy[aktualniRadek][0].ToString());
                         int kamSkocit = prikazy[aktualniRadek][4];
-                        if (kamSkocit < 0 || kamSkocit > prikazy.Count)
+                        if (kamSkocit < 0 || kamSkocit > prikazy.Count+1)
                         {
                              MessageBox.Show("Nelze skocit na radek"+kamSkocit.ToString(),"Chyba!!");
                         }
                         else
-                        {
+                        {                            
                             if (prikazy[aktualniRadek][3] == 1)
                             {
                                 if (vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]) == vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]))
                                 {
                                     MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() +" = "+ vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     aktualniRadek = kamSkocit - 2;
-                                   konzole.AppendText(aktualniRadek + 1+". ");
+                                    konzole.AppendText(aktualniRadek + 1+". ");
                                     konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
@@ -481,7 +500,7 @@ namespace noMansResourceMachine
                                             break;
                                         }
                                     }
-
+                                    /*
                                     if (vsechnyLevely[aktualniLevel].getMaxPocetPromenych() != 0)
                                     {
                                         for (int idk = 1; idk < 7; idk++)
@@ -499,7 +518,7 @@ namespace noMansResourceMachine
 
 
                                     }
-
+                                    */
                                     vyhra();
                                     break;
                                 }

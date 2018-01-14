@@ -112,7 +112,7 @@ namespace noMansResourceMachine
         {
             if (this.input.Count == 0) {
                 MessageBox.Show("Chyba","došli inputy nemužeš brat další čísla");
-                return 7012;
+                return int.MaxValue;
             }
             int x = this.input[0];
             this.input.RemoveAt(0);
@@ -153,23 +153,19 @@ namespace noMansResourceMachine
 
         public void setHodnota(int argument2, int operacaniHodnota)
         {
-            /*
-             * 
-             
-             * 
-             */
-            if (argument2 ==1)
+        
+            if (argument2 == int.MaxValue-1)
                 this.hodnotaA = operacaniHodnota;
             //textBox2.Text += "Hodnota promene A se zmenila na ";
-            else if (argument2 ==  2)
+            else if (argument2 == int.MaxValue - 2)
                 this.hodnotaB = operacaniHodnota;
-            else if (argument2 ==  3)
+            else if (argument2 == int.MaxValue - 3)
                 this.hodnotaC = operacaniHodnota;
-            else if (argument2 ==   4)
+            else if (argument2 == int.MaxValue - 4)
                 this.hodnotaD = operacaniHodnota;
-            else if (argument2 == 5)
+            else if (argument2 == int.MaxValue - 5)
                 this.hodnotaE = operacaniHodnota;
-            else if (argument2 ==  6)
+            else if (argument2 == int.MaxValue - 6)
                 this.hodnotaF = operacaniHodnota;
 
         }

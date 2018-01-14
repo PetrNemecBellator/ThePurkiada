@@ -106,7 +106,7 @@ namespace noMansResourceMachine
             argument2cb.Items.Add('D');
             argument2cb.Items.Add('E');
             argument2cb.Items.Add('F');
-            argument2cb.Items.Add('i');
+          
 
 
             if (this.typ == 0) // prirad
@@ -520,24 +520,40 @@ namespace noMansResourceMachine
         public int getArgument1()
         {
 
-            if ("A" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
-                return 1;
-            else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
-                return 2;
-            else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem).ToString()))
-                return 3;
-            else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
-                return 4;
-            else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
-                return 5;
-            else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)).ToString())
-                return 6;
-            else if ("i" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem).ToString()))
-                return 0;
+            if ("A" == (this.argument1cb.Text.ToString()) || "B" == (this.argument1cb.Text.ToString()) || "C" == (this.argument1cb.Text.ToString()) || "D" == (this.argument1cb.Text.ToString()) || "E" == (this.argument1cb.Text.ToString()) || "F" == (this.argument1cb.Text.ToString()))
+            {
+                MessageBox.Show("pohoda moc ty arggumrnty 1");
 
-            else
-                return 7012;
+                if ("A" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 1;
+                else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 2;
+                else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 3;
+                else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 4;
+                else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 5;
+                else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                    return int.MaxValue - 6;
+                else if ("A" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 1;
+                else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 2;
+                else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 3;
+                else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 4;
+                else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 5;
+                else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                    return int.MaxValue - 6;
 
+                //  else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                //      return int.MaxValue;
+
+            }
+            return -1;
         }
         private void setUPButtonloaton (int x, int y)
         {
@@ -634,46 +650,76 @@ namespace noMansResourceMachine
         public int getArgument2()
         {
             int cislo = 0;
-            if (this.typ ==6)
-            {
-               if ( int.TryParse(this.argument2cb.Text ,out cislo))
+
+                if (int.TryParse(this.argument2cb.Text, out cislo))
+                {
+
+                if (this.typ == 6)
                 {
                     if (cislo == 0 || cislo == 1)
                     {
                         return cislo;
                     }
-                    
-                    
+                    else
+                    {
+                        MessageBox.Show("Do bloku output nelze vložít nic kromě 0 a 1. ", "Chyba");
+                    }
+                 }
+                 if (this.typ == 3)
+                    {
                         
-                }
+                            if (cislo < 0)
+                            {
+                                MessageBox.Show( "Čislo nemu6e byt zaporne","Chyba");
+                                return -1;
+                            }
+                                    return cislo;
+                           }
+
+                
             }
-            if (this.typ == 3)
+            else if ("A" == (this.argument2cb.Text.ToString()) || "B" == (this.argument2cb.Text.ToString()) || "C" == (this.argument2cb.Text.ToString()) || "D" == (this.argument2cb.Text.ToString()) || "E" == (this.argument2cb.Text.ToString()) || "F" == (this.argument2cb.Text.ToString()))
             {
-                if (int.TryParse(this.argument2cb.Text, out cislo)){
-                    
-                        return cislo;
-                    
-                }
-            }
-            if ('A' == char.Parse( this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                    return int.MaxValue- 1;
-                else if ('B' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                MessageBox.Show("yadddddtimjo");
+
+                if ("A" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                    return int.MaxValue - 1;
+                else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
                     return int.MaxValue - 2;
-                else if ('C' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
                     return int.MaxValue - 3;
-                else if ('D' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
                     return int.MaxValue - 4;
-                else if ('E' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
                     return int.MaxValue - 5;
-                else if ('F' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
-                return int.MaxValue - 6;
+                else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                    return int.MaxValue - 6;
+                else if ("A" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 1;
+                else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 2;
+                else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 3;
+                else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 4;
+                else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 5;
+                else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                    return int.MaxValue - 6;
+                //  else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                //      return int.MaxValue;
+
+            }
+
+
+            return -1;
+
+        }
 
 
 
             //MessageBox.Show("argument je spatne zadaný na řadku: "+((this.posY/85)+1).ToString(), "Chyba!!");
-            return -1;
-
-        }
+            
         public int getArgument3()
         {
             if ("=" == (this.argument3cb.GetItemText(this.argument3cb.SelectedItem)).ToString())
