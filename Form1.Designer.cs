@@ -112,6 +112,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.napVystup = new System.Windows.Forms.Button();
             this.napVstup = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -744,10 +745,19 @@
             this.napVstup.UseVisualStyleBackColor = true;
             this.napVstup.Click += new System.EventHandler(this.button18_Click);
             // 
+            // button10
+            // 
+            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            resources.ApplyResources(this.button10, "button10");
+            this.button10.Name = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.napVstup);
             this.Controls.Add(this.napVystup);
             this.Controls.Add(this.button16);
@@ -890,6 +900,7 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button napVystup;
         private System.Windows.Forms.Button napVstup;
+        private System.Windows.Forms.Button button10;
     }
 }
 

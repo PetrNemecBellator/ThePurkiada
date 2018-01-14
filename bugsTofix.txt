@@ -1,3 +1,4 @@
 pada u mnoho nasobneho vypsani chyb
 drag and drop sistem
 char na strin vzjmak
+              scrolbar pozice pred potom na0 a pka na pred u ▲▼ a pridavani bloku

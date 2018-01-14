@@ -18,6 +18,7 @@ namespace noMansResourceMachine
         private int posY;
         public Label nazevPrikazu = new Label();
         private int typ;
+        private int radekIndex;
         public ComboBox argument1cb = new ComboBox();
         public ComboBox argument2cb = new ComboBox();
         public ComboBox argument3cb = new ComboBox();
@@ -34,11 +35,12 @@ namespace noMansResourceMachine
         private static List<PrikazZobrazeni> prikazySeVsim;
         public PrikazZobrazeni(int PosY, int typ, Panel scrollO)
         {
-            this.posY = PosY * 85 + 1;
+            radekIndex = PosY;
+            this.posY = PosY * 85;
             this.typ = typ;
             blok.Width = 200;
             blok.Height = 65;
-            blok.Top = (posY);
+            blok.Top = PosY * 85;
             blok.Left = (50);
 
             // button to navigate blok
@@ -319,13 +321,16 @@ namespace noMansResourceMachine
 
         private void DownButton_MouseClick(object sender, MouseEventArgs e)
         {
+            MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() +"souradnice:" + this.blok.Top.ToString());
             if (Form1.getAktpocet()-1 == getIndex())
             {
                 MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže","Varování!");
             }
             else
             {
-                Form1.pridejDoPoleImaze(getIndex() + 1, getIndex());
+              
+                Form1.pridejDoPoleImaze(getIndex() + 1,getIndex());
+                this.radekIndex += 1;
                 Form1.zmenPole();
             }
         }
@@ -337,8 +342,10 @@ namespace noMansResourceMachine
                 MessageBox.Show("Dany blok je už nahoře nelze ho přesunout vyše","Varování");
             }
             else
-            {                
-                Form1.pridejDoPoleImaze(getIndex()-1 , getIndex());                
+            {
+                
+                Form1.pridejDoPoleImaze(getIndex()-1 , getIndex());
+                this.radekIndex -= 1;
                 Form1.zmenPole();
              }
          }
@@ -582,6 +589,7 @@ namespace noMansResourceMachine
         {
             blok.Top = y;
             blok.Left = x;
+            this.posY = y;
         }
         public Panel getBlok()
         {
@@ -593,7 +601,7 @@ namespace noMansResourceMachine
         }
         public int getIndex()
         {
-            return (blok.Top / 85);
+            return this.posY/85;
            // ArrayList ar = (ArrayList)blok.Tag;
             //return (int)ar[0];
         }

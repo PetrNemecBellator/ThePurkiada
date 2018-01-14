@@ -31,7 +31,7 @@ namespace noMansResourceMachine
         {
             input.Clear();
 
-            if (aktualniLevel == 0)
+            if (aktualniLevel == 1)
             {
                 maxPocetRadku = 4;
                 maxPocetPrvedenychInstrukci = 4;
@@ -51,7 +51,42 @@ namespace noMansResourceMachine
                 this.hodnotaF = null;
 
             }
-            else if (aktualniLevel == 1)
+            else if (aktualniLevel == 0)
+            {
+                maxPocetRadku = 10;
+                maxPocetPrvedenychInstrukci = 999;
+                maxPocetPromenych = 1;
+                typVstupu = "10 cisel od 0 do 12 ";
+                zadaniText = "Pokud je cislo sudy, tak dej do vystupu 0, pokud lichy, do vystupu dej 1 (napr.: vstup: 5,8,1,... vystup: 1,0,1,...)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
+                for(int i = 0; i < 10; i++)
+                {
+                    input.Add(rnd.Next(1, 12));
+                }
+                
+                for(int i =0; i < 10;i++)
+                {
+                    if(input[i] % 2 == 0)
+                    {
+                        output.Add(0);
+                    }else
+                    {
+                        output.Add(1);
+                    }
+                    
+                    
+                }
+                
+
+                this.hodnotaA = null;
+                this.hodnotaB = null;
+                this.hodnotaC = null;
+                this.hodnotaD = null;
+                this.hodnotaE = null;
+                this.hodnotaF = null;
+                
+            }
+            else if (aktualniLevel == 6)
             {
                 maxPocetRadku = 8;
                 maxPocetPrvedenychInstrukci = 999;
@@ -71,7 +106,7 @@ namespace noMansResourceMachine
 
 
             }
-            else if (aktualniLevel == 2)
+            else if (aktualniLevel == 5)
             {
                 maxPocetRadku = 999;
                 maxPocetPrvedenychInstrukci = 6;
