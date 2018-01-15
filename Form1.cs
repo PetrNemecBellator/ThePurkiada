@@ -23,7 +23,7 @@ namespace noMansResourceMachine
         List<int> prikaz = new List<int>();
         List<int> outputHrace = new List<int>();
       static  List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-        Levely[] vsechnyLevely= new Levely[3] { new Levely(0), new Levely(1), new Levely(2) };
+        Levely[] vsechnyLevely= new Levely[7] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6) };
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         int aktualniLevel = 0;
@@ -42,11 +42,13 @@ namespace noMansResourceMachine
             //            vypisKonzole();
             zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
             prijmeni.BackColor = Color.Red;
+            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál \n toto info lze zobrazit kliknutim na tlačitko vysvetleni hry", "Zakldani informace");
+            
 
 
 
         }
-        
+
         public static String getJmeno ()
         {
             return jmeno.ToUpper();
@@ -253,7 +255,7 @@ namespace noMansResourceMachine
              var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
 
              int k = 0;
-             for (int i = 0; i < 7; i++)
+             for (int i = 0; i <vsechnyLevely.Count(); i++)
              {
                  k += 2;
                  if (k > vr[0].ToString().Count())
@@ -367,6 +369,7 @@ namespace noMansResourceMachine
                     {
                         //MessageBox.Show("typ ", prikazy[aktualniRadek][0].ToString());
                         int kamSkocit = prikazy[aktualniRadek][4];
+                       
                         if (kamSkocit < 0 || kamSkocit > prikazy.Count+1)
                         {
                              MessageBox.Show("Nelze skocit na radek: "+kamSkocit.ToString(),"Chyba!!");
@@ -442,6 +445,7 @@ namespace noMansResourceMachine
                     {
                         //MessageBox.Show("typ ", prikazy[aktualniRadek][0].ToString());
                         int kamSkocit = prikazy[aktualniRadek][1];
+                        
                         if (kamSkocit < 0 || kamSkocit > prikazy.Count)
                         {
                             // MessageBox.Show("mmmmm lysarny " + prikazy[aktualniRadek][1].ToString() + " prikk " + prikazy.Count.ToString());
@@ -703,8 +707,15 @@ namespace noMansResourceMachine
 
         private void everyBtnClick(int typPrikazu)
         {
-            kompilovat.Enabled = true;
-            button9.Enabled = false;
+            if (textPrijmeni.Enabled == false)
+            {
+                kompilovat.Enabled = true;
+                button9.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Neni zadano přijmení", "Přijmení");
+            }
 
             prikazySeVsim.Add(new PrikazZobrazeni(prikazySeVsim.Count, typPrikazu, panel_scrolllll));
             // prikazySeVsim[prikazySeVsim.Count - 1].setBlokPoint(200, 20);
@@ -983,10 +994,10 @@ namespace noMansResourceMachine
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Na pravo se nachází příkazove bloky z kterých se bude skladat program." +
-                     "Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) "
-                +"\n pouze do výstupu a skoč když (třetí pole z leva) lze davat čisla"+
-                "\n pote co klikneš na start vygeneruji se nahodna čisla do vstupu se kterými bude program pracovat" , "Zakldani informace");
+
+            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál.", "Zakldani informace");
+
+
         }
 
         private void prijmeni_TextChanged(object sender, EventArgs e)
@@ -994,6 +1005,9 @@ namespace noMansResourceMachine
             if (prijmeni.Text == "")
             {
                 prijmeni.BackColor = Color.Red;
+
+                kompilovat.Enabled = false;
+                button9.Enabled = false;
             }
             else
             {
@@ -1007,6 +1021,8 @@ namespace noMansResourceMachine
             {
                 prijmeni.BackColor = Color.Red;
                 textPrijmeni.BackColor = Color.Red;
+                kompilovat.Enabled = false;
+                button9.Enabled = false;
             }
             else
             {
@@ -1017,6 +1033,8 @@ namespace noMansResourceMachine
                 prijmeni.Enabled = false;
                 label2.Enabled = false;
                 label2.Visible = false;
+               
+                
             }
         }
 

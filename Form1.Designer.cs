@@ -116,6 +116,7 @@
             this.prijmeni = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textPrijmeni = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -771,16 +772,23 @@
             // 
             // textPrijmeni
             // 
-            this.textPrijmeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.textPrijmeni, "textPrijmeni");
+            this.textPrijmeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textPrijmeni.Name = "textPrijmeni";
             this.textPrijmeni.UseVisualStyleBackColor = true;
             this.textPrijmeni.Click += new System.EventHandler(this.textPrijmeni_Click);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Name = "label3";
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textPrijmeni);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.prijmeni);
@@ -931,6 +939,7 @@
         private System.Windows.Forms.TextBox prijmeni;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button textPrijmeni;
+        private System.Windows.Forms.Label label3;
     }
 }
 
