@@ -113,6 +113,9 @@
             this.napVystup = new System.Windows.Forms.Button();
             this.napVstup = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.prijmeni = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textPrijmeni = new System.Windows.Forms.Button();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -747,16 +750,40 @@
             // 
             // button10
             // 
-            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             resources.ApplyResources(this.button10, "button10");
+            this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button10.Name = "button10";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // prijmeni
+            // 
+            resources.ApplyResources(this.prijmeni, "prijmeni");
+            this.prijmeni.Name = "prijmeni";
+            this.prijmeni.TextChanged += new System.EventHandler(this.prijmeni_TextChanged);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Name = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textPrijmeni
+            // 
+            this.textPrijmeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            resources.ApplyResources(this.textPrijmeni, "textPrijmeni");
+            this.textPrijmeni.Name = "textPrijmeni";
+            this.textPrijmeni.UseVisualStyleBackColor = true;
+            this.textPrijmeni.Click += new System.EventHandler(this.textPrijmeni_Click);
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textPrijmeni);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.prijmeni);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.napVstup);
             this.Controls.Add(this.napVystup);
@@ -901,6 +928,9 @@
         private System.Windows.Forms.Button napVystup;
         private System.Windows.Forms.Button napVstup;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox prijmeni;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button textPrijmeni;
     }
 }
 

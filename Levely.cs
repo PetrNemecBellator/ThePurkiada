@@ -25,13 +25,16 @@ namespace noMansResourceMachine
       private int? hodnotaE;
       private  int? hodnotaF;
 
+        private int aktualniLevel;
+
         private static Random rnd = new Random();
 
         public Levely(int aktualniLevel)  // vsechny zadani: vynasob A s B, z 20 udelej 5, vynasob vstup sestnacti ,
         {
             input.Clear();
+            this.aktualniLevel = aktualniLevel ;
 
-            if (aktualniLevel == 1)
+            if (aktualniLevel == 0)
             {
                 maxPocetRadku = 4;
                 maxPocetPrvedenychInstrukci = 4;
@@ -146,12 +149,47 @@ namespace noMansResourceMachine
         public int getInput()
         {
             if (this.input.Count == 0) {
-                MessageBox.Show("Chyba","došli inputy nemužeš brat další čísla");
+                MessageBox.Show("došli inputy nemužeš brat další čísla", "Chyba");
                 return int.MaxValue;
             }
             int x = this.input[0];
             this.input.RemoveAt(0);
             return x;
+        }
+        public static int k = 0;
+        public string getWinCode()
+        {
+            /*
+
+                        var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
+                        string s = "";
+                        int k = 0;
+                        for (int i = 0; i < 7; i++)
+                        {
+                            k += 2;
+                            if (k > vr[0].ToString().Count())
+                            {
+                                k = 0;
+                            }
+                            s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
+                        }
+
+
+
+                         */
+            var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
+            string s = "";
+            
+
+                k += 2;
+                if (k > vr[0].ToString().Count())
+                {
+                    k = 0;
+                }
+            MessageBox.Show(k.ToString() + " " + aktualniLevel);
+            return "\n" + vr[0].ToString().Insert(k, aktualniLevel.ToString()) + (aktualniLevel * 6).ToString();
+
+
         }
         public List<int> getInputCely()
         {

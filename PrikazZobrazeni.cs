@@ -54,16 +54,16 @@ namespace noMansResourceMachine
             scrollO.Controls.Add(downButton);
             scrollO.Controls.Add(deleteButton);
             int offset = 20;
-            upButton.SetBounds(250,offset+ this.posY, 20, 20);
+            upButton.SetBounds(250, offset + this.posY, 20, 20);
             upButton.Text = "▲";
             upButton.ForeColor = Color.Black;
-            downButton.SetBounds(250, offset+ this.posY +20, 20, 20);
+            downButton.SetBounds(250, offset + this.posY + 20, 20, 20);
             downButton.Text = "▼";
             downButton.ForeColor = Color.Black;
-            deleteButton.SetBounds(270, offset+ this.posY +13,20,20);
+            deleteButton.SetBounds(270, offset + this.posY + 13, 20, 20);
             deleteButton.Text = "X";
             deleteButton.ForeColor = Color.Black;
-            
+
             //button to navigate blok
 
             nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
@@ -78,12 +78,12 @@ namespace noMansResourceMachine
             cisloRadku.Tag = tagAndOrigin;
 
             blokONline = fakeAktualniPocetBloku;
-          /*  for (int i = 1; i < fakeAktualniPocetBloku + 1; i++)
-            {
-                argument4cb.Items.Add(i);
-            }/*/
+            /*  for (int i = 1; i < fakeAktualniPocetBloku + 1; i++)
+              {
+                  argument4cb.Items.Add(i);
+              }/*/
 
-            
+
             this.cisloRadku.Font = new Font("Arial", 15);
             this.cisloRadku.BackColor = Color.FromArgb(1, 64, 64, 64);
             this.cisloRadku.Text = (fakeAktualniPocetBloku + 1).ToString();
@@ -108,7 +108,7 @@ namespace noMansResourceMachine
             argument2cb.Items.Add('D');
             argument2cb.Items.Add('E');
             argument2cb.Items.Add('F');
-          
+
 
 
             if (this.typ == 0) // prirad
@@ -168,7 +168,7 @@ namespace noMansResourceMachine
                 this.blok.Controls.Add(argument1cb);
 
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
-                this.nazevPrikazu.Text = "zmensi o 1";
+                this.nazevPrikazu.Text = "odečti 1";
                 this.nazevPrikazu.SetBounds(55, 25, 120, 40);
 
             }
@@ -176,7 +176,7 @@ namespace noMansResourceMachine
             {
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                nazevPrikazu.SetBounds(0, 0,150,30);
+                nazevPrikazu.SetBounds(0, 0, 150, 30);
                 nazevPrikazu.Text = "skoč když";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
@@ -185,16 +185,16 @@ namespace noMansResourceMachine
 
 
                 blok.BackColor = Color.FromArgb(255, 0, 0, 255);
-             
+
                 argument1cb.Text = "-";
                 argument1cb.Size = new Size(30, 00);
                 argument1cb.Location = new Point(20, 32);
                 blok.Controls.Add(argument1cb);
 
-                argument2cb.Text = "-";                
+                argument2cb.Text = "-";
                 argument2cb.Size = new Size(30, 00);
                 argument2cb.Location =
-                    new Point((50 * 2) , 32);  
+                    new Point((50 * 2), 32);
                 blok.Controls.Add(argument2cb);
 
                 argument3cb.Text = "-";
@@ -230,7 +230,7 @@ namespace noMansResourceMachine
 
 
                 blok.BackColor = Color.FromArgb(255, 0, 0, 255);
-                
+
                 // blok.MouseClick += Blok_MouseClick;
                 argument4cb.Text = "-";
                 argument4cb.Size = new Size(30, 00);
@@ -321,22 +321,42 @@ namespace noMansResourceMachine
 
         private void DownButton_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() +"souradnice:" + this.blok.Top.ToString());
-            if (Form1.getAktpocet()-1 == getIndex())
+            MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() + "souradnice:" + this.blok.Top.ToString());
+            if (Form1.getAktpocet() - 1 == getIndex())
             {
-                MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže","Varování!");
+                MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže", "Varování!");
             }
             else
             {
-              
-                Form1.pridejDoPoleImaze(getIndex() + 1,getIndex());
+
+                Form1.pridejDoPoleImaze(getIndex() + 1, getIndex());
                 this.radekIndex += 1;
                 Form1.zmenPole();
             }
         }
-
+        private static int maxHodScrollBar;
+        private static int minHodScrollBar;
+        private static void setminMaxValuescrollBar(int min, int max)
+        {
+            maxHodScrollBar = max;
+            minHodScrollBar =min;
+        }
+        private void jsouMiMaxvPohode()
+        {
+            //blbost
+            if (maxHodScrollBar != ScrolHelp.VerticalScroll.Maximum || maxHodScrollBar != ScrolHelp.VerticalScroll.Maximum) jsouMiMaxvPohode();
+           
+            
+        }
         private void UpButton_MouseClick(object sender, MouseEventArgs e)
         {
+            Point puvodniBod = ScrolHelp.AutoScrollPosition;
+            Point p = new Point(ScrolHelp.AutoScrollPosition.X, 0);
+            setminMaxValuescrollBar(ScrolHelp.VerticalScroll.Minimum, ScrolHelp.VerticalScroll.Maximum);
+            ScrolHelp.AutoScrollPosition= p;
+           // Thread.Sleep(5000);
+            MessageBox.Show("ten 1" +puvodniBod.ToString());
+
             if (getIndex() == 0)
             {
                 MessageBox.Show("Dany blok je už nahoře nelze ho přesunout vyše","Varování");
@@ -348,7 +368,11 @@ namespace noMansResourceMachine
                 this.radekIndex -= 1;
                 Form1.zmenPole();
              }
-         }
+           
+            ScrolHelp.AutoScrollPosition = puvodniBod;
+           
+            MessageBox.Show("te druhej"+ ScrolHelp.AutoScrollPosition.ToString());
+        }
 
         public Button getdownButton()
         {
@@ -529,7 +553,7 @@ namespace noMansResourceMachine
 
             if ("A" == (this.argument1cb.Text.ToString()) || "B" == (this.argument1cb.Text.ToString()) || "C" == (this.argument1cb.Text.ToString()) || "D" == (this.argument1cb.Text.ToString()) || "E" == (this.argument1cb.Text.ToString()) || "F" == (this.argument1cb.Text.ToString()))
             {
-                MessageBox.Show("pohoda moc ty arggumrnty 1");
+              //  MessageBox.Show("pohoda moc ty arggumrnty 1");
 
                 if ("A" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
                     return int.MaxValue - 1;
@@ -560,7 +584,7 @@ namespace noMansResourceMachine
                 //      return int.MaxValue;
 
             }
-            return -1;
+            return int.MaxValue;
         }
         private void setUPButtonloaton (int x, int y)
         {
@@ -671,24 +695,19 @@ namespace noMansResourceMachine
                     else
                     {
                         MessageBox.Show("Do bloku output nelze vložít nic kromě 0 a 1. ", "Chyba");
+                        return int.MaxValue;
                     }
                  }
                  if (this.typ == 3)
                     {
-                        
-                            if (cislo < 0)
-                            {
-                                MessageBox.Show( "Čislo nemu6e byt zaporne","Chyba");
-                                return -1;
-                            }
-                                    return cislo;
-                           }
+                    return cislo;
+                   }
 
                 
             }
             else if ("A" == (this.argument2cb.Text.ToString()) || "B" == (this.argument2cb.Text.ToString()) || "C" == (this.argument2cb.Text.ToString()) || "D" == (this.argument2cb.Text.ToString()) || "E" == (this.argument2cb.Text.ToString()) || "F" == (this.argument2cb.Text.ToString()))
             {
-                MessageBox.Show("yadddddtimjo");
+              //  MessageBox.Show("yadddddtimjo");
 
                 if ("A" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
                     return int.MaxValue - 1;
@@ -720,7 +739,7 @@ namespace noMansResourceMachine
             }
 
 
-            return -1;
+            return int.MaxValue;
 
         }
 
@@ -736,7 +755,7 @@ namespace noMansResourceMachine
                 return 2;
             else if (">" == (this.argument3cb.GetItemText(this.argument3cb.SelectedItem)).ToString())
                 return 3;
-            return 7012;
+            return int.MaxValue;
         }
         public int getArgument4()
         {
@@ -746,7 +765,7 @@ namespace noMansResourceMachine
                 return cislo;
             }
             //return 7012;
-            return 7012;
+            return int.MaxValue;
         }
 
         
