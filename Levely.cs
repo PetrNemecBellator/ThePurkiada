@@ -111,7 +111,7 @@ namespace noMansResourceMachine
                         output.Add(1);
                     }
                 }
-
+               
                 this.hodnotaA = 0;
                 this.hodnotaB = 0;
                 this.hodnotaC = 0;
@@ -127,17 +127,19 @@ namespace noMansResourceMachine
                 maxPocetRadku = 5;
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 1;
-                typVstupu = "číslo od 5 do 30";
+                typVstupu = "5 čísel od 5 do 8";
                 zadaniText = "Odpočet (napr.: vstup: 5,3 vystup: 5,4,3,2,1, 3,2,1)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
-                int nahoda = rnd.Next(5, 30);
-                input.Add(nahoda);
-
-                for (int i = nahoda; i > 0; i--)
+                for (int j = 0; j < 5; j++)
                 {
-                    output.Add(i);
-                }
+                    int nahoda = rnd.Next(5, 9);
+                    input.Add(nahoda);
 
+                    for (int i = nahoda; i > 0; i--)
+                    {
+                        output.Add(i);
+                    }
+                }
                 this.hodnotaA = 0;
                 this.hodnotaB = 0;
                 this.hodnotaC = 0;
@@ -309,7 +311,7 @@ namespace noMansResourceMachine
                 {
                     k = 0;
                 }
-            MessageBox.Show(k.ToString() + " " + aktualniLevel);
+            //MessageBox.Show(k.ToString() + " " + aktualniLevel);
             return "\n" + vr[0].ToString().Insert(k, aktualniLevel.ToString()) + (aktualniLevel * 6).ToString();
 
 
@@ -346,7 +348,10 @@ namespace noMansResourceMachine
                 return argument1;
 
         }
-
+        public int getPocetZbivajicichVzstupu()
+        {
+           return this.input.Count();
+        }
         public void setHodnota(int argument2, int operacaniHodnota)
         {
         

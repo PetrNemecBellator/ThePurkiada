@@ -66,9 +66,9 @@ namespace noMansResourceMachine
 
             //button to navigate blok
 
-            nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
+            //nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
             ScrolHelp = scrollO;
-            ScrolHelp.MouseMove += ScrolHelp_MouseMove;
+           // ScrolHelp.MouseMove += ScrolHelp_MouseMove;
             ScrolHelp.MouseClick += ScrolHelp_MouseClick1;
             //   Form1.zmenPocetBloku(1);
 
@@ -91,7 +91,7 @@ namespace noMansResourceMachine
             this.cisloRadku.ForeColor = Color.FromArgb(255, 0, 0, 0);
             scrollO.Controls.Add(cisloRadku);
 
-            blok.MouseClick += Blok_MouseClick1;
+          //  blok.MouseClick += Blok_MouseClick1;
 
 
 
@@ -313,7 +313,7 @@ namespace noMansResourceMachine
             if (dialogResult == DialogResult.Yes)
             {
                 ArrayList ar = this.tagAndOrigin;
-                Form1.deleFromMainArray((int)ar[0]);
+                Form1.deleFromMainArray(this.posY/85);
                 Form1.zmenPole();
             }
 
@@ -321,7 +321,7 @@ namespace noMansResourceMachine
 
         private void DownButton_MouseClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() + "souradnice:" + this.blok.Top.ToString());
+            //MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() + "souradnice:" + this.blok.Top.ToString());
             if (Form1.getAktpocet() - 1 == getIndex())
             {
                 MessageBox.Show("příkazoví blok už je na konci programu nelze posunout níže", "Varování!");
@@ -355,7 +355,7 @@ namespace noMansResourceMachine
             setminMaxValuescrollBar(ScrolHelp.VerticalScroll.Minimum, ScrolHelp.VerticalScroll.Maximum);
             ScrolHelp.AutoScrollPosition= p;
            // Thread.Sleep(5000);
-            MessageBox.Show("ten 1" +puvodniBod.ToString());
+        //    MessageBox.Show("ten 1" +puvodniBod.ToString());
 
             if (getIndex() == 0)
             {
@@ -371,7 +371,7 @@ namespace noMansResourceMachine
            
             ScrolHelp.AutoScrollPosition = puvodniBod;
            
-            MessageBox.Show("te druhej"+ ScrolHelp.AutoScrollPosition.ToString());
+          //  MessageBox.Show("te druhej"+ ScrolHelp.AutoScrollPosition.ToString());
         }
 
         public Button getdownButton()
@@ -423,7 +423,7 @@ namespace noMansResourceMachine
                 if (dialogResult == DialogResult.Yes)
                 {
                     ArrayList ar = this.tagAndOrigin;
-                    Form1.deleFromMainArray((int)ar[0]);
+                    Form1.deleFromMainArray((this.posY/85));
                     Form1.zmenPole();
                 }
             }
@@ -663,7 +663,7 @@ namespace noMansResourceMachine
                 if (dialogResult == DialogResult.Yes)
                 {
                     ArrayList ar = this.tagAndOrigin;
-                    Form1.deleFromMainArray((int)ar[0]);
+                    Form1.deleFromMainArray(this.posY/85);
                     Form1.zmenPole();
                 }
             }

@@ -35,6 +35,7 @@ namespace noMansResourceMachine
 
 
             InitializeComponent();
+            
             button9.Enabled = false;
             kompilovat.Enabled = false;
             poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1 };
@@ -243,7 +244,7 @@ namespace noMansResourceMachine
         {
             
             MessageBox.Show("Vzhral jsi: \n opis kod aktualniho levlu: " + vsechnyLevely[aktualniLevel].getWinCode() + "\n ches pokracovat","Vyhra");
-           
+            aktualniPocetBloku = 0;
             aktualniLevel++;
             prikazySeVsim.Clear();
             panel_scrolllll.Controls.Clear();
@@ -251,9 +252,9 @@ namespace noMansResourceMachine
             vypisKonzole();
             inputTB.Clear();
             outputTB.Clear();
-             String s = "";
+           /*  String s = "";
              var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
-
+            
              int k = 0;
              for (int i = 0; i <vsechnyLevely.Count(); i++)
              {
@@ -264,7 +265,7 @@ namespace noMansResourceMachine
                  }
                  s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
              }
-            MessageBox.Show(s);
+            MessageBox.Show(s);*/
             zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
             pocetProvedenychInstrukci = 0;
             pocetPouzitychPromenych = 0;
@@ -285,6 +286,10 @@ namespace noMansResourceMachine
                 MessageBox.Show("Pocet kroku je moc velky, musi byt pod 100");
                 goto konecProcesovani;
 
+            }else if(vsechnyLevely[aktualniLevel].getPocetZbivajicichVzstupu() == 0)
+            {
+                MessageBox.Show("Váš program je nejspíš chynný vyčerpal(a) jste všechny vstupy zkuste jej změnit a dat znovu start.","Chyba");
+                goto konecProcesovani;
             }
             for (int i = 0; i < int.Parse(velikostKroku.Text); i++)
             {
