@@ -62,7 +62,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 31;
                 maxPocetPromenych = 1;
                 typVstupu = "10 jakychkoli cisel";
-                zadaniText = "Do výstpu dej všechna čisla z výstupu (např.: vstup: 5,3,8,... výstup: 5,3,8,...) (použij blok skoč)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Do výstpu dej všechna čisla z vstupu (např.: vstup: 5,3,8,... výstup: 5,3,8,...) (použij blok skoč)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
 
 
@@ -89,7 +89,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 1;
                 typVstupu = "10 jakychkoliv cisel";
-                zadaniText = "Pokud je na vstupu cislo mensi nez 0, do vysupu dej 1. Pokud je na vstupu cislo vetsi nebo rovno nule, do vystupu dej 1@(napr.: vstup: 8,-5,-8,0,54,-1,... vystup: 1,0,0,1,1,0,...)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Pokud je na vstupu cislo mensi nez 0, do vysupu dej 0. Pokud je na vstupu cislo vetsi nebo rovno nule, do vystupu dej 1@(napr.: vstup: 8,-5,-8,0,54,-1,... vystup: 1,0,0,1,1,0,...)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
 
                 for (int i = 0; i < 10; i++)
@@ -214,7 +214,7 @@ namespace noMansResourceMachine
             else if (aktualniLevel == 6)
             {
                 maxPocetRadku = 999;
-                maxPocetPrvedenychInstrukci = 4;
+                maxPocetPrvedenychInstrukci = 6;
                 maxPocetPromenych = 999;
                 typVstupu = "1 jakekoli cislo ";
                 zadaniText = "Do vystupu dej vynasobeny sestnacti (napr.: vstup: 3 vystup: 42)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;

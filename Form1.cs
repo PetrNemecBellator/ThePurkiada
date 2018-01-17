@@ -102,7 +102,7 @@ namespace noMansResourceMachine
                 //textBox1.Text += "typ" + (prikazySeVsim[i].getTyp()).ToString();
                 if (prikazySeVsim[i].getTyp() == 0)
                 {
-                    if (prikazySeVsim[i].getArgument1() == int.MaxValue && prikazySeVsim[i].getArgument2() == int.MaxValue)
+                    if (prikazySeVsim[i].getArgument1() == int.MaxValue || prikazySeVsim[i].getArgument2() == int.MaxValue)
                     {
                         blokChybaVipis("přiřaď", i + 1);
                         nastalaChyba = true;
@@ -243,7 +243,7 @@ namespace noMansResourceMachine
         private void vyhra()
         {
             
-            MessageBox.Show("Vzhral jsi: \n opis kod aktualniho levlu: " + vsechnyLevely[aktualniLevel].getWinCode() + "\n ches pokracovat","Vyhra");
+            MessageBox.Show("Vyhral jsi: \n opiš kod aktualniho levlu: " + vsechnyLevely[aktualniLevel].getWinCode() + "\n cheš pokračovat","Vyhra");
             aktualniPocetBloku = 0;
             aktualniLevel++;
             prikazySeVsim.Clear();
@@ -286,11 +286,11 @@ namespace noMansResourceMachine
                 MessageBox.Show("Pocet kroku je moc velky, musi byt pod 100");
                 goto konecProcesovani;
 
-            }else if(vsechnyLevely[aktualniLevel].getPocetZbivajicichVzstupu() == 0)
+            }/*else if(vsechnyLevely[aktualniLevel].getPocetZbivajicichVzstupu()+1 == 0)
             {
                 MessageBox.Show("Váš program je nejspíš chynný vyčerpal(a) jste všechny vstupy zkuste jej změnit a dat znovu start.","Chyba");
-                goto konecProcesovani;
-            }
+             //   goto konecProcesovani;
+            }*/
             for (int i = 0; i < int.Parse(velikostKroku.Text); i++)
             {
 
@@ -472,7 +472,14 @@ namespace noMansResourceMachine
                     {
 
                         int specArgument1 = prikazy[aktualniRadek][1]; // kam
-                        vsechnyLevely[aktualniLevel].setHodnota(specArgument1, vsechnyLevely[aktualniLevel].getInput());
+                        int aktualniInput = vsechnyLevely[aktualniLevel].getInput();
+                        if (jeCisloOk(aktualniInput))
+                        {
+                            MessageBox.Show("Váš program je nejspíš chybnný vyčerpal(a) jste všechny vstupy zkuste jej změnit a dat znovu start.", "Chyba");
+                            goto konecProcesovani;
+                        }
+                        vsechnyLevely[aktualniLevel].setHodnota(specArgument1, aktualniInput);
+                       
                         //textbox text co se stalo(priradilo se A k B)
                         inputTB.Clear();
                         for (int mocforcylklu = 0; mocforcylklu < vsechnyLevely[aktualniLevel].getInputCely().Count(); mocforcylklu++)
@@ -1000,7 +1007,7 @@ namespace noMansResourceMachine
         private void button10_Click_1(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál.", "Zakldani informace");
+            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. císlo ze vstupu, a tak dál.", "Zakldani informace");
 
 
         }
