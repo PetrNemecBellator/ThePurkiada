@@ -95,7 +95,8 @@
             this.konzole = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel_scrolllll = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.napovedaDebug = new System.Windows.Forms.Button();
+            button9 = new System.Windows.Forms.Button();
             this.velikostKroku = new System.Windows.Forms.TextBox();
             this.zadani = new System.Windows.Forms.TextBox();
             this.inputTB = new System.Windows.Forms.TextBox();
@@ -117,6 +118,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textPrijmeni = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -608,8 +610,8 @@
             // 
             // konzole
             // 
-            resources.ApplyResources(this.konzole, "konzole");
             this.konzole.BackColor = System.Drawing.SystemColors.MenuText;
+            resources.ApplyResources(this.konzole, "konzole");
             this.konzole.ForeColor = System.Drawing.SystemColors.Menu;
             this.konzole.Name = "konzole";
             this.konzole.ReadOnly = true;
@@ -626,13 +628,21 @@
             resources.ApplyResources(this.panel_scrolllll, "panel_scrolllll");
             this.panel_scrolllll.Name = "panel_scrolllll";
             // 
+            // napovedaDebug
+            // 
+            this.napovedaDebug.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            resources.ApplyResources(this.napovedaDebug, "napovedaDebug");
+            this.napovedaDebug.Name = "napovedaDebug";
+            this.napovedaDebug.UseVisualStyleBackColor = true;
+            this.napovedaDebug.Click += new System.EventHandler(this.napovedaDebug_Click_1);
+            // 
             // button9
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            resources.ApplyResources(button9, "button9");
+            button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            button9.Name = "button9";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // velikostKroku
             // 
@@ -784,10 +794,18 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Name = "label3";
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Name = "label4";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.napovedaDebug);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textPrijmeni);
             this.Controls.Add(this.label2);
@@ -808,7 +826,7 @@
             this.Controls.Add(this.inputTB);
             this.Controls.Add(this.zadani);
             this.Controls.Add(this.velikostKroku);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(button9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.konzole);
             this.Controls.Add(this.odecti1);
@@ -918,7 +936,6 @@
         private System.Windows.Forms.TextBox konzole;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel_scrolllll;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox velikostKroku;
         private System.Windows.Forms.TextBox zadani;
         private System.Windows.Forms.TextBox inputTB;
@@ -940,6 +957,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button textPrijmeni;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button napovedaDebug;
+        private static System.Windows.Forms.Button button9;
     }
 }
 

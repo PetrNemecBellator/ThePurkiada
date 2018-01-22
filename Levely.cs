@@ -42,7 +42,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 4;
                 maxPocetPromenych = 2;
                 typVstupu = "2 jakakoli cisla";
-                zadaniText = "Na vstupu jsou dve cisla, dej je do vystupu v obracenem pořadí (napr.: vstup: 5;3 vystup: 3;5) (použij bloky vstup a výstup)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Na vstupu jsou dve cisla, dej je do vystupu v obracenem pořadí (napr.: vstup: 5;3 vystup: 3;5) (použij pouze bloky vstup a výstup)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 input.Add(rnd.Next(-99, -1));
                 input.Add(rnd.Next(0, 99));
@@ -274,7 +274,7 @@ namespace noMansResourceMachine
         public int getInput()
         {
             if (this.input.Count == 0) {
-                MessageBox.Show("došli inputy nemužeš brat další čísla", "Chyba");
+               
                 return int.MaxValue;
             }
             int x = this.input[0];

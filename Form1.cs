@@ -23,7 +23,7 @@ namespace noMansResourceMachine
         List<int> prikaz = new List<int>();
         List<int> outputHrace = new List<int>();
       static  List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-        Levely[] vsechnyLevely= new Levely[7] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6) };
+        Levely[] vsechnyLevely= new Levely[8] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6),new Levely(7) };
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         int aktualniLevel = 0;
@@ -37,14 +37,14 @@ namespace noMansResourceMachine
             InitializeComponent();
             
             button9.Enabled = false;
-            kompilovat.Enabled = false;
-            poleButonuEnabledDisabled = new Panel[8] { jumpIf, jump, output, inputPanel, pricti, odecti1, pricti1, odecti1 };
+          //  kompilovat.Enabled = false;
+         
             vypisKonzole();
             //            vypisKonzole();
             zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
             prijmeni.BackColor = Color.Red;
-            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál \n toto info lze zobrazit kliknutim na tlačitko vysvetleni hry", "Zakldani informace");
             
+            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Pěknou zábavu! ", "Základní informace");
 
 
 
@@ -246,30 +246,39 @@ namespace noMansResourceMachine
             MessageBox.Show("Vyhral jsi: \n opiš kod aktualniho levlu: " + vsechnyLevely[aktualniLevel].getWinCode() + "\n cheš pokračovat","Vyhra");
             aktualniPocetBloku = 0;
             aktualniLevel++;
-            prikazySeVsim.Clear();
-            panel_scrolllll.Controls.Clear();
-            konzole.Clear();
-            vypisKonzole();
-            inputTB.Clear();
-            outputTB.Clear();
-           /*  String s = "";
-             var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
-            
-             int k = 0;
-             for (int i = 0; i <vsechnyLevely.Count(); i++)
-             {
-                 k += 2;
-                 if (k > vr[0].ToString().Count())
-                 {
-                     k = 0;
-                 }
-                 s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
-             }
-            MessageBox.Show(s);*/
-            zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
-            pocetProvedenychInstrukci = 0;
-            pocetPouzitychPromenych = 0;
-        }
+            if (aktualniLevel > vsechnyLevely.Count())
+            {
+                MessageBox.Show("Už nezbývají žádné levely", "Totalní výhra");
+                aktualniLevel--;
+            }
+            else
+            {
+                prikazySeVsim.Clear();
+                panel_scrolllll.Controls.Clear();
+                konzole.Clear();
+                vypisKonzole();
+                inputTB.Clear();
+                outputTB.Clear();
+                /*  String s = "";
+                  var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
+
+                  int k = 0;
+                  for (int i = 0; i <vsechnyLevely.Count(); i++)
+                  {
+                      k += 2;
+                      if (k > vr[0].ToString().Count())
+                      {
+                          k = 0;
+                      }
+                      s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
+                  }
+                 MessageBox.Show(s);*/
+                zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
+                pocetProvedenychInstrukci = 0;
+                pocetPouzitychPromenych = 0;
+            }
+
+            }
         private void button9_Click(object sender, EventArgs e)
         {
 
@@ -886,6 +895,10 @@ namespace noMansResourceMachine
         {
 
         }
+        public static void setDalsiKrokBool(bool pouzit)
+        {
+            button9.Enabled = pouzit;
+        }
         public static void deleFromMainArray(int pozice)
         {
 
@@ -907,31 +920,31 @@ namespace noMansResourceMachine
 
         private void button13_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("skoč když", "Když se splní podminka skočí na jiný řádek."+
-                "\n   příklad: 1. pole \"5\" 2. pole \">\" 3. pole (proměnné ale i zadaná čísla) \"2\" 4.pole \"4\" (čísla) \n  " +
+            zobrazNapovedu("skoč když", "Když se splní podminka skočí na Vámi zadaný řádek."+
+                "\npříklad: 1. pole \"5\" 2. pole \">\" 3. pole (proměnné ale i zadaná čísla) \"2\" 4.pole \"4\" (čísla) \n  " +
                 "5 je vetši než 2 takže program pokračuje od 4 řadku \n  " +
-                "pokud by byla podminka nepravdiva nic se neděje program \n   pokračuje dale.");
+                "pokud by byla podminka nepravdiva nic se neděje program \n   pokračuje nasledujícím řádkem.");
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("vstup", "Vezme 1 cislo ze vstupu a uloziho do promene zadane v 1.poli ");
+            zobrazNapovedu("vstup", "Vezme 1. číslo ze vstupu a uložího do proměnné zadané v 1.poli ");
         }
 
         private void napSkoc_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("skoč", "Vždy skočí na řádek zadaný v poli");
+            zobrazNapovedu("skoč", "Vždy skočí na řádek Vámi zadaný v poli");
         }
 
         private void napPricti1_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("přičti jedna", "K promněnne v 1. poli přičte jedna \n  "+
+            zobrazNapovedu("přičti jedna", "K proměnné v 1. poli přičte jedna \n  "+
                 "příklad: pole obsahuje \"5\"  vysledna hodnota je 6 (5+1) ");
         }
 
         private void napOdecti1_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("odečti jedna", "K promněnne v 1. poli odečte jedna \n  " +
+            zobrazNapovedu("odečti jedna", "Od proměnné v 1. poli odečte jedna \n  " +
                 "příklad: pole obsahuje \"6\"  vysledna hodnota je 5 (6-1) ");
         }
 
@@ -943,20 +956,20 @@ namespace noMansResourceMachine
 
         private void button16_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("přiřaď", "Proměnnou napsanou 1. poli nahradí hodnoutou proměnné nebo čila zadaneho v 2. poli \n\t"+
+            zobrazNapovedu("přiřaď", "Proměnnou napsanou 1. poli nahradí hodnoutou proměnné v 2. poli \n"+
                 "příklad: A=1 B=5 1.pole \"A\" 2. pole \"5\" \n   vysledne hodnoty  A =5 B=5");
         }
 
         private void napPricti_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("příčti", "K promněnne v 1. poli příčte proměnnou nebo čislo z 2. pole \n  " +
-                "příklad:(proměnná)  A=6 1.pole obsahuje \"A= 6\" (proměnná) B=5 2.pole \"B=5\"  vysledna hodnota je A= 11  (5+6), B= 5. ");
+            zobrazNapovedu("příčti", "K promněnne v 1. poli příčte proměnnou nebo čislo z 2. pole \n" +
+                "příklad:(proměnná)  A=6 1.pole obsahuje \"A= 6\" (proměnná) B=5 2.pole \"B=5\"  vysledna hodnota je \"A= 11\"  (5+6), \"B= 5.\" ");
         }
 
         private void napOdecti_Click(object sender, EventArgs e)
         {
-            zobrazNapovedu("příčti", "K promněnne v 1. poli odečte proměnnou nebo čislo z 2. pole \n\t" +
-                "příklad: (proměnná A=6) 1.pole obsahuje \"A\" (proměnná B=5) 2.pole \"B\"  vysledna hodnota  A = -1  (5-6), B= 5. ");
+            zobrazNapovedu("příčti", "Od proměnné v 1. poli odečte proměnnou nebo čislo z 2. pole \n" +
+                "příklad: (proměnná A=6) 1.pole obsahuje \"A\" (proměnná B=5) 2.pole \"B\"  vysledna hodnota  \"A = -1\"  (5-6), \"B= 5.\" ");
         }
 
         private void skocKdyzLabel_MouseClick(object sender, MouseEventArgs e)
@@ -1006,10 +1019,8 @@ namespace noMansResourceMachine
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-
-            MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \n Na pravo se nachází příkazove bloky z kterých se bude skladat program. \n Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat 0 nebo 1, a do \" skoč když \"do třetího pole(porovnavacího) lze zadat jakekoli čislo. \n Pote, co klikneš na start vygeneruji se nahodna čisla do kolonky \n \"Vstup \". Příkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. císlo ze vstupu, a tak dál.", "Zakldani informace");
-
-
+          //  MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \nPo spuštení vašeho programu se do vstupu napíšou náhodná čísla, vaším úkolem bude vzít tato čísla, provést s nimi požadovanou operaci (napsana v zadání) a dát výsledný číslo do vstupu.\n Program se píše takhle - na pravo se nachází příkazove bloky ze kterých se bude skladat vas program. Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat aji 0 a 1, a do \"skoč když\"do třetího pole(po porovnacim poli) lze zadat i jakekoli čislo. Proměnné ve vyplňovacím poli říkají, do jaké proměnné se ma číslo uložit nebo z jaké proměnné vzít hodnotu.\n Svuj program spustíš kliknutím na \"start\". Poté, se vygenerují nahodná čisla do kolonky \"Vstup \" (vlevo uprostred).\nPříkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál.\nPříkaz výstup dá do výstupu hodnotu z promene, kterou jste zadali do vyplnovaciho pole.\nPříkaz skoc kdyz porovna dve promeny (nebo promenou s cislem), a pokud a vzorec bude pravdivy, program se bude cist od radku, ktery je napsan ve 4.poli, pokud neni pravdivy, program pokracuje dal.\nDalší vysvětlení jednotlivych prikazu muzete zobrazit kliknutim na otaznik vedle příkazů ", "Zakldani informace");
+            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Pěknou zábavu! ", "Základní informace");
         }
 
         private void prijmeni_TextChanged(object sender, EventArgs e)
@@ -1052,6 +1063,15 @@ namespace noMansResourceMachine
 
         private void label2_Click(object sender, EventArgs e)
         {
+
+        }
+
+    
+
+        private void napovedaDebug_Click_1(object sender, EventArgs e)
+        {
+            zobrazNapovedu("aktualni hodnoty programu", "zobrazuje číslo řádku který se zrovna provádi a změnu kterou tento řádek provedl. \n "+
+                "A vypisuje hodnoty vašich proměnných.");
 
         }
     }

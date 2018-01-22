@@ -17,6 +17,8 @@ namespace noMansResourceMachine
         private bool alredzDrag = true;
         private int posY;
         public Label nazevPrikazu = new Label();
+        public Label nazevPrikazu2 = new Label();
+        public Label nazevPrikazu3 = new Label();
         private int typ;
         private int radekIndex;
         public ComboBox argument1cb = new ComboBox();
@@ -50,6 +52,10 @@ namespace noMansResourceMachine
             downButton.MouseClick += DownButton_MouseClick;
             deleteButton.MouseClick += DeleteButton_MouseClick;
 
+            argument1cb.TextChanged += Argument1cb_TextChanged;
+            argument2cb.TextChanged += Argument2cb_TextChanged;
+            argument3cb.TextChanged += Argument3cb_TextChanged;
+            argument4cb.TextChanged += Argument4cb_TextChanged;
             scrollO.Controls.Add(upButton);
             scrollO.Controls.Add(downButton);
             scrollO.Controls.Add(deleteButton);
@@ -115,46 +121,68 @@ namespace noMansResourceMachine
             {
 
                 blok.BackColor = Color.FromArgb(142, 158, 41);
+
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 142, 158, 41);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "Do";
+                this.nazevPrikazu2.SetBounds(0, 25, 80, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 142, 158, 41);
-                this.nazevPrikazu.Text = "<==přiřaď";
+                this.nazevPrikazu.Text = "ulož";
+                this.nazevPrikazu.SetBounds(80, 25, 100, 80);
 
-                this.nazevPrikazu.SetBounds(60, 25, 100, 80);
-                this.argument1cb.SetBounds(10, 25, 30, 30);
-                this.argument2cb.SetBounds(160, 25, 30, 30);
+                this.argument1cb.SetBounds(40, 25, 30, 30);
+                this.argument2cb.SetBounds(140, 25, 30, 30);
 
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(argument1cb);
                 blok.Controls.Add(argument2cb);
                 blok.Controls.Add(nazevPrikazu);
+                blok.Controls.Add(nazevPrikazu2);
 
                 //  this.nazevPrikazu.Text = argument1cb.GetItemText(this.argument1cb.SelectedItem);
 
             }
             else if (this.typ == 1) // Pricti jedna
             {
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 148, 0);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "K";
+                this.nazevPrikazu2.SetBounds(20, 25, 40, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(nazevPrikazu);
                 this.blok.Controls.Add(argument1cb);
-
                 //nazevPrikazu.Text = " Pricti jedna";
                 this.nazevPrikazu.Font = new Font("Arial", 15);
                 this.nazevPrikazu.BackColor = Color.FromArgb(255, 148, 0);
 
                 this.argument1cb.Text = "-";
                 this.argument1cb.Size = new Size(30, 00);
-                this.argument1cb.Location = new Point(10, 20);
+                this.argument1cb.Location = new Point(60, 25);
                 this.blok.Controls.Add(argument1cb);
 
-
-
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
-                this.nazevPrikazu.Text = "zvetsi o 1";
-                this.nazevPrikazu.SetBounds(55, 15, 100, 30);
+                this.nazevPrikazu.Text = "přičti 1";
+                this.nazevPrikazu.SetBounds(100, 25, 120, 40);
+
 
             }
             else if (this.typ == 2) // zmensi o 1
             {
+
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 148, 0);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "Od";
+                this.nazevPrikazu2.SetBounds(0, 25, 40, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(nazevPrikazu);
                 this.blok.Controls.Add(argument1cb);
@@ -164,22 +192,35 @@ namespace noMansResourceMachine
 
                 this.argument1cb.Text = "-";
                 this.argument1cb.Size = new Size(30, 00);
-                this.argument1cb.Location = new Point(10, 25);
+                this.argument1cb.Location = new Point(60, 25);
                 this.blok.Controls.Add(argument1cb);
 
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
                 this.nazevPrikazu.Text = "odečti 1";
-                this.nazevPrikazu.SetBounds(55, 25, 120, 40);
+                this.nazevPrikazu.SetBounds(100, 25, 120, 40);
 
             }
             else if (this.typ == 3)//jump if
             {
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                nazevPrikazu.SetBounds(0, 0, 150, 30);
-                nazevPrikazu.Text = "skoč když";
+                nazevPrikazu.SetBounds(0, 4, 70, 30);
+                nazevPrikazu.Text = "pokud";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 0, 0, 255);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "skoč na";
+                this.nazevPrikazu2.SetBounds(0, 35, 80, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
+                this.nazevPrikazu3.Font = new Font("Arial", 15);
+                this.nazevPrikazu3.BackColor = Color.FromArgb(255, 0, 0, 255);
+                this.nazevPrikazu3.ForeColor = Color.White;
+                this.nazevPrikazu3.Text = ". řádek";
+                this.nazevPrikazu3.SetBounds(110, 35, 95, 30);
+                blok.Controls.Add(nazevPrikazu3);
                 //20,15 200,65
                 //   blok.SetBounds(20, posY, 200, 65);
 
@@ -188,27 +229,30 @@ namespace noMansResourceMachine
 
                 argument1cb.Text = "-";
                 argument1cb.Size = new Size(30, 00);
-                argument1cb.Location = new Point(20, 32);
+                argument1cb.Location = new Point(85, 4);
                 blok.Controls.Add(argument1cb);
 
                 argument2cb.Text = "-";
                 argument2cb.Size = new Size(30, 00);
-                argument2cb.Location =
-                    new Point((50 * 2), 32);
+                argument2cb.Location = new Point(150, 4);
+                
+                argument2cb.Items.Add("-1");
+                argument2cb.Items.Add('0');
+                argument2cb.Items.Add('1');
                 blok.Controls.Add(argument2cb);
 
                 argument3cb.Text = "-";
                 argument3cb.Size = new Size(30, 00);
-                argument3cb.Location = new Point(60, 32);
+                argument3cb.Location = new Point(117, 4);
                 argument3cb.Items.Add('=');
                 argument3cb.Items.Add('<');
                 argument3cb.Items.Add('>');
                 blok.Controls.Add(argument3cb);
 
 
-                argument4cb.Text = "-";
+                argument4cb.Text = "";
                 argument4cb.Size = new Size(30, 00);
-                argument4cb.Location = new Point((60 * 2) + 30, 32);
+                argument4cb.Location = new Point(80, 35);
                 blok.Controls.Add(argument4cb);
 
 
@@ -223,26 +267,51 @@ namespace noMansResourceMachine
             {
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                nazevPrikazu.SetBounds(0, 0, 80, 30);
-                nazevPrikazu.Text = "skoč";
+                nazevPrikazu.SetBounds(0, 25, 80, 30);
+                nazevPrikazu.Text = "skoč na ";
                 nazevPrikazu.Font = new Font("Arial", 15);
+    
                 nazevPrikazu.BackColor = Color.FromArgb(255, 0, 0, 255);
-
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 0, 0, 255);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = ". řádek";
+                this.nazevPrikazu2.SetBounds(105, 25, 95, 30);
+                blok.Controls.Add(nazevPrikazu2);
 
                 blok.BackColor = Color.FromArgb(255, 0, 0, 255);
-
+           
                 // blok.MouseClick += Blok_MouseClick;
-                argument4cb.Text = "-";
+                argument4cb.Text = "";
                 argument4cb.Size = new Size(30, 00);
-                argument4cb.Location = new Point((60 * 2) + 30, 32);
+              
+                argument4cb.Location = new Point(85, 25);// new Point((60 * 2) , 32);
                 blok.Controls.Add(argument4cb);
             }
             else if (typ == 5) // input
             {
+
+
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 23, 99, 13);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "Do";
+                this.nazevPrikazu2.SetBounds(0, 25, 40, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
+                this.nazevPrikazu3.Font = new Font("Arial", 15);
+                this.nazevPrikazu3.BackColor = Color.FromArgb(255, 23, 99, 13);
+                this.nazevPrikazu3.Text = "ulož";
+                this.nazevPrikazu3.SetBounds(80, 25, 50, 30);
+                blok.Controls.Add(nazevPrikazu3);
+                this.argument1cb.SetBounds(40, 25, 30, 30);
+                this.argument2cb.SetBounds(140, 25, 30, 30);
+
+
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                nazevPrikazu.SetBounds(100, 25, 100, 80);
-                nazevPrikazu.Text = "<== vstup";
+                nazevPrikazu.SetBounds(130, 25, 80, 80);
+                nazevPrikazu.Text = "vstup";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 23, 99, 13);
 
@@ -252,30 +321,62 @@ namespace noMansResourceMachine
                 argument1cb.Text = "-";
                 argument1cb.Size = new Size(30, 00);
 
-                argument1cb.Location = new Point(10, 25);
+                argument1cb.Location = new Point(40, 25);
                 blok.Controls.Add(argument1cb);
             }
             else if (typ == 6)// output
             {
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 23, 99, 13);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "Přidej";
+                this.nazevPrikazu2.SetBounds(0, 25, 65, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
+          
+                this.argument1cb.SetBounds(40, 25, 30, 30);
+                this.argument2cb.SetBounds(140, 25, 30, 30);
+
+
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
-                blok.Controls.Add(argument2cb);
-
-                nazevPrikazu.SetBounds(80, 25, 150, 30);
-                nazevPrikazu.Text = "==> výstup";
+                nazevPrikazu.SetBounds(100, 25, 120, 80);
+                nazevPrikazu.Text = "do výstupu";
                 nazevPrikazu.Font = new Font("Arial", 15);
                 nazevPrikazu.BackColor = Color.FromArgb(255, 23, 99, 13);
 
 
                 blok.BackColor = Color.FromArgb(255, 23, 99, 13);
 
-                argument2cb.Text = "-";
-                argument2cb.Size = new Size(30, 00);
-                argument2cb.Location = new Point(5, 20);
+                argument1cb.Text = "-";
+                argument1cb.Size = new Size(30, 00);
+
+                argument1cb.Location = new Point(65, 25);
+                blok.Controls.Add(argument1cb);
             }
             else if (typ == 7)
             {
 
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 178, 30, 30);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "K";
+                this.nazevPrikazu2.SetBounds(0, 20, 20, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
+                scrollO.Controls.Add(blok);
+                blok.Controls.Add(nazevPrikazu);
+                this.blok.Controls.Add(argument1cb);
+                //nazevPrikazu.Text = " Pricti jedna";
+                this.nazevPrikazu.Font = new Font("Arial", 15);
+                this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
+
+
+                this.blok.Controls.Add(argument1cb);
+
+              // this.blok.BackColor = Color.FromArgb(255, 178, 30, 30);
+                this.nazevPrikazu.Text = "přicti";
+                this.nazevPrikazu.SetBounds(85, 25, 65,40);
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(argument1cb);
                 blok.Controls.Add(argument2cb);
@@ -283,35 +384,76 @@ namespace noMansResourceMachine
 
                 blok.BackColor = Color.FromArgb(255, 178, 30, 30);
 
-                this.nazevPrikazu.Font = new Font("Arial", 15);
-                this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
-                this.nazevPrikazu.Text = "<==přicti";
-                this.nazevPrikazu.SetBounds(60, 25, 100, 80);
-                this.argument1cb.SetBounds(10, 25, 30, 30);
+             
+                this.argument1cb.SetBounds(30, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
+                this.blok.Controls.Add(argument1cb);
+                this.blok.Controls.Add(argument2cb);
             }
             else if (typ == 8)
             {
+                this.nazevPrikazu2.Font = new Font("Arial", 15);
+                this.nazevPrikazu2.BackColor = Color.FromArgb(255, 178, 30, 30);
+                this.nazevPrikazu2.ForeColor = Color.White;
+                this.nazevPrikazu2.Text = "Od";
+                this.nazevPrikazu2.SetBounds(0, 20, 40, 30);
+                blok.Controls.Add(nazevPrikazu2);
+
+                scrollO.Controls.Add(blok);
+                blok.Controls.Add(nazevPrikazu);
+                this.blok.Controls.Add(argument1cb);
+                //nazevPrikazu.Text = " Pricti jedna";
+                this.nazevPrikazu.Font = new Font("Arial", 15);
+                this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
+
+
+                this.blok.Controls.Add(argument1cb);
+
+                // this.blok.BackColor = Color.FromArgb(255, 178, 30, 30);
+                this.nazevPrikazu.Text = "odečti";
+                this.nazevPrikazu.SetBounds(85, 25, 65, 40);
                 scrollO.Controls.Add(blok);
                 blok.Controls.Add(argument1cb);
                 blok.Controls.Add(argument2cb);
                 blok.Controls.Add(nazevPrikazu);
+
                 blok.BackColor = Color.FromArgb(255, 178, 30, 30);
 
-                this.nazevPrikazu.Font = new Font("Arial", 15);
-                this.nazevPrikazu.BackColor = Color.FromArgb(255, 178, 30, 30);
-                this.nazevPrikazu.Text = "<--odečti";
-                this.nazevPrikazu.SetBounds(60, 25, 100, 80);
-                this.argument1cb.SetBounds(10, 25, 30, 30);
+
+                this.argument1cb.SetBounds(50, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
+                this.blok.Controls.Add(argument1cb);
+                this.blok.Controls.Add(argument2cb);
             }
+        }
+
+        private void Argument4cb_TextChanged(object sender, EventArgs e)
+        {
+            Form1.setDalsiKrokBool(false);
+        }
+
+        private void Argument3cb_TextChanged(object sender, EventArgs e)
+        {
+            Form1.setDalsiKrokBool(false);
+        }
+
+        private void Argument2cb_TextChanged(object sender, EventArgs e)
+        {
+            Form1.setDalsiKrokBool(false);
+        }
+
+        private void Argument1cb_TextChanged(object sender, EventArgs e)
+        {
+            Form1.setDalsiKrokBool(false);
         }
 
         private void DeleteButton_MouseClick(object sender, MouseEventArgs e)
         {
+            
             DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smázni!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                Form1.setDalsiKrokBool(false);
                 ArrayList ar = this.tagAndOrigin;
                 Form1.deleFromMainArray(this.posY/85);
                 Form1.zmenPole();
@@ -321,6 +463,7 @@ namespace noMansResourceMachine
 
         private void DownButton_MouseClick(object sender, MouseEventArgs e)
         {
+           
             //MessageBox.Show((Form1.getAktpocet() - 1).ToString() + "== " + getIndex() + "souradnice:" + this.blok.Top.ToString());
             if (Form1.getAktpocet() - 1 == getIndex())
             {
@@ -328,7 +471,7 @@ namespace noMansResourceMachine
             }
             else
             {
-
+                Form1.setDalsiKrokBool(false);
                 Form1.pridejDoPoleImaze(getIndex() + 1, getIndex());
                 this.radekIndex += 1;
                 Form1.zmenPole();
@@ -350,6 +493,7 @@ namespace noMansResourceMachine
         }
         private void UpButton_MouseClick(object sender, MouseEventArgs e)
         {
+           
             Point puvodniBod = ScrolHelp.AutoScrollPosition;
             Point p = new Point(ScrolHelp.AutoScrollPosition.X, 0);
             setminMaxValuescrollBar(ScrolHelp.VerticalScroll.Minimum, ScrolHelp.VerticalScroll.Maximum);
@@ -363,7 +507,7 @@ namespace noMansResourceMachine
             }
             else
             {
-                
+                Form1.setDalsiKrokBool(false);
                 Form1.pridejDoPoleImaze(getIndex()-1 , getIndex());
                 this.radekIndex -= 1;
                 Form1.zmenPole();
