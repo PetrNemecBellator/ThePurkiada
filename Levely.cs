@@ -41,8 +41,8 @@ namespace noMansResourceMachine
                 maxPocetRadku = 4;
                 maxPocetPrvedenychInstrukci = 4;
                 maxPocetPromenych = 2;
-                typVstupu = "2 jakakoli cisla";
-                zadaniText = "Na vstupu jsou dve cisla, dej je do vystupu v obracenem pořadí (napr.: vstup: 5;3 vystup: 3;5) (použij pouze bloky vstup a výstup)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                typVstupu = "2 jakákoli čísla";
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Na vstupu jsou dvě čisla, dej je do výstupu v obraceném pořadí (např.: vstup: 5;3 výstup: 3;5) (použij pouze bloky vstup a výstup)@Typ vstupu: " + typVstupu + " @@Maximalní počet řádků: " + maxPocetRadku + "@Maximalní počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 input.Add(rnd.Next(-99, -1));
                 input.Add(rnd.Next(0, 99));
@@ -61,15 +61,15 @@ namespace noMansResourceMachine
                 maxPocetRadku = 3;
                 maxPocetPrvedenychInstrukci = 31;
                 maxPocetPromenych = 1;
-                typVstupu = "10 jakychkoli cisel";
-                zadaniText = "Do výstpu dej všechna čisla z vstupu (např.: vstup: 5,3,8,... výstup: 5,3,8,...) (použij blok skoč)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                typVstupu = "10 jakýchkoli čísel";
+                zadaniText = "Level "+(aktualniLevel+1) +": Do výstpu dej všechna čisla z vstupu (např.: vstup: 5,3,8,... výstup: 5,3,8,...) (použij blok skoč)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
 
 
                 for (int i = 0; i < 10; i++)
                 {
 
-                    input.Add(rnd.Next(-999, 999));
+                    input.Add(rnd.Next(0, 999));
                     output.Add(input[i]);
 
                 }
@@ -88,8 +88,8 @@ namespace noMansResourceMachine
                 maxPocetRadku = 6;
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 1;
-                typVstupu = "10 jakychkoliv cisel";
-                zadaniText = "Pokud je na vstupu cislo mensi nez 0, do vysupu dej 0. Pokud je na vstupu cislo vetsi nebo rovno nule, do vystupu dej 1@(napr.: vstup: 8,-5,-8,0,54,-1,... vystup: 1,0,0,1,1,0,...)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                typVstupu = "10 jakýchkoliv čísel";
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Pokud je na vstupu číslo menší než 0, do výstupu dej 0. Pokud je na vstupu čislo větší nebo rovno nule, do výstupu dej 1@(např.: vstup: 8,-5,-8,0,54,-1,... výstup: 1,0,0,1,1,0,...)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
 
                 for (int i = 0; i < 10; i++)
@@ -128,7 +128,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 1;
                 typVstupu = "5 čísel od 5 do 8";
-                zadaniText = "Odpočet (napr.: vstup: 5,3 vystup: 5,4,3,2,1, 3,2,1)@Typ vstupu: " + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Odpočet (např.: vstup: 5,3 výstup: 5,4,3,2,1, 3,2,1)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode;;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 for (int j = 0; j < 5; j++)
                 {
@@ -155,7 +155,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 2;
                 typVstupu = "10 čísel od -99 do 99";
-                zadaniText = "DO výstupu dej absolutní hodnotu vstupu (od záporneho čísla odstraň mínus a kladné ponechej) (napr.: vstup: 8,-5,0,-1,35,... vystup: 8,5,0,1,35,...)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Do výstupu dej absolutní hodnotu vstupu (od záporneho čísla odstraň mínus a kladné ponechej) (např.: vstup: 8,-5,0,-1,35,... výstup: 8,5,0,1,35,...)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
 
                 for (int i = 0; i < 10; i++)
@@ -183,7 +183,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 999;
                 typVstupu = "10 čísel od 0 do 20";
-                zadaniText = "Pokud je na vstupu sudé číslo, do výstupu dej 0, pokud záporné, do výstupu dej 1 (napr.: vstup: 5,8,1,... vystup: 1,0,1,...)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Pokud je na vstupu sudé číslo, do výstupu dej 0, pokud záporné, do výstupu dej 1 (např.: vstup: 5,8,1,... výstup: 1,0,1,...)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 for (int i = 0; i < 10; i++)
                 {
@@ -216,8 +216,8 @@ namespace noMansResourceMachine
                 maxPocetRadku = 999;
                 maxPocetPrvedenychInstrukci = 6;
                 maxPocetPromenych = 999;
-                typVstupu = "1 jakekoli cislo ";
-                zadaniText = "Do vystupu dej vynasobeny sestnacti (napr.: vstup: 3 vystup: 42)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                typVstupu = "jedno jakékoli číslo ";
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Do vystupu dej vstup vynásobený šestnácti (např.: vstup: 3 výstup: 42)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode;;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 input.Add(rnd.Next(3, 7));
 
@@ -233,11 +233,11 @@ namespace noMansResourceMachine
             }
             else if (aktualniLevel == 7)
             {
-                maxPocetRadku = 8;
+                maxPocetRadku = 7;
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 3;
-                typVstupu = "2 jakakoli cisla od dvou vys";
-                zadaniText = "Do vystupu dej prvni cislo ze vstupu vynasobeny druhym cislem ze vstupu (napr.: vstup: 5;3 vystup: 15)@Typ vstupu:" + typVstupu + " @@Maximalni pocet radku: " + maxPocetRadku + "@Maximalni pocet provadenych instrukci: " + maxPocetPrvedenychInstrukci + "@Maximalni pocet pouzitich promenych: " + maxPocetPromenych;
+                typVstupu = "dvě jakakoli čísla vyšší než 1";
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Do výstupu dej první číslo ze vstupu vynásobeny druhým číslem ze vstupu (např.: vstup: 5;3 výstup: 15)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 input.Add(rnd.Next(2, 9));
                 input.Add(rnd.Next(2, 9));
@@ -250,6 +250,14 @@ namespace noMansResourceMachine
                 this.hodnotaF = null;
 
 
+            }else if (aktualniLevel == 8)
+            {
+                maxPocetRadku = -1;
+                maxPocetPrvedenychInstrukci = 404;
+                maxPocetPromenych = 42;
+                typVstupu = "404";
+                zadaniText = "Vyhráli jste!!! @Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode.ToString();
+                zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
             }
 
 
@@ -312,7 +320,7 @@ namespace noMansResourceMachine
                     k = 0;
                 }
             //MessageBox.Show(k.ToString() + " " + aktualniLevel);
-            return "\n" + vr[0].ToString().Insert(k, aktualniLevel.ToString()) + (aktualniLevel * 6).ToString();
+            return  vr[0].ToString().Insert(k, aktualniLevel.ToString()) + (aktualniLevel * 6).ToString();
 
 
         }

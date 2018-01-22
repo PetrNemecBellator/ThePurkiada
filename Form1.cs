@@ -22,8 +22,8 @@ namespace noMansResourceMachine
         List<List<int>> prikazy = new List<List<int>>();
         List<int> prikaz = new List<int>();
         List<int> outputHrace = new List<int>();
-      static  List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
-        Levely[] vsechnyLevely= new Levely[8] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6),new Levely(7) };
+        static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
+        Levely[] vsechnyLevely = new Levely[9] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6), new Levely(7), new Levely(8) };
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         int aktualniLevel = 0;
@@ -35,22 +35,22 @@ namespace noMansResourceMachine
 
 
             InitializeComponent();
-            
+
             button9.Enabled = false;
-          //  kompilovat.Enabled = false;
-         
+            //  kompilovat.Enabled = false;
+
             vypisKonzole();
             //            vypisKonzole();
             zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
             prijmeni.BackColor = Color.Red;
-            
-            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Pěknou zábavu! ", "Základní informace");
+
+            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Svůj program spustíme kliknutiím na tlačítko \"Start\", poté se do kolonky vstup (vlevo uprostřed) vygenerují nahodná čísla, se kterými bude Váš program pracovat. Pěknou zábavu!", "Základní informace");
 
 
 
         }
 
-        public static String getJmeno ()
+        public static String getJmeno()
         {
             return jmeno.ToUpper();
         }
@@ -64,9 +64,9 @@ namespace noMansResourceMachine
         {
             return cislo == int.MaxValue;
         }
-        public void blokChybaVipis(string typBloku, int radek)
+        public void blokChybaVipis(string typBloku, int řádek)
         {
-            MessageBox.Show("Blok "+ typBloku.ToString()+" na řádku " + radek.ToString() + "\n nemá spravně doplněné argumenty","Chyba!");
+            MessageBox.Show("Blok " + typBloku.ToString() + " na řádku " + řádek.ToString() + "\n nemá spravně doplněné argumenty", "Chyba!");
         }
         private void kompilovat_Click(object sender, EventArgs e)
         {
@@ -76,28 +76,28 @@ namespace noMansResourceMachine
             button9.Enabled = true;
             pocetProvedenychInstrukci = 0;
             pocetPouzitychPromenych = 0;
-            
+
             prikazy = new List<List<int>>();
             konzole.Clear();
             inputTB.Clear();
             outputTB.Clear();
             outputHrace.Clear();
             //textBox1.Clear();
-            vsechnyLevely[aktualniLevel] = new Levely( aktualniLevel) ;
+            vsechnyLevely[aktualniLevel] = new Levely(aktualniLevel);
             vypisKonzole();
             konzole.AppendText(Environment.NewLine);
 
-            for(int i = 0; i < vsechnyLevely[aktualniLevel].getInputCely().Count();i++)
+            for (int i = 0; i < vsechnyLevely[aktualniLevel].getInputCely().Count(); i++)
             {
                 inputTB.AppendText(vsechnyLevely[aktualniLevel].getInputCely()[i].ToString() + "  ");
             }
             //Zaznamenani Zmen
-            
+
 
 
             for (int i = 0; i < prikazySeVsim.Count; i++)  // prechod z bloku na blok
             {
-               
+
                 prikaz.Add(prikazySeVsim[i].getTyp());
                 //textBox1.Text += "typ" + (prikazySeVsim[i].getTyp()).ToString();
                 if (prikazySeVsim[i].getTyp() == 0)
@@ -119,7 +119,7 @@ namespace noMansResourceMachine
                 else if (prikazySeVsim[i].getTyp() == 1)
                 {
                     if (jeCisloOk(prikazySeVsim[i].getArgument1())) {
-                        blokChybaVipis("přičti jedna", i + 1);
+                        blokChybaVipis("přičti 1", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
                     }
@@ -176,7 +176,7 @@ namespace noMansResourceMachine
                 {
                     if (jeCisloOk(prikazySeVsim[i].getArgument2()))
                     {
-                      //  MessageBox.Show((jeCisloOk(prikazySeVsim[i].getArgument2()).ToString() + "a jakz cislo si dostal: " + (prikazySeVsim[i].getArgument2())));
+                        //  MessageBox.Show((jeCisloOk(prikazySeVsim[i].getArgument2()).ToString() + "a jakz cislo si dostal: " + (prikazySeVsim[i].getArgument2())));
                         blokChybaVipis("výstup", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
@@ -191,13 +191,13 @@ namespace noMansResourceMachine
                 {
                     if (jeCisloOk(prikazySeVsim[i].getArgument2()) || jeCisloOk(prikazySeVsim[i].getArgument1()))
                     {
-                        blokChybaVipis("přicti", i + 1);
+                        blokChybaVipis("přičti", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
                     }
 
                     prikaz.Add(prikazySeVsim[i].getArgument1());
-                   // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
+                    // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
 
                     prikaz.Add(prikazySeVsim[i].getArgument2());
                     // textBox1.Text += "    argument2cb" + (prikazySeVsim[i].getArgument2()).ToString();
@@ -208,7 +208,7 @@ namespace noMansResourceMachine
                 {
                     if (jeCisloOk(prikazySeVsim[i].getArgument2()) || jeCisloOk(prikazySeVsim[i].getArgument1()))
                     {
-                        blokChybaVipis("odecti", i + 1);
+                        blokChybaVipis("odečti", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
                     }
@@ -221,17 +221,17 @@ namespace noMansResourceMachine
                 }
 
 
-                    // ||
+                // ||
 
 
-                    prikazy.Add(prikaz);
+                prikazy.Add(prikaz);
 
                 //textBox1.Text += "   typ " + (prikazy[i][0]).ToString();
 
                 konecKompilace:;
-                button9.Enabled =! nastalaChyba;
+                button9.Enabled = !nastalaChyba;
                 prikaz = new List<int>();
-                                
+
 
             }
             ////////precetli jste   Zaznamenani Zmen
@@ -239,11 +239,15 @@ namespace noMansResourceMachine
 
 
         //// Provadeni Priakazu
-        
+        public static string posledniWinCode = "";
+        public void setWinCode(string kod)
+        {
+            Form1.posledniWinCode = kod;
+        }
         private void vyhra()
         {
-            
-            MessageBox.Show("Vyhral jsi: \n opiš kod aktualniho levlu: " + vsechnyLevely[aktualniLevel].getWinCode() + "\n cheš pokračovat","Vyhra");
+            setWinCode( vsechnyLevely[aktualniLevel].getWinCode());
+            MessageBox.Show("Vyhral jsi: \n opiš kod aktualniho levlu: " + posledniWinCode + ".\n nelze se vratit zpět!","Vyhra");
             aktualniPocetBloku = 0;
             aktualniLevel++;
             if (aktualniLevel > vsechnyLevely.Count())
@@ -305,7 +309,7 @@ namespace noMansResourceMachine
 
                 pocetProvedenychInstrukci += 1;
                 aktualniRadek += 1;
-                //MessageBox.Show("aktualni radek: " + aktualniRadek.ToString());
+                //MessageBox.Show("aktualni řádek: " + aktualniRadek.ToString());
 
                 if (aktualniRadek < prikazy.Count)
                 {
@@ -320,7 +324,7 @@ namespace noMansResourceMachine
                         if (hodA == null)
                         {
 
-                            MessageBox.Show("blok prirad \n promněnné na řadku" + (aktualniRadek+1) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
+                            MessageBox.Show("blok přiřaď \n promněnné na řadku" + (aktualniRadek+1) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
                         }
                         else
                         {
@@ -341,7 +345,7 @@ namespace noMansResourceMachine
 
                         if (hodA == null)
                         {
-                            MessageBox.Show("blok pricti 1  jedna \n promněnné na řadku" + ((aktualniRadek+1)) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
+                            MessageBox.Show("blok pricti 1  jedna \n proměnné na řadku" + ((aktualniRadek+1)) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
 
                         }
                         else
@@ -364,7 +368,7 @@ namespace noMansResourceMachine
 
                         if (hodA == null)
                         {
-                            MessageBox.Show("blok odečti jedna \n promněnné na řadku" + ((aktualniRadek+1)) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
+                            MessageBox.Show("blok odečti jedna \n proměnné na řadku" + ((aktualniRadek+1)) + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
 
                         }
                         else
@@ -386,7 +390,7 @@ namespace noMansResourceMachine
                        
                         if (kamSkocit < 0 || kamSkocit > prikazy.Count+1)
                         {
-                             MessageBox.Show("Nelze skocit na radek: "+kamSkocit.ToString(),"Chyba!!");
+                             MessageBox.Show("Nelze skočit na řádek: "+kamSkocit.ToString(),"Chyba!!");
                         }
                         else
                         {                            
@@ -397,7 +401,7 @@ namespace noMansResourceMachine
                                     //MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() +" = "+ vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     aktualniRadek = kamSkocit - 2;
                                     konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
+                                    konzole.AppendText("Skočil jsi na " + (aktualniRadek + 2).ToString() + ". řádek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
@@ -405,7 +409,7 @@ namespace noMansResourceMachine
                                     //MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " = " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
 
                                     konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Podminka nesplnena ");
+                                    konzole.AppendText("Podmínka nesplněna ");
                                     konzole.AppendText(Environment.NewLine);
                                 }
                             }
@@ -416,14 +420,14 @@ namespace noMansResourceMachine
                                     //MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " < " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     aktualniRadek = kamSkocit - 2;
                                     konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
+                                    konzole.AppendText("Skočil jsi na " + (aktualniRadek + 2).ToString() + ". řádek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
                                     //MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " < " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Podminka nesplnena ");
+                                    konzole.AppendText("Podmínka nesplněna ");
                                     konzole.AppendText(Environment.NewLine);
                                 }
 
@@ -435,14 +439,14 @@ namespace noMansResourceMachine
                                     //MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " > " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     aktualniRadek = kamSkocit - 2;
                                    konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
+                                    konzole.AppendText("Skočil jsi na " + (aktualniRadek + 2).ToString() + ". řádek"); //po
                                     konzole.AppendText(Environment.NewLine);
                                 }
                                 else
                                 {
                                   //  MessageBox.Show(vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][1]).ToString() + " > " + vsechnyLevely[aktualniLevel].getHodnota(prikazy[aktualniRadek][2]).ToString());
                                     konzole.AppendText(aktualniRadek + 1+". ");
-                                    konzole.AppendText("Podminka nesplnena ");
+                                    konzole.AppendText("Podminka nesplněna ");
                                     konzole.AppendText(Environment.NewLine);
 
                                 }
@@ -469,7 +473,7 @@ namespace noMansResourceMachine
 
                             aktualniRadek = kamSkocit - 2;
                            konzole.AppendText(aktualniRadek + 1+". ");
-                            konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". radek"); //po
+                            konzole.AppendText("Skocil jsi na " + (aktualniRadek + 2).ToString() + ". řádek"); //po
                             konzole.AppendText(Environment.NewLine);
                             // MessageBox.Show("aktialni rakde " + aktualniRadek.ToString());
                         }
@@ -513,13 +517,13 @@ namespace noMansResourceMachine
                         if ((vsechnyLevely[aktualniLevel].getHodnota(specArgument1)) == null)
                         {
 
-                            MessageBox.Show("blok výstup \n  na řadku" + aktualniRadek + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
+                            MessageBox.Show("blok výstup \n  na řádku" + aktualniRadek + " nebyla přiřazena hodnota \n tak to program nemuže běžet.", "Kritická chyba");
                         }
                         else
                         {
                             outputHrace.Add((int)vsechnyLevely[aktualniLevel].getHodnota(specArgument1));
                            konzole.AppendText(aktualniRadek + 1+". ");
-                            konzole.AppendText("Do vystupu bylo pridano cislo");
+                            konzole.AppendText("Do výstupu bylo přidáno číslo");
                             konzole.AppendText(Environment.NewLine);
 
                             outputTB.AppendText(vsechnyLevely[aktualniLevel].getHodnota(specArgument1).ToString() + " ");
@@ -620,7 +624,7 @@ namespace noMansResourceMachine
 
                         if (hodA == null)
                         {
-                            MessageBox.Show("blok odečti \n promněnně na řadku" + aktualniRadek + " nebyla přiřazena hodnota \n tak to program nemuže běžet.","Kritická chyba");
+                            MessageBox.Show("blok odečti \n proměnné na řadku" + aktualniRadek + " nebyla přiřazena hodnota \n tak to program nemuže běžet.","Kritická chyba");
                             goto konecProcesovani;
                         }
                         else
@@ -1020,7 +1024,7 @@ namespace noMansResourceMachine
         private void button10_Click_1(object sender, EventArgs e)
         {
           //  MessageBox.Show("Je povino vyplnit pole přijmení jinak nebude vaše skore hodnoceno. \nPo spuštení vašeho programu se do vstupu napíšou náhodná čísla, vaším úkolem bude vzít tato čísla, provést s nimi požadovanou operaci (napsana v zadání) a dát výsledný číslo do vstupu.\n Program se píše takhle - na pravo se nachází příkazove bloky ze kterých se bude skladat vas program. Do bloků je povoleno zadavat pouze proměnné (A,B,C,D,E,F) až na vyjímky - do výstupu lze zadat aji 0 a 1, a do \"skoč když\"do třetího pole(po porovnacim poli) lze zadat i jakekoli čislo. Proměnné ve vyplňovacím poli říkají, do jaké proměnné se ma číslo uložit nebo z jaké proměnné vzít hodnotu.\n Svuj program spustíš kliknutím na \"start\". Poté, se vygenerují nahodná čisla do kolonky \"Vstup \" (vlevo uprostred).\nPříkaz vstup uloží do proměnné (krerou jste zadali do vyplňovacího pole) první číslo ze vstupu. Když příkaz vstup použijete znova, ulozi se 2. cislo ze vstupu, a tak dál.\nPříkaz výstup dá do výstupu hodnotu z promene, kterou jste zadali do vyplnovaciho pole.\nPříkaz skoc kdyz porovna dve promeny (nebo promenou s cislem), a pokud a vzorec bude pravdivy, program se bude cist od radku, ktery je napsan ve 4.poli, pokud neni pravdivy, program pokracuje dal.\nDalší vysvětlení jednotlivych prikazu muzete zobrazit kliknutim na otaznik vedle příkazů ", "Zakldani informace");
-            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Pěknou zábavu! ", "Základní informace");
+            MessageBox.Show("Tato aplikace slouží k programovaní zadaných úkolu pomoci jednoduchých bloku. Ty jsou umístěny na pravé straně. Kliknutím na ně je umístíte doprostřed a vytvoříte blokové schema programu podle zadání vlevo. Vyplňte příjmení. Pokud bude program správně, postupujete do dalšího levelu. Proměnné požíváte A-F, konstanty lze psát jen do bloku \"skoč když\" a \"výstup\". Svůj program spustíme kliknutiím na tlačítko \"Start\", poté se do kolonky vstup (vlevo uprostřed) vygenerují nahodná čísla, se kterými bude Váš program pracovat. Pěknou zábavu!", "Základní informace");
         }
 
         private void prijmeni_TextChanged(object sender, EventArgs e)
@@ -1070,9 +1074,104 @@ namespace noMansResourceMachine
 
         private void napovedaDebug_Click_1(object sender, EventArgs e)
         {
-            zobrazNapovedu("aktualni hodnoty programu", "zobrazuje číslo řádku který se zrovna provádi a změnu kterou tento řádek provedl. \n "+
+            zobrazNapovedu("aktualní hodnoty programu", "zobrazuje číslo řádku který se zrovna provádí a změnu kterou tento řádek provedl. \n "+
                 "A vypisuje hodnoty vašich proměnných.");
 
+        }
+
+        private void vystupLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(6);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(0);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(1);
+        }
+
+        private void prictiLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(7);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(3);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(3);
+        }
+
+        private void skocKdyzLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(3);
+        }
+
+        private void skocLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(4);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(4);
+        }
+
+        private void pricti1Label_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(1);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(2);
+        }
+
+        private void odecti1Label_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(2);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(5);
+        }
+
+        private void vstupLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(5);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(6);
+        }
+
+        private void priradLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(0);
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(7);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(8);
+        }
+
+        private void odectiLabel_Click(object sender, EventArgs e)
+        {
+            everyBtnClick(8);
         }
     }
 }

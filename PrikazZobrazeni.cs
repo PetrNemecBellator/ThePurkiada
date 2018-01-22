@@ -152,7 +152,7 @@ namespace noMansResourceMachine
                 this.nazevPrikazu2.BackColor = Color.FromArgb(255, 148, 0);
                 this.nazevPrikazu2.ForeColor = Color.White;
                 this.nazevPrikazu2.Text = "K";
-                this.nazevPrikazu2.SetBounds(20, 25, 40, 30);
+                this.nazevPrikazu2.SetBounds(10, 25, 30, 30);
                 blok.Controls.Add(nazevPrikazu2);
 
                 scrollO.Controls.Add(blok);
@@ -164,12 +164,12 @@ namespace noMansResourceMachine
 
                 this.argument1cb.Text = "-";
                 this.argument1cb.Size = new Size(30, 00);
-                this.argument1cb.Location = new Point(60, 25);
+                this.argument1cb.Location = new Point(40, 25);
                 this.blok.Controls.Add(argument1cb);
 
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
                 this.nazevPrikazu.Text = "přičti 1";
-                this.nazevPrikazu.SetBounds(100, 25, 120, 40);
+                this.nazevPrikazu.SetBounds(90, 25, 120, 40);
 
 
             }
@@ -192,12 +192,12 @@ namespace noMansResourceMachine
 
                 this.argument1cb.Text = "-";
                 this.argument1cb.Size = new Size(30, 00);
-                this.argument1cb.Location = new Point(60, 25);
+                this.argument1cb.Location = new Point(40, 25);
                 this.blok.Controls.Add(argument1cb);
 
                 this.blok.BackColor = Color.FromArgb(255, 148, 0);
                 this.nazevPrikazu.Text = "odečti 1";
-                this.nazevPrikazu.SetBounds(100, 25, 120, 40);
+                this.nazevPrikazu.SetBounds(90, 25, 120, 40);
 
             }
             else if (this.typ == 3)//jump if
@@ -334,9 +334,7 @@ namespace noMansResourceMachine
                 blok.Controls.Add(nazevPrikazu2);
 
           
-                this.argument1cb.SetBounds(40, 25, 30, 30);
-                this.argument2cb.SetBounds(140, 25, 30, 30);
-
+                
 
                 blok.Controls.Add(nazevPrikazu);
                 scrollO.Controls.Add(blok);
@@ -385,7 +383,7 @@ namespace noMansResourceMachine
                 blok.BackColor = Color.FromArgb(255, 178, 30, 30);
 
              
-                this.argument1cb.SetBounds(30, 25, 30, 30);
+                this.argument1cb.SetBounds(40, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
                 this.blok.Controls.Add(argument1cb);
                 this.blok.Controls.Add(argument2cb);
@@ -420,7 +418,7 @@ namespace noMansResourceMachine
                 blok.BackColor = Color.FromArgb(255, 178, 30, 30);
 
 
-                this.argument1cb.SetBounds(50, 25, 30, 30);
+                this.argument1cb.SetBounds(40, 25, 30, 30);
                 this.argument2cb.SetBounds(160, 25, 30, 30);
                 this.blok.Controls.Add(argument1cb);
                 this.blok.Controls.Add(argument2cb);
