@@ -1825,7 +1825,7 @@
     <value>NoControl</value>
   </data>
   <data name="odecti1Label.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 13</value>
+    <value>98, 15</value>
   </data>
   <data name="odecti1Label.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 25</value>
@@ -2312,6 +2312,9 @@
   </data>
   <data name="napSkocKdyz.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
+  </data>
+  <data name="napSkocKdyz.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="napSkocKdyz.Location" type="System.Drawing.Point, System.Drawing">
     <value>819, 39</value>

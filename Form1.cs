@@ -986,47 +986,43 @@ namespace noMansResourceMachine
 
         private void skocKdyzLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(3);
         }
 
         private void skocLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(4);
+        
         }
 
         private void pricti1Label_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(1);
+         
         }
 
         private void odecti1Label_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(2);
+           
         }
 
         private void vstupLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(5);
+          
         }
 
         private void vystupLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(6);
+            
         }
 
         private void priradLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(0);
+          
         }
 
-        private void prictiLabel_MouseClick(object sender, MouseEventArgs e)
-        {
-            everyBtnClick(7);
-        }
+       
 
         private void odectiLabel_MouseClick(object sender, MouseEventArgs e)
         {
-            everyBtnClick(8);
+          
         }
 
         private void button10_Click_1(object sender, EventArgs e)
@@ -1180,6 +1176,16 @@ namespace noMansResourceMachine
         private void odectiLabel_Click(object sender, EventArgs e)
         {
             everyBtnClick(8);
+        }
+
+        private void pricti_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void prictiLabel_MouseClick_1(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
