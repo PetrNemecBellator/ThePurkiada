@@ -127,12 +127,12 @@ namespace noMansResourceMachine
                 maxPocetRadku = 5;
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 1;
-                typVstupu = "5 čísel od 5 do 8";
+                typVstupu = "5 čísel od 5 do 10";
                 zadaniText = "Level " + (aktualniLevel + 1) + ": Odpočet (např.: vstup: 5,3 výstup: 5,4,3,2,1, 3,2,1)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode;;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 for (int j = 0; j < 5; j++)
                 {
-                    int nahoda = rnd.Next(5, 9);
+                    int nahoda = rnd.Next(5, 8);
                     input.Add(nahoda);
 
                     for (int i = nahoda; i > 0; i--)
@@ -183,7 +183,7 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 999;
                 maxPocetPromenych = 999;
                 typVstupu = "10 čísel od 0 do 20";
-                zadaniText = "Level " + (aktualniLevel + 1) + ": Pokud je na vstupu sudé číslo, do výstupu dej 0, pokud záporné, do výstupu dej 1 (např.: vstup: 5,8,1,... výstup: 1,0,1,...)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
+                zadaniText = "Level " + (aktualniLevel + 1) + ": Pokud je na vstupu sudé číslo, do výstupu dej 0, pokud liché, do výstupu dej 1 (např.: vstup: 5,8,1,... výstup: 1,0,1,...)@Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych ;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
                 for (int i = 0; i < 10; i++)
                 {
@@ -223,12 +223,12 @@ namespace noMansResourceMachine
 
                 output.Add(input[0] * 16);
 
-                this.hodnotaA = null;
-                this.hodnotaB = null;
-                this.hodnotaC = null;
-                this.hodnotaD = null;
-                this.hodnotaE = null;
-                this.hodnotaF = null;
+                this.hodnotaA = 0;
+                this.hodnotaB = 0;
+                this.hodnotaC = 0;
+                this.hodnotaD = 0;
+                this.hodnotaE = 0;
+                this.hodnotaF = 0;
 
             }
             else if (aktualniLevel == 7)
@@ -244,10 +244,10 @@ namespace noMansResourceMachine
                 output.Add(input[0] * input[1]);
                 this.hodnotaA = 0;
                 this.hodnotaB = 0;
-                this.hodnotaC = null;
-                this.hodnotaD = null;
-                this.hodnotaE = null;
-                this.hodnotaF = null;
+                this.hodnotaC = 0;
+                this.hodnotaD = 0;
+                this.hodnotaE = 0;
+                this.hodnotaF = 0;
 
 
             }else if (aktualniLevel == 8)
