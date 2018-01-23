@@ -333,7 +333,7 @@ namespace noMansResourceMachine
                 this.nazevPrikazu2.SetBounds(0, 25, 65, 30);
                 blok.Controls.Add(nazevPrikazu2);
 
-          
+                
                 
 
                 blok.Controls.Add(nazevPrikazu);
@@ -346,11 +346,12 @@ namespace noMansResourceMachine
 
                 blok.BackColor = Color.FromArgb(255, 23, 99, 13);
 
-                argument1cb.Text = "-";
-                argument1cb.Size = new Size(30, 00);
-
-                argument1cb.Location = new Point(65, 25);
-                blok.Controls.Add(argument1cb);
+                argument2cb.Text = "-";
+                argument2cb.Size = new Size(30, 00);
+                argument2cb.Items.Add(0);
+                argument2cb.Items.Add(1);
+                argument2cb.Location = new Point(65, 25);
+                blok.Controls.Add(argument2cb);
             }
             else if (typ == 7)
             {
@@ -448,15 +449,18 @@ namespace noMansResourceMachine
         private void DeleteButton_MouseClick(object sender, MouseEventArgs e)
         {
             
-            DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smázni!", MessageBoxButtons.YesNo);
+          /* DialogResult dialogResult = MessageBox.Show("Jste si opravdu jisti že chcete daný blok smazat?", "Smázni!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Form1.setDalsiKrokBool(false);
                 ArrayList ar = this.tagAndOrigin;
                 Form1.deleFromMainArray(this.posY/85);
                 Form1.zmenPole();
-            }
-
+            }*/
+                Form1.setDalsiKrokBool(false);
+                ArrayList ar = this.tagAndOrigin;
+                Form1.deleFromMainArray(this.posY/85);
+                Form1.zmenPole();
         }
 
         private void DownButton_MouseClick(object sender, MouseEventArgs e)

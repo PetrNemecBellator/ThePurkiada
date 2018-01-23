@@ -285,21 +285,29 @@ namespace noMansResourceMachine
             }
         private void button9_Click(object sender, EventArgs e)
         {
-
-            if (int.Parse(velikostKroku.Text) == 2522000)
+            int velikostKrokuInt;
+            if (int.TryParse(velikostKroku.Text, out velikostKrokuInt))
             {
+                if (velikostKrokuInt == 2522000)
+                {
+                    vyhra();
+                    goto konecProcesovani;
+                }
+                else if (int.Parse(velikostKroku.Text) > 100)
+                {
+                    MessageBox.Show("Pocet kroku je moc velky, musi byt pod 100");
+                    goto konecProcesovani;
 
-                vyhra();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Nevyplňená kolonka \"počet kroků\"", "Chyba");
                 goto konecProcesovani;
             }
 
-
-            else if (int.Parse(velikostKroku.Text) > 100)
-            {
-                MessageBox.Show("Pocet kroku je moc velky, musi byt pod 100");
-                goto konecProcesovani;
-
-            }/*else if(vsechnyLevely[aktualniLevel].getPocetZbivajicichVzstupu()+1 == 0)
+            /*else if(vsechnyLevely[aktualniLevel].getPocetZbivajicichVzstupu()+1 == 0)
             {
                 MessageBox.Show("Váš program je nejspíš chynný vyčerpal(a) jste všechny vstupy zkuste jej změnit a dat znovu start.","Chyba");
              //   goto konecProcesovani;
