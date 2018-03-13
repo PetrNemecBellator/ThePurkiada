@@ -39,7 +39,7 @@ namespace noMansResourceMachine
             if (aktualniLevel == 0)
             {
                 maxPocetRadku = 4;
-                maxPocetPrvedenychInstrukci = 4;
+                maxPocetPrvedenychInstrukci = 999;//4;
                 maxPocetPromenych = 2;
                 typVstupu = "2 jakákoli čísla";
                 zadaniText = "Level " + (aktualniLevel + 1) + ": Na vstupu jsou dvě čisla, dej je do výstupu v obraceném pořadí (např.: vstup: 5;3 výstup: 3;5) (použij pouze bloky vstup a výstup)@Typ vstupu: " + typVstupu + " @@Maximalní počet řádků: " + maxPocetRadku + "@Maximalní počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych;

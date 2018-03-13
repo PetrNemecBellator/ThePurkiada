@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +24,7 @@ namespace noMansResourceMachine
         List<int> prikaz = new List<int>();
         List<int> outputHrace = new List<int>();
         static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
+        Thread beziciProgram;
         Levely[] vsechnyLevely = new Levely[9] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6), new Levely(7), new Levely(8) };
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
@@ -38,7 +40,10 @@ namespace noMansResourceMachine
 
             button9.Enabled = false;
             //  kompilovat.Enabled = false;
-
+            beziciProgram = new Thread(kompilaceJede);
+            beziciProgram.Name = "vlaknoKompilace";
+            
+            
             vypisKonzole();
             //            vypisKonzole();
             zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
@@ -68,9 +73,8 @@ namespace noMansResourceMachine
         {
             MessageBox.Show("Blok " + typBloku.ToString() + " na řádku " + řádek.ToString() + "\n nemá spravně doplněné argumenty", "Chyba!");
         }
-        private void kompilovat_Click(object sender, EventArgs e)
+        public void kompilaceJede()
         {
-
             nastalaChyba = false;
             aktualniRadek = -1;
             button9.Enabled = true;
@@ -118,7 +122,8 @@ namespace noMansResourceMachine
                 }
                 else if (prikazySeVsim[i].getTyp() == 1)
                 {
-                    if (jeCisloOk(prikazySeVsim[i].getArgument1())) {
+                    if (jeCisloOk(prikazySeVsim[i].getArgument1()))
+                    {
                         blokChybaVipis("přičti 1", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
@@ -136,8 +141,10 @@ namespace noMansResourceMachine
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                 }
                 else if (prikazySeVsim[i].getTyp() == 3) // jump if
-                { if ((jeCisloOk(prikazySeVsim[i].getArgument1()) && jeCisloOk(prikazySeVsim[i].getArgument2())
-                     && jeCisloOk(prikazySeVsim[i].getArgument3()) && jeCisloOk(prikazySeVsim[i].getArgument4()))) {
+                {
+                    if ((jeCisloOk(prikazySeVsim[i].getArgument1()) && jeCisloOk(prikazySeVsim[i].getArgument2())
+                       && jeCisloOk(prikazySeVsim[i].getArgument3()) && jeCisloOk(prikazySeVsim[i].getArgument4())))
+                    {
                         blokChybaVipis("skoč pokud", i + 1);
                         nastalaChyba = true;
                         goto konecKompilace;
@@ -233,9 +240,28 @@ namespace noMansResourceMachine
                 prikaz = new List<int>();
 
 
+
             }
-            ////////precetli jste   Zaznamenani Zmen
         }
+        private bool uzKompiluji;
+        private void kompilovat_Click(object sender, EventArgs e)
+        {
+            if (uzKompiluji == false)
+            {
+                kompilovat.Text = "jede";
+                beziciProgram.Start();
+                uzKompiluji = true;
+            }
+            else
+            {
+                kompilovat.Text = "is paused";
+                beziciProgram.Suspend();
+                uzKompiluji= false;
+
+            }
+        }
+            ////////precetli jste   Zaznamenani Zmen
+        
 
 
         //// Provadeni Priakazu
