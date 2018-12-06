@@ -259,10 +259,13 @@ namespace noMansResourceMachine
                 zadaniText = "Vyhráli jste!!! @Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode.ToString();
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
             }
+            // dej do vystupu soucet vsech cisel ve vstupu. na konci je vstupu je 0
+            //
+            // pokud je cislo delitelne 7, dej do vstupu 1, pokud ne, dej do vstupu 0
+            // pokud je posledni cislice cisla 1, dej do vstupu 1, pokud ne, dej do vstupu 0 (vcetne zapornych cisel) 
+            // na vstupu jsou dve cisla, do vystupu dej  nejmensi spolecnyno nasobka    (vstup 10,12, vystup 60)
 
-
-        
-    }
+        }
         public string getZadani()
         {
             return this.zadaniText;

@@ -106,7 +106,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel_scrolllll = new System.Windows.Forms.Panel();
             this.napovedaDebug = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
+              button9 = new System.Windows.Forms.Button();
             this.velikostKroku = new System.Windows.Forms.TextBox();
             this.zadani = new System.Windows.Forms.TextBox();
             this.inputTB = new System.Windows.Forms.TextBox();
@@ -1066,7 +1066,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
-        private static System.Windows.Forms.Button button9;
+        private static volatile System.Windows.Forms.Button button9;
     }
 }
 
