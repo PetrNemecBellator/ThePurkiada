@@ -146,7 +146,7 @@ namespace noMansResourceMachine
                 this.hodnotaD = 0;
                 this.hodnotaE = 0;
                 this.hodnotaF = 0;
-
+              //  1,2,3,4,5,6     7 8 9 10 11 12
 
             }
             else if (aktualniLevel == 4)
@@ -259,11 +259,14 @@ namespace noMansResourceMachine
                 zadaniText = "Vyhráli jste!!! @Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode.ToString();
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
             }
-            // dej do vystupu soucet vsech cisel ve vstupu. na konci je vstupu je 0
-            //
-            // pokud je cislo delitelne 7, dej do vstupu 1, pokud ne, dej do vstupu 0
-            // pokud je posledni cislice cisla 1, dej do vstupu 1, pokud ne, dej do vstupu 0 (vcetne zapornych cisel) 
-            // na vstupu jsou dve cisla, do vystupu dej  nejmensi spolecnyno nasobka    (vstup 10,12, vystup 60)
+            //1. cislo na vstupu do vystupu
+            //2. vsechna cisla na vstupu do vystupu
+            //3. kazde druhe cislo
+            //4. vsechen vstup do vystupu zvetseny o 2
+            //5. dej do vystupu soucet vsech cisel ve vstupu. na konci je vstupu je 0
+            //6 pokud je cislo delitelne 7, dej do vstupu 1, pokud ne, dej do vstupu 0
+            //7. pokud je posledni cislice cisla 1, dej do vstupu 1, pokud ne, dej do vstupu 0 (vcetne zapornych cisel) 
+            //8. na vstupu jsou dve cisla, do vystupu dej  nejmensi spolecnyno nasobka    (vstup 10,12, vystup 60)
 
         }
         public string getZadani()
