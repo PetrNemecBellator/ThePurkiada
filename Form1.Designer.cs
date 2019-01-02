@@ -106,7 +106,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel_scrolllll = new System.Windows.Forms.Panel();
             this.napovedaDebug = new System.Windows.Forms.Button();
-              button9 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.velikostKroku = new System.Windows.Forms.TextBox();
             this.zadani = new System.Windows.Forms.TextBox();
             this.inputTB = new System.Windows.Forms.TextBox();
@@ -129,6 +129,10 @@
             this.textPrijmeni = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.nadpis = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.jumpIf.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.jump.SuspendLayout();
@@ -731,11 +735,11 @@
             // 
             // button9
             // 
-            resources.ApplyResources(button9, "button9");
-            button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            button9.Name = "button9";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += new System.EventHandler(this.button9_Click);
+            resources.ApplyResources(this.button9, "button9");
+            this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button9.Name = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // velikostKroku
             // 
@@ -897,10 +901,45 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Name = "label4";
             // 
+            // button11
+            // 
+            resources.ApplyResources(this.button11, "button11");
+            this.button11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button11.Name = "button11";
+            this.button11.UseCompatibleTextRendering = true;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            resources.ApplyResources(this.button12, "button12");
+            this.button12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button12.Name = "button12";
+            this.button12.UseCompatibleTextRendering = true;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // nadpis
+            // 
+            resources.ApplyResources(this.nadpis, "nadpis");
+            this.nadpis.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nadpis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.nadpis.Name = "nadpis";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.ForeColor = System.Drawing.Color.Green;
+            this.label19.Name = "label19";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.nadpis);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.napovedaDebug);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -923,7 +962,7 @@
             this.Controls.Add(this.inputTB);
             this.Controls.Add(this.zadani);
             this.Controls.Add(this.velikostKroku);
-            this.Controls.Add(button9);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.konzole);
             this.Controls.Add(this.odecti1);
@@ -1066,7 +1105,11 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
-        private static volatile System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label nadpis;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label19;
     }
 }
 

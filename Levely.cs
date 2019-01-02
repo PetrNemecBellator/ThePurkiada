@@ -8,15 +8,19 @@ using System.Windows.Forms;
 namespace noMansResourceMachine
 {
 
-    class Levely                                      
+    public class Levely                                      
     {
       private  List<int> input = new List<int>();
       private  List<int> output = new List<int>();
+      public List <PrikazZobrazeni>  ulozenePerikazy;
+      
+      private bool splneno = false;
       private  string zadaniText;
       private  string typVstupu;
       private  int maxPocetRadku = 0;
       private  int maxPocetPrvedenychInstrukci = 0;
       private  int maxPocetPromenych = 0;
+      
 
       private  int? hodnotaA;
       private int? hodnotaB;

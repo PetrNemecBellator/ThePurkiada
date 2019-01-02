@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace noMansResourceMachine
 {
-    class PrikazZobrazeni
+    public class PrikazZobrazeni : Control
     {
         private Button upButton = new Button();
         private Button downButton = new Button();
@@ -73,7 +73,7 @@ namespace noMansResourceMachine
             //button to navigate blok
 
             //nazevPrikazu.MouseClick += NazevPrikazu_MouseClick;
-            ScrolHelp = scrollO;
+           ScrolHelp = scrollO;
            // ScrolHelp.MouseMove += ScrolHelp_MouseMove;
             ScrolHelp.MouseClick += ScrolHelp_MouseClick1;
             //   Form1.zmenPocetBloku(1);
@@ -678,6 +678,7 @@ namespace noMansResourceMachine
 
                             Label labelText = (Label)c;
                             //labelText.Top = pos;
+                            //labelText.Top = pos;
 
                             labelText.SetBounds(0, pos, 45, 20);
                             labelText.Text = ((pos / 85) + 1).ToString();
@@ -1007,6 +1008,16 @@ namespace noMansResourceMachine
             //return 7012;
             return int.MaxValue;
         }
+
+        public void nactiPrikazy(PrikazZobrazeni[] ulozenePrikazy)
+        {
+            ScrolHelp.Controls.Clear();
+            for(int i = 0; i > ulozenePrikazy.Length;i++)
+            {
+                ScrolHelp.Controls.Add(ulozenePrikazy[i]);
+            }
+            
+       }
 
         
     }

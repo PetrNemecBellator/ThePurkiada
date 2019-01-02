@@ -25,19 +25,25 @@ namespace noMansResourceMachine
         List<int> outputHrace = new List<int>();
         static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
         Thread beziciProgram;
-        Levely[] vsechnyLevely = new Levely[9] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6), new Levely(7), new Levely(8) };
+        public static Levely[] vsechnyLevely = new Levely[9] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6), new Levely(7), new Levely(8) };
+
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
-        int aktualniLevel = 0;
+        private static int aktualniLevel = 0;
         int pocetProvedenychInstrukci = 0;
         int pocetPouzitychPromenych = 0;
         private int aktualniRadek = -1;
+        public static int  getAktulanilevel()
+        {
+            return aktualniLevel;
+        }
         public Form1(){
             InitializeComponent();
             button9.Enabled = false;
             //  kompilovat.Enabled = false;
             beziciProgram = new Thread(kompilaceJede);
             beziciProgram.Name = "vlaknoKompilace";
+            
             
             
             vypisKonzole();
@@ -271,40 +277,7 @@ namespace noMansResourceMachine
         {
             setWinCode( vsechnyLevely[aktualniLevel].getWinCode());
             MessageBox.Show("Vyhral jsi: \n opiš kod aktualniho levlu: " + posledniWinCode + ".\n nelze se vratit zpět!","Vyhra");
-            aktualniPocetBloku = 0;
-            aktualniLevel++;
-            if (aktualniLevel > vsechnyLevely.Count())
-            {
-                MessageBox.Show("Už nezbývají žádné levely", "Totalní výhra");
-                aktualniLevel--;
-            }
-            else
-            {
-                prikazySeVsim.Clear();
-                panel_scrolllll.Controls.Clear();
-                konzole.Clear();
-                vypisKonzole();
-                inputTB.Clear();
-                outputTB.Clear();
-                /*  String s = "";
-                  var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
-
-                  int k = 0;
-                  for (int i = 0; i <vsechnyLevely.Count(); i++)
-                  {
-                      k += 2;
-                      if (k > vr[0].ToString().Count())
-                      {
-                          k = 0;
-                      }
-                      s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
-                  }
-                 MessageBox.Show(s);*/
-                zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
-                pocetProvedenychInstrukci = 0;
-                pocetPouzitychPromenych = 0;
-            }
-
+            
             }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -1209,6 +1182,81 @@ namespace noMansResourceMachine
 
         private void prictiLabel_MouseClick_1(object sender, MouseEventArgs e)
         {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ulozPrikazi();
+            button11.Enabled = true;
+            aktualniPocetBloku = 0;
+            aktualniLevel++;
+            if (aktualniLevel == 1)
+            {
+                button12.Enabled = false;
+            }
+            else
+            {
+                prikazySeVsim.Clear();
+                panel_scrolllll.Controls.Clear();
+                konzole.Clear();
+                vypisKonzole();
+                inputTB.Clear();
+                outputTB.Clear();
+                zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
+                pocetProvedenychInstrukci = 0;
+                pocetPouzitychPromenych = 0;
+            }
+
+
+        }
+
+        public void ulozPrikazi()
+        {
+            Form1.vsechnyLevely[Form1.getAktulanilevel()].ulozenePerikazy = new List<PrikazZobrazeni>(prikazySeVsim);
+        }
+        public void loadPrykazy()
+        {
+            prikazySeVsim = Form1.vsechnyLevely[Form1.getAktulanilevel()].ulozenePerikazy;
+
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ulozPrikazi();
+            button12.Enabled = true;
+            aktualniPocetBloku = 0;
+            aktualniLevel++;
+            if (aktualniLevel > vsechnyLevely.Count()-1)
+            {
+                button11.Enabled = false;
+                
+            }
+            else
+            {
+                prikazySeVsim.Clear();
+                panel_scrolllll.Controls.Clear();
+                konzole.Clear();
+                vypisKonzole();
+                inputTB.Clear();
+                outputTB.Clear();
+                /*  String s = "";
+                  var vr = Encoding.UTF8.GetBytes(Form1.getJmeno().ToUpper());
+
+                  int k = 0;
+                  for (int i = 0; i <vsechnyLevely.Count(); i++)
+                  {
+                      k += 2;
+                      if (k > vr[0].ToString().Count())
+                      {
+                          k = 0;
+                      }
+                      s += "\n" + vr[0].ToString().Insert(k, i.ToString()) + (i * 6).ToString();
+                  }
+                 MessageBox.Show(s);*/
+                zadani.Text = vsechnyLevely[aktualniLevel].getZadani();
+                pocetProvedenychInstrukci = 0;
+                pocetPouzitychPromenych = 0;
+            }
 
         }
     }
