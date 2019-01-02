@@ -32,12 +32,8 @@ namespace noMansResourceMachine
         int pocetProvedenychInstrukci = 0;
         int pocetPouzitychPromenych = 0;
         private int aktualniRadek = -1;
-        public Form1()
-        {
-
-
+        public Form1(){
             InitializeComponent();
-
             button9.Enabled = false;
             //  kompilovat.Enabled = false;
             beziciProgram = new Thread(kompilaceJede);
@@ -78,8 +74,7 @@ namespace noMansResourceMachine
             nastalaChyba = false;
             aktualniRadek = -1;
             button9.Enabled = true;
-            pocetProvedenychInstrukci = 0;
-            pocetPouzitychPromenych = 0;
+            PrikazZobrazeni.nullPouzitePormene();
 
             prikazy = new List<List<int>>();
             konzole.Clear();
@@ -112,6 +107,7 @@ namespace noMansResourceMachine
                         nastalaChyba = true;
                         goto konecKompilace;
                     }
+
                     prikaz.Add(prikazySeVsim[i].getArgument1());
                     // textBox1.Text += "    argument1cb" + (prikazySeVsim[i].getArgument1()).ToString();
 
@@ -246,7 +242,7 @@ namespace noMansResourceMachine
         private bool uzKompiluji;
         private void kompilovat_Click(object sender, EventArgs e)
         {
-            if (uzKompiluji == false)
+            /*if (uzKompiluji == false)
             {
                 kompilovat.Text = "jede";
                 beziciProgram.Start();
@@ -258,7 +254,8 @@ namespace noMansResourceMachine
                 beziciProgram.Suspend();
                 uzKompiluji= false;
 
-            }
+            }*/
+            kompilaceJede();
         }
             ////////precetli jste   Zaznamenani Zmen
         
@@ -580,6 +577,24 @@ namespace noMansResourceMachine
 
                                 if (bl)
                                 {
+                                    if (vsechnyLevely[aktualniLevel].getMaxPocetPromenych() != 0)
+                                    {
+                                        /*for (int idk = 1; idk < 7; idk++)
+                                        {
+                                            if (vsechnyLevely[aktualniLevel].getHodnota(idk) != null)
+                                            {
+                                                pocetPouzitychPromenych += 1;
+                                            }
+                                        }*/
+
+                                        if (PrikazZobrazeni.getPocetPouzitichPromenych() > vsechnyLevely[aktualniLevel].getMaxPocetPromenych())
+                                        {
+                                            MessageBox.Show("Výstup máš správně, ale použil jsi moc (" + PrikazZobrazeni.getPocetPouzitichPromenych() + ") proměnných");
+                                            break;
+                                        }
+
+
+                                    }
                                     if (vsechnyLevely[aktualniLevel].getMaxPocetRadku() != 0)
                                     {
                                         if (prikazy.Count() > vsechnyLevely[aktualniLevel].getMaxPocetRadku())
@@ -597,25 +612,7 @@ namespace noMansResourceMachine
                                             break;
                                         }
                                     }
-                                    /*
-                                    if (vsechnyLevely[aktualniLevel].getMaxPocetPromenych() != 0)
-                                    {
-                                        for (int idk = 1; idk < 7; idk++)
-                                        {
-                                            if (vsechnyLevely[aktualniLevel].getHodnota(idk) != null)
-                                            {
-                                                pocetPouzitychPromenych += 1;
-                                            }
-                                        }
-                                        if (pocetPouzitychPromenych > vsechnyLevely[aktualniLevel].getMaxPocetPromenych())
-                                        {
-                                            MessageBox.Show("Výstup máš správně, ale použil jsi moc (" + pocetPouzitychPromenych + ") proměnných");
-                                            break;
-                                        }
-
-
-                                    }
-                                    */
+                                    
                                     vyhra();
                                     break;
                                 }
@@ -682,40 +679,41 @@ namespace noMansResourceMachine
 
         private void vypisKonzole()
         {
-            
             konzole.AppendText("a = " + vsechnyLevely[aktualniLevel].getHodnotaA());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaA().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
-            konzole.AppendText("b = " + vsechnyLevely[aktualniLevel].getHodnotaB());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaB().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
-            konzole.AppendText("c = " + vsechnyLevely[aktualniLevel].getHodnotaC());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaC().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
-            konzole.AppendText("d = " + vsechnyLevely[aktualniLevel].getHodnotaD());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaD().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
-            konzole.AppendText("e = " + vsechnyLevely[aktualniLevel].getHodnotaE());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaE().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
-            konzole.AppendText("f = " + vsechnyLevely[aktualniLevel].getHodnotaF());
-            for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaF().ToString().Length; i++)
-            {
-                konzole.AppendText(" ");
-            }
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaA().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
+                konzole.AppendText("b = " + vsechnyLevely[aktualniLevel].getHodnotaB());
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaB().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
+                konzole.AppendText("c = " + vsechnyLevely[aktualniLevel].getHodnotaC());
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaC().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
+                konzole.AppendText("d = " + vsechnyLevely[aktualniLevel].getHodnotaD());
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaD().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
+                konzole.AppendText("e = " + vsechnyLevely[aktualniLevel].getHodnotaE());
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaE().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
+                konzole.AppendText("f = " + vsechnyLevely[aktualniLevel].getHodnotaF());
+                for (int i = 0; i < 7 - vsechnyLevely[aktualniLevel].getHodnotaF().ToString().Length; i++)
+                {
+                    konzole.AppendText(" ");
+                }
 
-            konzole.AppendText(Environment.NewLine);
-        }
+                konzole.AppendText(Environment.NewLine);
+
+
+         }
 
         private void setDisebledOthers(string tag)
         {
@@ -763,7 +761,7 @@ namespace noMansResourceMachine
                 prikazySeVsim[i].setCisloRadkuText((i + 1).ToString());
             }
         }
-
+  
         private void everyBtnClick(int typPrikazu)
         {
             if (textPrijmeni.Enabled == false)

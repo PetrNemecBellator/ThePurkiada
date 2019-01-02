@@ -2,7 +2,6 @@ C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.exe.con
 C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.exe
 C:\Users\Petr\Desktop\no mans  machine\bin\Release\noMansResourceMachine.pdb
 C:\Users\Petr\Desktop\no mans  machine\bin\Release\aa\noMansResourceMachine.resources.dll
-C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csprojResolveAssemblyReference.cache
 C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Form1.resources
 C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Properties.Resources.resources
 C:\Users\Petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.Form1.aa.resources
@@ -26,3 +25,5 @@ C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\noMansResourceMachine.
 C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\aa\noMansResourceMachine.resources.dll
 C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\noMansResourceMachine.exe
 C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\noMansResourceMachine.pdb
+C:\Users\petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csprojAssemblyReference.cache
+C:\Users\petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csproj.CoreCompileInputs.cache

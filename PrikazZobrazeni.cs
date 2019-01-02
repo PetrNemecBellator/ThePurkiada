@@ -345,7 +345,7 @@ namespace noMansResourceMachine
 
 
                 blok.BackColor = Color.FromArgb(255, 23, 99, 13);
-
+         
                 argument2cb.Text = "-";
                 argument2cb.Size = new Size(30, 00);
                 argument2cb.Items.Add(0);
@@ -694,38 +694,98 @@ namespace noMansResourceMachine
         {
             return (blok.Top / 85) + 1;
         }
+        private static string pouzitePromene = "";
+        public static int getPocetPouzitichPromenych()
+        {
+            return pouzitePromene.Length;
+        }
+        public static void nullPouzitePormene()
+        {
+            pouzitePromene = "";
+        }
+        private void addPouzitaProm(string promena)
+        {
+            bool nealezena = false;
+            for (int i = 0 ; i < pouzitePromene.Length; i++) {
+                if (pouzitePromene[i] == promena[0])
+                {
+                    
+                    return;                   
+                }
+            }
+            pouzitePromene += promena;
+            
+            
+        }
+
         public int getArgument1()
         {
 
             if ("A" == (this.argument1cb.Text.ToString()) || "B" == (this.argument1cb.Text.ToString()) || "C" == (this.argument1cb.Text.ToString()) || "D" == (this.argument1cb.Text.ToString()) || "E" == (this.argument1cb.Text.ToString()) || "F" == (this.argument1cb.Text.ToString()))
             {
-              //  MessageBox.Show("pohoda moc ty arggumrnty 1");
+                //  MessageBox.Show("pohoda moc ty arggumrnty 1");
 
                 if ("A" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("A");
                     return int.MaxValue - 1;
+                }
                 else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("B");
                     return int.MaxValue - 2;
+                }
                 else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("C");
                     return int.MaxValue - 3;
+                }
                 else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("D");
                     return int.MaxValue - 4;
+                }
                 else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("E");
                     return int.MaxValue - 5;
+                }
                 else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.Text.ToString())))
+                {
+                    addPouzitaProm("F");
                     return int.MaxValue - 6;
-                else if ("A" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 1;
-                else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 2;
-                else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 3;
-                else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 4;
-                else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 5;
-                else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
-                    return int.MaxValue - 6;
+                }
 
+                else if ("A" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("A");
+                    return int.MaxValue - 1;
+                }
+                else if ("B" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("B");
+                    return int.MaxValue - 2;
+                }
+                else if ("C" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("C");
+                    return int.MaxValue - 3;
+                }
+                else if ("D" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("D");
+                    return int.MaxValue - 4;
+                }
+                else if ("E" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("E");
+                    return int.MaxValue - 5;
+                }
+                else if ("F" == (this.argument1cb.GetItemText(this.argument1cb.SelectedItem)))
+                {
+                    addPouzitaProm("F");
+                    return int.MaxValue - 6;
+                }
                 //  else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                 //      return int.MaxValue;
 
@@ -832,61 +892,95 @@ namespace noMansResourceMachine
                 if (int.TryParse(this.argument2cb.Text, out cislo))
                 {
 
-                if (this.typ == 6)
-                {
-                    if (cislo == 0 || cislo == 1)
+                    if (this.typ == 6)
                     {
+                        if (cislo == 0 || cislo == 1)
+                        {
+                            return cislo;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Do bloku output nelze vložít nic kromě 0 a 1. ", "Chyba");
+                            return int.MaxValue;
+                        }
+                     }
+                     if (this.typ == 3)
+                        {
                         return cislo;
                     }
-                    else
-                    {
-                        MessageBox.Show("Do bloku output nelze vložít nic kromě 0 a 1. ", "Chyba");
-                        return int.MaxValue;
-                    }
-                 }
-                 if (this.typ == 3)
-                    {
-                    return cislo;
-                   }
 
                 
             }
-            else if ("A" == (this.argument2cb.Text.ToString()) || "B" == (this.argument2cb.Text.ToString()) || "C" == (this.argument2cb.Text.ToString()) || "D" == (this.argument2cb.Text.ToString()) || "E" == (this.argument2cb.Text.ToString()) || "F" == (this.argument2cb.Text.ToString()))
+            else if ("A" == (this.argument1cb.Text.ToString()) || "B" == (this.argument2cb.Text.ToString()) || "C" == (this.argument2cb.Text.ToString()) || "D" == (this.argument2cb.Text.ToString()) || "E" == (this.argument2cb.Text.ToString()) || "F" == (this.argument2cb.Text.ToString()))
             {
-              //  MessageBox.Show("yadddddtimjo");
+                //  MessageBox.Show("pohoda moc ty arggumrnty 1");
 
                 if ("A" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("A");
                     return int.MaxValue - 1;
+                }
                 else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("B");
                     return int.MaxValue - 2;
+                }
                 else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("C");
                     return int.MaxValue - 3;
+                }
                 else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("D");
                     return int.MaxValue - 4;
+                }
                 else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("E");
                     return int.MaxValue - 5;
+                }
                 else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.Text.ToString())))
+                {
+                    addPouzitaProm("F");
                     return int.MaxValue - 6;
+                }
+
                 else if ("A" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("A");
                     return int.MaxValue - 1;
+                }
                 else if ("B" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("B");
                     return int.MaxValue - 2;
+                }
                 else if ("C" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("C");
                     return int.MaxValue - 3;
+                }
                 else if ("D" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("D");
                     return int.MaxValue - 4;
+                }
                 else if ("E" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("E");
                     return int.MaxValue - 5;
+                }
                 else if ("F" == (this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
+                {
+                    addPouzitaProm("F");
                     return int.MaxValue - 6;
+                }
                 //  else if ('i' == char.Parse(this.argument2cb.GetItemText(this.argument2cb.SelectedItem)))
                 //      return int.MaxValue;
 
             }
-
-
             return int.MaxValue;
-
         }
 
 
