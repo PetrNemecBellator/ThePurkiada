@@ -260,7 +260,10 @@ namespace noMansResourceMachine
                 maxPocetPrvedenychInstrukci = 404;
                 maxPocetPromenych = 42;
                 typVstupu = "404";
-                zadaniText = "Vyhráli jste!!! @Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci + "@Maximalni počet použitých proměných: " + maxPocetPromenych + "@Kód od předchozího levelu:" + Form1.posledniWinCode.ToString();
+                zadaniText = "Vyhráli jste!!! @Typ vstupu: " + typVstupu + " @@Maximalni počet řádků: " + maxPocetRadku + 
+                    "@Maximalni počet provedených instrukcí: " + maxPocetPrvedenychInstrukci +
+                    "@Maximalni počet použitých proměných: " + 
+                    "@Kód od předchozího levelu:" + Form1.posledniWinCode;
                 zadaniText = zadaniText.Replace("@", System.Environment.NewLine);
             }
             //1. cislo na vstupu do vystupu

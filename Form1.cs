@@ -26,7 +26,7 @@ namespace noMansResourceMachine
         static List<PrikazZobrazeni> prikazySeVsim = new List<PrikazZobrazeni>();
         Thread beziciProgram;
         public static Levely[] vsechnyLevely = new Levely[9] { new Levely(0), new Levely(1), new Levely(2), new Levely(3), new Levely(4), new Levely(5), new Levely(6), new Levely(7), new Levely(8) };
-
+        
         private static Panel[] poleButonuEnabledDisabled;
         //int [] pole= new pole
         private static int aktualniLevel = 0;
