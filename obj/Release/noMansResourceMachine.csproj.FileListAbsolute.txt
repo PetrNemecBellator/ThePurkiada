@@ -27,3 +27,16 @@ C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\noMansResourceMachine.
 C:\Users\petr\Desktop\zaloha\no mans  machine\obj\Release\noMansResourceMachine.pdb
 C:\Users\petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csprojAssemblyReference.cache
 C:\Users\petr\Desktop\no mans  machine\obj\Release\noMansResourceMachine.csproj.CoreCompileInputs.cache
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.csprojResolveAssemblyReference.cache
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.Form1.resources
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.Properties.Resources.resources
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.Form1.aa.resources
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.csproj.GenerateResource.Cache
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.csproj.CoreCompileInputs.cache
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.exe
+V:\MyProjects\ThePurkiada\obj\Release\noMansResourceMachine.pdb
+V:\MyProjects\ThePurkiada\bin\Release\noMansResourceMachine.exe.config
+V:\MyProjects\ThePurkiada\bin\Release\noMansResourceMachine.exe
+V:\MyProjects\ThePurkiada\bin\Release\noMansResourceMachine.pdb
+V:\MyProjects\ThePurkiada\bin\Release\aa\noMansResourceMachine.resources.dll
+V:\MyProjects\ThePurkiada\obj\Release\aa\noMansResourceMachine.resources.dll

@@ -106,7 +106,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel_scrolllll = new System.Windows.Forms.Panel();
             this.napovedaDebug = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            button9 = new System.Windows.Forms.Button();
             this.velikostKroku = new System.Windows.Forms.TextBox();
             this.zadani = new System.Windows.Forms.TextBox();
             this.inputTB = new System.Windows.Forms.TextBox();
@@ -735,11 +735,11 @@
             // 
             // button9
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            resources.ApplyResources(button9, "button9");
+            button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            button9.Name = "button9";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += new System.EventHandler(button9_Click);
             // 
             // velikostKroku
             // 
@@ -962,7 +962,7 @@
             this.Controls.Add(this.inputTB);
             this.Controls.Add(this.zadani);
             this.Controls.Add(this.velikostKroku);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(button9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.konzole);
             this.Controls.Add(this.odecti1);
@@ -1108,7 +1108,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label nadpis;
-        private System.Windows.Forms.Button button9;
+        private static System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label19;
     }
 }
